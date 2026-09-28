@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Math Free Learning V14.50</title>
+<title>Math Free Learning V14.52</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
@@ -4920,6 +4920,51 @@ body{
   display:none!important;
 }
 
+
+/* V14.51 — 頭像列恢復：保留控制按鈕，但不把標題加回來 */
+.app-title-row{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:10px!important;
+  margin:0 0 10px!important;
+  min-height:52px!important;
+}
+.app-title-row > h1{
+  display:none!important;
+}
+.app-title-row .top-actions{
+  width:auto!important;
+  margin-left:auto!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:9px!important;
+  flex-wrap:wrap!important;
+}
+#profileBtn{
+  display:flex!important;
+}
+@media(max-width:640px){
+  .app-title-row{
+    min-height:48px!important;
+    margin-bottom:8px!important;
+  }
+  .app-title-row .top-actions{
+    width:100%!important;
+    justify-content:flex-end!important;
+  }
+  #profileBtn{
+    min-width:150px!important;
+    max-width:190px!important;
+  }
+}
+
+/* V14.51 — 地圖切回時不要做視覺跳動 */
+.path-mainline-scroll{
+  scroll-behavior:auto!important;
+}
+
 </style>
 </head>
 <body><div class="app">
@@ -4936,7 +4981,7 @@ body{
 <div id="game" class="hidden">
 
 <div class="app-title-row">
-  <h1>Math Free Learning <span class="version-badge">V14.50</span></h1>
+  <h1>Math Free Learning <span class="version-badge">V14.52</span></h1>
   <div class="top-actions">
     <button id="shopBtn" type="button" class="coin-shop-btn" onclick="openHuangShop()" aria-label="開啟黃黃商店">
       <img id="topCoinIcon" class="coin-icon" alt="" aria-hidden="true">
@@ -7585,6 +7630,7 @@ let mainlineJumpIndex=-1;
 let mainlinePraiseCleared=new Set();
 let mainlineVerticalFocusedOnce=false;
 let mainlineLastRenderKey="";
+let mainlinePendingRestoreIndex=-1;
 
 function mainlineCard(){
  return $("mainlineMap")?.querySelector(".path-mainline-card")
@@ -7636,7 +7682,10 @@ function bindMainlineSwipe(){
  const sc=$("mainlinePathScroll");
  if(!sc)return;
  sc.addEventListener("scroll",()=>{
-   s.mainlineScrollTop=sc.scrollTop
+   const line=$("line");
+   if(s.tab==="line" && line && !line.classList.contains("hidden")){
+     s.mainlineScrollTop=sc.scrollTop
+   }
  },{passive:true})
 }
 
@@ -10240,9 +10289,15 @@ function closeExitMainlineConfirm(){
 }
 function exitMainlineToMap(){
  closeExitMainlineConfirm();
- // 明確退出才回主線地圖；目前題目與本關進度仍保留。
+ // V14.51：退出時回到正在玩的關卡，不跳到主線最上方。
+ const current=mainlineCurrentIndex();
+ const rawStage=Number.isInteger(s.mainlineStage)?s.mainlineStage:current;
+ const target=Math.max(0,Math.min(current,rawStage));
+ s.mainlineSelected=target;
+ s.mainlineViewIndex=target;
+ mainlineJumpIndex=-1;
+ mainlinePendingRestoreIndex=target;
  tab("line",true);
- renderMainline();
  saveGame()
 }
 function resumeMainlineSession(){
@@ -10277,6 +10332,11 @@ function openMainlineTab(){
  tab("line",true)
 }
 function tab(x,force=false){
+ // V14.51：iPad/Safari 在 display:none 時可能把 scrollTop 變成 0，先保存。
+ if(s.tab==="line" && x!=="line"){
+   const oldScroll=$("mainlinePathScroll");
+   if(oldScroll)s.mainlineScrollTop=oldScroll.scrollTop
+ }
  if(x!=="main"&&!document.body.classList.contains("stage-finish-lock"))document.body.classList.remove("completion-focus");
  if(document.body.classList.contains("bingo-focus")&&x!=="bingo")return;
  // 正在做主線題目時，除了「退出」以外不能切到其他分頁。
@@ -10308,6 +10368,24 @@ function tab(x,force=false){
  // Build/update the map while #line is still hidden, so users do not see an empty/reflow frame.
  if(x==="line")renderMainline();
  ["main","line","bingo","study","battle","rank"].forEach(v=>$(v).classList.toggle("hidden",v!==x));
+
+ if(x==="line"){
+   const savedScroll=Math.max(0,Number(s.mainlineScrollTop)||0);
+   const restoreIndex=mainlinePendingRestoreIndex;
+   requestAnimationFrame(()=>{
+     const sc=$("mainlinePathScroll");
+     if(!sc)return;
+     if(restoreIndex>=0){
+       scrollMainlineNodeIntoView(restoreIndex,"auto");
+       mainlinePendingRestoreIndex=-1
+     }else{
+       const maxTop=Math.max(0,sc.scrollHeight-sc.clientHeight);
+       sc.scrollTop=Math.max(0,Math.min(maxTop,savedScroll));
+       s.mainlineScrollTop=sc.scrollTop
+     }
+   })
+ }
+
  const mainlineTabActive = x==="line" || (x==="main" && s.mainlineActive);
  $("tl").classList.toggle("active",mainlineTabActive);
  $("tbi").classList.toggle("active",x==="bingo");
@@ -10763,7 +10841,7 @@ async function startMatchmaking(d,subject){
    battle.searchStartedAt=Date.now();
    battle.difficulty=d;
    battle.subject=subject;
-   $("battleWait").textContent=`🔎 尋找 ${battleDiffName(d)}・隨機題目 對手…`;
+   $("battleWait").textContent=`🔎 尋找 ${battleDiffName(d)}・隨機題目 對手…（保持排隊中）`;
    $("cancelMatch").classList.remove("hidden");
    await tryMatch(token);
    startSearchTimer(token)
@@ -10790,29 +10868,29 @@ async function validateBattleCandidate(id){
    if(error||!data)return false;
 
    const participant=data.p1===u.id||data.p2===u.id;
-   const distinct=!!data.p1&&!!data.p2&&data.p1!==data.p2;
    const usable=data.status==="waiting"||data.status==="active";
-   if(!participant||!distinct||!usable){
+   if(!participant||!usable){
      await rejectStaleBattle(id);
      return false
    }
 
-   // The opponent must have pinged the server very recently.
-   // This prevents old waiting/active rows from being mistaken for a live player.
-   const me1=data.p1===u.id;
-   const oppHb=me1?data.p2_heartbeat:data.p1_heartbeat;
-   if(!battleHeartbeatFresh(oppHb,9000)){
+   // V14.52: a one-player WAITING row is the queue itself.
+   // Do NOT call leave_math_battle_v4 here or the first searcher gets removed
+   // from the queue before a second browser has time to join.
+   const hasBoth=!!data.p1&&!!data.p2;
+   if(!hasBoth){
+     return false
+   }
+
+   // Same authenticated user on both sides is malformed and can be cleared.
+   if(data.p1===data.p2){
      await rejectStaleBattle(id);
      return false
    }
 
-   // A waiting candidate returned during a NEW search must itself be recent.
-   const created=Date.parse(data.created_at||"");
-   if(data.status==="waiting" && Number.isFinite(created) &&
-      battle.searchStartedAt && created < battle.searchStartedAt-5000){
-     await rejectStaleBattle(id);
-     return false
-   }
+   // Do not reject a legitimate pair just because the first player has waited
+   // more than five seconds or because the second heartbeat has not arrived yet.
+   // openBattle()/refreshBattle() performs the real live-heartbeat handshake.
    return true
  }catch(e){
    console.warn("validate battle candidate",e);
@@ -10844,12 +10922,10 @@ async function settleBattleCandidate(initialId,token=battle.searchToken){
    const usable=q.data.filter(row=>{
      if(!row?.p1||!row?.p2||row.p1===row.p2)return false;
      if(row.p1!==u.id&&row.p2!==u.id)return false;
-     const me1=row.p1===u.id;
-     const oppHb=me1?row.p2_heartbeat:row.p1_heartbeat;
-     if(!battleHeartbeatFresh(oppHb,9000))return false;
-     if(row.status==="active")return true;
-     const created=Date.parse(row.created_at||"");
-     return !Number.isFinite(created)||!battle.searchStartedAt||created>=battle.searchStartedAt-5000
+     // V14.52: do not discard a real pair merely because the queue row is old
+     // or the opponent heartbeat has not advanced yet. The live handshake below
+     // is the authoritative ghost-player check.
+     return row.status==="waiting"||row.status==="active"
    });
    if(!usable.length)return initialId;
    const active=usable.filter(x=>x.status==="active");
@@ -10972,7 +11048,12 @@ async function openBattle(id,token=battle.searchToken){
  const snapMe1=snap.data.p1===u.id;
  const snapOppHb=snapMe1?snap.data.p2_heartbeat:snap.data.p1_heartbeat;
  battle.handshakeStartedAt=Date.now();
- battle.opponentHeartbeatBaseline=Date.parse(snapOppHb||"");
+ {
+   const parsedBaseline=Date.parse(snapOppHb||"");
+   // V14.52: if the opponent has never heartbeated yet, use 0 so the first
+   // real heartbeat counts as an advance instead of getting stuck on NaN.
+   battle.opponentHeartbeatBaseline=Number.isFinite(parsedBaseline)?parsedBaseline:0
+ }
  battle.opponentHeartbeatAdvanced=false;
 
  battle.matchId=id;
