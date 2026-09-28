@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Math Free Learning V14.53</title>
+<title>Math Free Learning V14.55</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
@@ -4965,6 +4965,169 @@ body{
   scroll-behavior:auto!important;
 }
 
+
+
+/* V14.54 — iPad Split View / Stage Manager responsive cleanup
+   Fixes the awkward "half desktop / half mobile" layout around 700–900px. */
+html,body{
+  max-width:100%!important;
+  overflow-x:hidden!important;
+}
+.app{
+  width:100%!important;
+  box-sizing:border-box!important;
+}
+
+/* Keep the daily challenge as a compact right dock on medium iPad widths.
+   The old 820px breakpoint stacked it above the map and made the page look huge. */
+@media (min-width:681px) and (max-width:900px){
+  #line{
+    width:calc(100vw - 20px)!important;
+    max-width:none!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+  }
+  .line-layout{
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 184px!important;
+    gap:10px!important;
+    align-items:start!important;
+  }
+  .challenge-dock{
+    position:sticky!important;
+    top:10px!important;
+    order:initial!important;
+    padding:10px!important;
+    border-radius:16px!important;
+  }
+  .challenge-head{margin-bottom:6px!important}
+  .challenge-title{font-size:14px!important}
+  .challenge-count{min-width:34px!important;padding:4px 6px!important;font-size:10px!important}
+  .challenge-item{padding:8px 0!important}
+  .challenge-item-top{font-size:10px!important}
+  .challenge-item-top b{font-size:10.5px!important}
+  .challenge-bar{height:7px!important;margin-top:5px!important}
+
+  .path-mainline-card{
+    min-height:560px!important;
+    height:560px!important;
+  }
+  .path-mainline-scroll{
+    height:560px!important;
+    min-height:560px!important;
+    max-height:560px!important;
+  }
+
+  /* Compact but visible profile/avatar controls in split view. */
+  .app-title-row{
+    min-height:44px!important;
+    margin-bottom:8px!important;
+  }
+  .app-title-row .top-actions{
+    width:100%!important;
+    justify-content:flex-end!important;
+    gap:7px!important;
+  }
+  #profileBtn.profile-mini{
+    width:48px!important;
+    min-width:48px!important;
+    max-width:48px!important;
+    height:44px!important;
+    padding:4px!important;
+    justify-content:center!important;
+    flex:0 0 48px!important;
+  }
+  #profileBtn .profile-mini-meta{display:none!important}
+  #profileAvatar.avatar-circle{
+    width:34px!important;
+    height:34px!important;
+    flex:0 0 34px!important;
+  }
+  #onboardingReplayBtn{
+    min-width:44px!important;
+    padding:8px 10px!important;
+    font-size:0!important;
+  }
+  #onboardingReplayBtn::after{
+    content:"❓"!important;
+    font-size:18px!important;
+  }
+}
+
+/* Truly narrow windows should use one column, but compactly. */
+@media (max-width:680px){
+  #line{
+    width:auto!important;
+    left:auto!important;
+    transform:none!important;
+  }
+  .line-layout{
+    grid-template-columns:1fr!important;
+    gap:9px!important;
+  }
+  .challenge-dock{
+    position:static!important;
+    order:-1!important;
+    padding:9px 11px!important;
+    border-radius:15px!important;
+  }
+  .challenge-head{margin-bottom:4px!important}
+  .challenge-item{padding:6px 0!important}
+  .path-mainline-card{
+    min-height:500px!important;
+    height:500px!important;
+  }
+  .path-mainline-scroll{
+    height:500px!important;
+    min-height:500px!important;
+    max-height:500px!important;
+  }
+
+  .app-title-row{
+    min-height:44px!important;
+    margin-bottom:7px!important;
+  }
+  .app-title-row .top-actions{
+    width:100%!important;
+    justify-content:flex-end!important;
+    gap:6px!important;
+  }
+  #profileBtn.profile-mini{
+    width:46px!important;
+    min-width:46px!important;
+    max-width:46px!important;
+    height:42px!important;
+    padding:4px!important;
+    justify-content:center!important;
+    flex:0 0 46px!important;
+  }
+  #profileBtn .profile-mini-meta{display:none!important}
+  #profileAvatar.avatar-circle{
+    width:32px!important;
+    height:32px!important;
+    flex:0 0 32px!important;
+  }
+  #onboardingReplayBtn{
+    min-width:42px!important;
+    padding:7px 9px!important;
+    font-size:0!important;
+  }
+  #onboardingReplayBtn::after{
+    content:"❓"!important;
+    font-size:17px!important;
+  }
+}
+
+/* The map should never grow outside its column in split-screen. */
+#mainlineMap,
+.path-mainline-wrap,
+.path-mainline-card,
+.path-mainline-scroll,
+.path-mainline-inner{
+  max-width:100%!important;
+  box-sizing:border-box!important;
+}
+
 </style>
 </head>
 <body><div class="app">
@@ -4981,7 +5144,7 @@ body{
 <div id="game" class="hidden">
 
 <div class="app-title-row">
-  <h1>Math Free Learning <span class="version-badge">V14.53</span></h1>
+  <h1>Math Free Learning <span class="version-badge">V14.55</span></h1>
   <div class="top-actions">
     <button id="shopBtn" type="button" class="coin-shop-btn" onclick="openHuangShop()" aria-label="開啟黃黃商店">
       <img id="topCoinIcon" class="coin-icon" alt="" aria-hidden="true">
@@ -11161,14 +11324,13 @@ async function openBattle(id,token=battle.searchToken){
  $("battleLobby").classList.remove("hidden");
  $("battleGame").classList.add("hidden");
  $("battleResult").classList.add("hidden");
- $("battleWait").textContent="🔐 已找到候選對手，正在確認雙方連線…";
- // V14.18: ready failure must never destroy only one side of a valid match.
- // Try the RPC first; if an older Supabase function is incompatible, fall back to
- // marking THIS authenticated player ready directly. The shared row remains the
- // single source of truth, so both windows converge on the same state.
+ $("battleWait").textContent="🔐 已找到對手，正在同步雙方狀態…";
+ // V14.55: announce our readiness immediately. Both live browsers execute this;
+ // the server promotes the shared row to ACTIVE after both have checked in.
  await touchBattleHeartbeat(id);
+ await promoteBattleIfConnected(snap.data);
  await refreshBattle();
- if(battle.matchId&&!battle.timer)battle.timer=setInterval(refreshBattle,800)
+ if(battle.matchId&&!battle.timer)battle.timer=setInterval(refreshBattle,700)
 }
 
 
@@ -11188,15 +11350,23 @@ function battleHeartbeatFresh(v,maxMs=12000){
 async function promoteBattleIfConnected(row){
  if(!row||row.status!=="waiting"||!db)return false;
  if(!row.p1||!row.p2||row.p1===row.p2)return false;
- if(!battleHeartbeatFresh(row.p1_heartbeat)||!battleHeartbeatFresh(row.p2_heartbeat))return false;
- if(!battle.opponentHeartbeatAdvanced)return false;
  try{
-   // Server-side ready handshake. Each authenticated client can only mark itself
-   // ready; the SECURITY DEFINER RPC promotes to active only after BOTH are ready.
+   // V14.55: battle_ready_v3 IS the authoritative live-client handshake.
+   // Each authenticated browser can only mark itself ready; a dead/ghost tab
+   // cannot call this RPC, so we do not need to wait for a heartbeat timestamp
+   // to advance before sending ready.
    const r=await db.rpc("battle_ready_v3",{p_match:row.id});
-   if(r.error){console.warn("battle ready",r.error);return false}
+   if(r.error){
+     console.warn("battle ready",r.error);
+     if($("battleConn"))$("battleConn").textContent="連線確認服務暫時沒有回應…";
+     return false
+   }
    return true
- }catch(e){console.warn("battle ready",e);return false}
+ }catch(e){
+   console.warn("battle ready",e);
+   if($("battleConn"))$("battleConn").textContent="連線確認服務暫時沒有回應…";
+   return false
+ }
 }
 
 async function abandonBattle(message){
@@ -11243,9 +11413,11 @@ async function refreshBattle(){
  if(!battle.matchId||!db)return;
  try{
    const heartbeatOk=await touchBattleHeartbeat(battle.matchId);
-   if(!heartbeatOk){
-     if($("battleConn"))$("battleConn").textContent="網路暫時不穩，正在重新連線…";
-     return
+   // V14.55: heartbeat is a presence hint, not a hard gate.
+   // Older/incompatible heartbeat RPCs must not freeze both clients forever
+   // on "已找到候選對手".
+   if(!heartbeatOk && $("battleConn")){
+     $("battleConn").textContent="連線訊號同步中…";
    }
    let u=await ensureAuth();if(!u)return;
    let {data,error}=await db.from("battle_matches").select("*").eq("id",battle.matchId).single();
@@ -11289,42 +11461,46 @@ async function refreshBattle(){
      setTabsLocked(false);
      $("battleGame").classList.add("hidden");
      $("battleLobby").classList.remove("hidden");
+
+     // V14.55: both clients repeatedly send a server-side ready signal.
+     // This prevents stale "候選對手" text from becoming a permanent state.
+     const readySent=await promoteBattleIfConnected(data);
+     const handshakeAge=Date.now()-(battle.handshakeStartedAt||Date.now());
+
      const myHb=me1?data.p1_heartbeat:data.p2_heartbeat;
      const oppHb=me1?data.p2_heartbeat:data.p1_heartbeat;
-     const myOnline=battleHeartbeatFresh(myHb);
-     const oppOnline=battleHeartbeatFresh(oppHb);
-     const oppHbMs=Date.parse(oppHb||"");
-     const base=battle.opponentHeartbeatBaseline;
+     const myOnline=battleHeartbeatFresh(myHb,18000);
+     const oppOnline=battleHeartbeatFresh(oppHb,18000);
 
-     // IMPORTANT: freshness alone is not proof of life. The opponent must send
-     // a NEW heartbeat after we snapshotted the candidate in openBattle().
-     if(oppOnline&&Number.isFinite(oppHbMs)&&Number.isFinite(base)&&oppHbMs>base){
-       battle.opponentHeartbeatAdvanced=true
-     }
-
-     const handshakeAge=Date.now()-(battle.handshakeStartedAt||Date.now());
-     if(!oppOnline||(!battle.opponentHeartbeatAdvanced&&handshakeAge>6500)){
-       if(handshakeAge>6500){
-         const deadId=battle.matchId;
-         await rejectStaleBattle(deadId);
-         await abandonBattle("🔎 對手沒有回傳新的連線訊號，已清除幽靈配對並繼續搜尋。");
-         battle.searching=true;
-         battle.phase="searching";
-         battle.searchStartedAt=Date.now();
-         battle.handshakeStartedAt=0;
-         battle.opponentHeartbeatBaseline=null;
-         battle.opponentHeartbeatAdvanced=false;
-         const retryToken=++battle.searchToken;
-         $("cancelMatch").classList.remove("hidden");
-         startSearchTimer(retryToken);
-         return
-       }
-     }
-     if(myOnline&&oppOnline&&battle.opponentHeartbeatAdvanced){
-       $("battleWait").textContent="🔐 雙方已回傳新的連線訊號，正在開始對戰…";
-       await promoteBattleIfConnected(data);
+     if(readySent){
+       $("battleWait").textContent=
+         `🔄 已找到 ${oppName||"對手"}，雙方正在進入同一場對戰…`;
      }else{
-       $("battleWait").textContent=`🔐 即時連線確認：你 ${myOnline?"✅":"…"}　對手 ${battle.opponentHeartbeatAdvanced?"✅":"…"}`;
+       $("battleWait").textContent=
+         `🔐 已找到 ${oppName||"對手"}，等待連線確認…`;
+     }
+
+     // A real second browser should promote the match quickly through
+     // battle_ready_v3. If it never does, clear only after a generous timeout.
+     if(handshakeAge>12000 && data.status==="waiting"){
+       const deadId=battle.matchId;
+       await rejectStaleBattle(deadId);
+       await abandonBattle("🔎 對手沒有完成連線確認，已重新搜尋。");
+       battle.searching=true;
+       battle.phase="searching";
+       battle.searchStartedAt=Date.now();
+       battle.handshakeStartedAt=0;
+       battle.opponentHeartbeatBaseline=null;
+       battle.opponentHeartbeatAdvanced=false;
+       const retryToken=++battle.searchToken;
+       $("cancelMatch").classList.remove("hidden");
+       startSearchTimer(retryToken);
+       return
+     }
+
+     if($("battleConn")){
+       $("battleConn").textContent=
+         `連線：你 ${myOnline?"✅":"同步中"}　對手 ${oppOnline?"✅":"同步中"}`;
      }
      return
    }
@@ -11343,6 +11519,8 @@ async function refreshBattle(){
    }
 
    if(battle.lastStatus!=="active"){
+     $("battleWait").textContent="";
+     if($("battleConn"))$("battleConn").textContent="✅ 雙方已連線";
      battle.startedAt=window.performance.now();
      battle.input="";
      battle.answered=false;
