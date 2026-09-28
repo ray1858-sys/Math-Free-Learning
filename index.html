@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Math Free Learning V14.62</title>
+<title>Math Free Learning V14.63</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
@@ -5363,6 +5363,67 @@ html,body{
   }
 }
 
+
+
+/* V14.63 — 好友私聊 + 黃黃貼圖 */
+.friend-chat-panel{min-height:560px;display:flex;flex-direction:column;padding:0!important;overflow:hidden!important}
+.friend-chat-panel.hidden{display:none!important}
+.friend-chat-head{display:grid;grid-template-columns:42px 48px minmax(0,1fr) 42px;align-items:center;gap:9px;padding:10px 11px;border-bottom:1px solid #29425d;background:rgba(12,31,52,.9)}
+.friend-chat-back,.friend-chat-refresh{width:42px;min-width:42px;height:40px;padding:2px;font-size:25px}
+.friend-chat-refresh{font-size:19px}
+.friend-chat-avatar{width:44px!important;height:44px!important;font-size:21px!important}
+.friend-chat-head-meta{display:flex;flex-direction:column;min-width:0}
+.friend-chat-head-meta b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.friend-chat-head-meta span{font-size:10px;margin-top:2px}
+.friend-chat-messages{flex:1;min-height:360px;max-height:58vh;overflow-y:auto;padding:14px 12px 18px;scroll-behavior:smooth;background:radial-gradient(circle at 20% 10%,rgba(66,116,168,.12),transparent 34%),rgba(7,19,34,.72)}
+.friend-chat-empty{padding:30px 10px;color:#7890a8;text-align:center;font-size:12px}
+.friend-msg-row{display:flex;margin:7px 0}
+.friend-msg-row.mine{justify-content:flex-end}
+.friend-msg-row.theirs{justify-content:flex-start}
+.friend-msg{max-width:min(76%,520px);border-radius:16px;padding:9px 11px;border:1px solid #29425d;background:#102942;box-shadow:0 5px 16px rgba(0,0,0,.12)}
+.friend-msg-row.mine .friend-msg{background:#1d4d78;border-color:#3975a8}
+.friend-msg-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.45;font-size:14px}
+.friend-msg-time{margin-top:4px;font-size:9px;color:#8fa5b9;text-align:right}
+.friend-msg.sticker{padding:5px 7px 6px;background:rgba(12,31,52,.52);border-color:rgba(87,135,181,.55)}
+.friend-msg.sticker img{display:block;width:118px;height:118px;object-fit:contain}
+.huang-sticker-tray{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:9px;border-top:1px solid #29425d;background:#0d2238}
+.huang-sticker-tray.hidden{display:none!important}
+.huang-sticker-tray button{min-width:0;padding:7px 4px 6px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.huang-sticker-tray img{width:58px;height:58px;object-fit:contain}
+.huang-sticker-tray small{color:#a9bdd0;font-size:9px;white-space:nowrap}
+.friend-chat-status{min-height:20px;padding:4px 12px 0;font-size:10px}
+.friend-chat-status.bad{color:#fca5a5}.friend-chat-status.good{color:#86efac}
+.friend-chat-compose{display:grid;grid-template-columns:46px minmax(0,1fr) auto;gap:7px;padding:8px 10px 10px;align-items:center}
+.friend-chat-compose input{margin:0!important;height:46px;min-width:0;padding:10px 12px}
+.friend-chat-compose .primary{height:46px;padding:8px 13px}
+.friend-sticker-btn{width:46px;min-width:46px;height:46px;padding:5px;font-size:22px}
+.friend-sticker-btn.sticker-locked{
+  opacity:.46!important;
+  filter:grayscale(1);
+  cursor:not-allowed!important;
+}
+.huang-sticker-lock{
+  padding:11px 12px;
+  border-top:1px solid #29425d;
+  background:#0d2238;
+  color:#9fb3c8;
+  text-align:center;
+  font-size:11px;
+  font-weight:800;
+}
+.friend-chat-note{padding:0 11px 9px;color:#6f879e;font-size:9px;text-align:center}
+.friend-unread{display:inline-flex;align-items:center;justify-content:center;min-width:20px;height:20px;padding:0 6px;margin-left:5px;border-radius:999px;background:#ef4444;color:white;font-size:9px;font-weight:900}
+.friend-card.chat-ready{cursor:pointer}
+.friend-card.chat-ready:active{transform:scale(.995)}
+@media(max-width:560px){
+  .friend-chat-panel{min-height:520px}
+  .friend-chat-messages{min-height:320px;max-height:55vh}
+  .huang-sticker-tray{gap:5px}
+  .huang-sticker-tray img{width:50px;height:50px}
+  .friend-msg.sticker img{width:104px;height:104px}
+  .friend-msg{max-width:84%}
+}
+
 </style>
 </head>
 <body><div class="app">
@@ -5379,7 +5440,7 @@ html,body{
 <div id="game" class="hidden">
 
 <div class="app-title-row">
-  <h1>Math Free Learning <span class="version-badge">V14.62</span></h1>
+  <h1>Math Free Learning <span class="version-badge">V14.63</span></h1>
   <div class="top-actions">
     <button id="shopBtn" type="button" class="coin-shop-btn" onclick="openHuangShop()" aria-label="開啟黃黃商店">
       <img id="topCoinIcon" class="coin-icon" alt="" aria-hidden="true">
@@ -5553,11 +5614,11 @@ html,body{
 <section id="rank" class="hidden"><div class="panel"><b>排行榜 🏆 · TOP 100</b><div class="muted" style="margin-top:5px">只按主課程「總作答題數」排序；答對、答錯都會計入，錯題複習與對戰不計。最多顯示前 100 名。</div><div id="ranks"></div></div></section>
 
 <section id="friends" class="hidden">
-  <div class="panel friends-panel">
+  <div id="friendsHome" class="panel friends-panel">
     <div class="friends-head">
       <div>
         <b>👥 好友</b>
-        <div class="muted" style="margin-top:4px">用好友碼互加；好友列表會顯示目前頭像與主線進度。</div>
+        <div class="muted" style="margin-top:4px">用好友碼互加；好友可以私聊、傳黃黃貼圖。</div>
       </div>
       <button type="button" class="friends-refresh-btn" onclick="refreshFriendHub()">↻</button>
     </div>
@@ -5585,6 +5646,42 @@ html,body{
       <div class="friends-block-title">我的好友 <span id="friendsCount" class="friends-count">0</span></div>
       <div id="friendsList"><div class="friend-empty">還沒有好友</div></div>
     </div>
+  </div>
+
+  <div id="friendChatPanel" class="panel friend-chat-panel hidden">
+    <div class="friend-chat-head">
+      <button type="button" class="friend-chat-back" onclick="closeFriendChat()" aria-label="返回好友">‹</button>
+      <div id="friendChatAvatar" class="friend-avatar friend-chat-avatar"></div>
+      <div class="friend-chat-head-meta">
+        <b id="friendChatName">好友</b>
+        <span id="friendChatPresence" class="muted">離線</span>
+      </div>
+      <button type="button" class="friend-chat-refresh" onclick="loadFriendChat(false)">↻</button>
+    </div>
+
+    <div id="friendChatMessages" class="friend-chat-messages">
+      <div class="friend-chat-empty">還沒有訊息，傳一個黃黃貼圖吧 😛</div>
+    </div>
+
+    <div id="huangStickerLock" class="huang-sticker-lock hidden">🔒 通過主線第 5 關解鎖黃黃表情</div>
+    <div id="huangStickerTray" class="huang-sticker-tray hidden" aria-label="黃黃貼圖">
+      <button type="button" onclick="sendHuangSticker('hello')"><img alt="黃黃・你好" data-huang-sticker="hello"><small>你好</small></button>
+      <button type="button" onclick="sendHuangSticker('laugh')"><img alt="黃黃・笑死" data-huang-sticker="laugh"><small>笑死</small></button>
+      <button type="button" onclick="sendHuangSticker('fire')"><img alt="黃黃・太強了" data-huang-sticker="fire"><small>太強了</small></button>
+      <button type="button" onclick="sendHuangSticker('cry')"><img alt="黃黃・救命" data-huang-sticker="cry"><small>救命</small></button>
+      <button type="button" onclick="sendHuangSticker('angry')"><img alt="黃黃・生氣" data-huang-sticker="angry"><small>生氣</small></button>
+      <button type="button" onclick="sendHuangSticker('dead')"><img alt="黃黃・完蛋" data-huang-sticker="dead"><small>完蛋</small></button>
+      <button type="button" onclick="sendHuangSticker('king')"><img alt="黃黃・神" data-huang-sticker="king"><small>神</small></button>
+      <button type="button" onclick="sendHuangSticker('battle')"><img alt="黃黃・來對戰" data-huang-sticker="battle"><small>來對戰</small></button>
+    </div>
+
+    <div id="friendChatStatus" class="friend-chat-status muted"></div>
+    <div class="friend-chat-compose">
+      <button id="huangStickerBtn" type="button" class="friend-sticker-btn" onclick="toggleHuangStickerTray()">😛</button>
+      <input id="friendChatInput" type="text" maxlength="300" autocomplete="off" placeholder="輸入訊息…" onkeydown="if(event.key==='Enter'){event.preventDefault();sendFriendText()}">
+      <button id="friendChatSend" type="button" class="primary" onclick="sendFriendText()">傳送</button>
+    </div>
+    <div class="friend-chat-note">只有互相成為好友才能私聊；不支援圖片或檔案。</div>
   </div>
 </section>
 </div></div>
@@ -8038,6 +8135,9 @@ function shopFeatureUnlocked(){
 function bingoFeatureUnlocked(){
  return mainlineClearedCount()>=24
 }
+function huangStickerFeatureUnlocked(){
+ return mainlineClearedCount()>=5
+}
 function mainlineUnlocked(i){
  if(i===0)return true;
  const n=MAINLINE[i];
@@ -8446,7 +8546,7 @@ function playNextUnlockAnnouncement(){
  const modal=$("unlockAnnounceModal"),titleEl=$("unlockAnnounceTitle"),descEl=$("unlockAnnounceDesc"),iconEl=$("unlockAnnounceIcon");
  if(titleEl)titleEl.textContent=item.title;
  if(descEl)descEl.textContent=item.desc;
- if(iconEl)iconEl.textContent=item.title.includes("商店")?"🛍":"🎯";
+ if(iconEl)iconEl.textContent=item.title.includes("商店")?"🛍":item.title.includes("黃黃表情")?"😛":"🎯";
  if(item.buttonId)flashFeatureUnlockButton(item.buttonId);
  if(modal)modal.classList.remove("hidden");
  clearTimeout(showUnlockAnnouncement._timer);
@@ -8459,6 +8559,10 @@ function closeUnlockAnnouncement(){
  setTimeout(playNextUnlockAnnouncement,180);
 }
 function handleFeatureUnlockMilestones(prevCleared,nextCleared){
+ if(prevCleared<5&&nextCleared>=5){
+   showUnlockAnnouncement("黃黃表情解鎖！","第 5 關通過，現在可以在好友聊天使用全部黃黃表情。","friendsBtn");
+   if(typeof updateHuangStickerUnlockUI==="function")updateHuangStickerUnlockUI()
+ }
  if(prevCleared<12&&nextCleared>=12)showUnlockAnnouncement("黃黃商店解鎖！","第 12 關通過，現在可以打開黃黃商店。","shopBtn");
  if(prevCleared<24&&nextCleared>=24)showUnlockAnnouncement("賓果解鎖！","第 24 關通過，現在可以打開賓果。","tbi");
 }
@@ -10751,8 +10855,17 @@ const friendState={
   code:"",
   friends:[],
   incoming:[],
+  unread:{},
   loading:false,
   lastRefresh:0
+};
+const friendChat={
+  friendId:null,
+  profile:null,
+  timer:null,
+  loading:false,
+  lastSignature:"",
+  meId:null
 };
 
 function formatFriendCode(raw){
@@ -10811,10 +10924,12 @@ function setFriendStatus(msg,good=null){
  el.classList.toggle("bad",good===false)
 }
 function updateFriendBadge(){
- const n=friendState.incoming.length;
+ const requestN=(friendState.incoming||[]).length;
+ const unreadN=Object.values(friendState.unread||{}).reduce((a,b)=>a+(Number(b)||0),0);
+ const n=requestN+unreadN;
  const b=$("friendRequestBadge");
  if(b){
-   b.textContent=String(n);
+   b.textContent=String(Math.min(99,n));
    b.classList.toggle("hidden",n<=0)
  }
 }
@@ -10853,17 +10968,19 @@ function renderFriendsList(){
  }
  list.innerHTML=rows.map((f,i)=>{
    const p=friendPresenceLabel(f.last_seen);
+   const unread=Math.max(0,Number(friendState.unread?.[String(f.user_id)])||0);
    return `
-     <div class="friend-card">
-       <div id="friendAvatar${i}" class="friend-avatar"></div>
-       <div class="friend-main">
-         <div class="friend-name">${esc(String(f.nickname||"玩家"))}</div>
+     <div class="friend-card chat-ready">
+       <div id="friendAvatar${i}" class="friend-avatar" onclick="openFriendChat('${String(f.user_id||"")}')"></div>
+       <div class="friend-main" onclick="openFriendChat('${String(f.user_id||"")}')">
+         <div class="friend-name">${esc(String(f.nickname||"玩家"))}${unread?`<span class="friend-unread">${Math.min(99,unread)}</span>`:""}</div>
          <div class="friend-meta">
            ${esc(formatFriendCode(f.friend_code)||"")} · 主線已通過 ${Math.max(0,Number(f.mainline)||0)} 關 ·
            <span class="friend-presence ${p.cls}">${esc(p.txt)}</span>
          </div>
        </div>
        <div class="friend-actions">
+         <button type="button" class="primary" onclick="openFriendChat('${String(f.user_id||"")}')">聊天</button>
          <button type="button" class="danger" onclick="removeFriend('${String(f.user_id||"")}')">移除</button>
        </div>
      </div>
@@ -10875,6 +10992,24 @@ function renderFriendsList(){
    avatar_data:safeRemoteAvatarData(f.avatar_data,f.avatar_type||"symbol")
  }))
 }
+async function loadFriendUnreadCounts(){
+ friendState.unread={};
+ if(!db)return false;
+ try{
+   const r=await db.rpc("friend_unread_counts_v1");
+   if(r.error)throw r.error;
+   (Array.isArray(r.data)?r.data:[]).forEach(x=>{
+     friendState.unread[String(x.friend_id)]=Math.max(0,Number(x.unread_count)||0)
+   });
+   updateFriendBadge();
+   return true
+ }catch(e){
+   console.warn("friend unread",e);
+   updateFriendBadge();
+   return false
+ }
+}
+
 async function loadFriendData(silent=false){
  if(!db||!socialFeaturesUnlocked())return false;
  try{
@@ -10887,6 +11022,7 @@ async function loadFriendData(silent=false){
    friendState.friends=Array.isArray(fr.data)?fr.data:[];
    friendState.incoming=Array.isArray(req.data)?req.data:[];
    friendState.lastRefresh=Date.now();
+   await loadFriendUnreadCounts();
    renderFriendsList();
    renderFriendRequests();
    updateFriendBadge();
@@ -10982,6 +11118,204 @@ async function copyFriendCode(){
    setFriendStatus(`已複製 ${code}`,true)
  }catch(e){
    setFriendStatus(`好友碼：${code}（長按即可複製）`,true)
+ }
+}
+
+
+
+const HUANG_STICKER_IDS=["hello","laugh","fire","cry","angry","dead","king","battle"];
+
+function huangStickerSrc(id){
+ const valid=HUANG_STICKER_IDS.includes(id)?id:"hello";
+ let eyes=`<circle cx="74" cy="93" r="9" fill="#111827"/><circle cx="126" cy="93" r="9" fill="#111827"/>`;
+ let mouth=`<path d="M67 122 C79 140 121 140 133 122" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
+ let extra="";
+ if(valid==="hello"){
+   eyes=`<path d="M63 94 Q74 84 85 94" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/><path d="M115 94 Q126 84 137 94" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
+   extra=`<path d="M151 78 Q169 63 177 82" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/><path d="M160 73 L176 61" stroke="#111827" stroke-width="6" stroke-linecap="round"/>`;
+ }else if(valid==="laugh"){
+   eyes=`<path d="M62 94 Q74 79 86 94" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/><path d="M114 94 Q126 79 138 94" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
+   mouth=`<path d="M64 119 Q100 157 136 119 Q131 151 100 154 Q69 151 64 119Z" fill="#111827"/><path d="M80 144 Q100 134 120 144" fill="none" stroke="#fb7185" stroke-width="7" stroke-linecap="round"/>`;
+ }else if(valid==="fire"){
+   eyes=`<path d="M64 91 L84 97" stroke="#111827" stroke-width="7" stroke-linecap="round"/><path d="M116 97 L136 91" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
+   mouth=`<path d="M72 126 Q100 142 128 126" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
+   extra=`<path d="M153 58 C146 42 160 33 159 19 C179 34 185 52 174 69 C183 64 188 75 183 84 C176 97 156 95 149 82 C143 73 146 65 153 58Z" fill="#fb923c"/><path d="M160 61 C157 52 164 47 164 39 C174 47 177 57 171 67 C177 65 179 72 176 77 C172 84 161 83 157 76 C154 70 156 65 160 61Z" fill="#fde047"/>`;
+ }else if(valid==="cry"){
+   mouth=`<path d="M72 139 Q100 111 128 139" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
+   extra=`<path d="M63 103 C52 119 56 135 67 137 C78 135 81 119 70 103Z" fill="#60a5fa"/><path d="M130 103 C119 119 122 135 133 137 C144 135 148 119 137 103Z" fill="#60a5fa"/>`;
+ }else if(valid==="angry"){
+   eyes=`<path d="M60 82 L86 91" stroke="#111827" stroke-width="8" stroke-linecap="round"/><path d="M114 91 L140 82" stroke="#111827" stroke-width="8" stroke-linecap="round"/><circle cx="75" cy="99" r="7" fill="#111827"/><circle cx="125" cy="99" r="7" fill="#111827"/>`;
+   mouth=`<path d="M72 139 Q100 113 128 139" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
+ }else if(valid==="dead"){
+   eyes=`<path d="M64 84 L84 104 M84 84 L64 104 M116 84 L136 104 M136 84 L116 104" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
+   mouth=`<path d="M72 128 Q82 118 92 128 Q102 138 112 128 Q122 118 132 128" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
+ }else if(valid==="king"){
+   extra=`<path d="M48 46 L61 19 L84 39 L101 14 L119 39 L143 19 L153 47 Z" fill="#facc15" stroke="#92400e" stroke-width="5" stroke-linejoin="round"/>`;
+ }else if(valid==="battle"){
+   eyes=`<path d="M62 92 L84 98" stroke="#111827" stroke-width="7" stroke-linecap="round"/><path d="M116 98 L138 92" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
+   extra=`<path d="M149 51 L179 81 M179 51 L149 81" stroke="#e5e7eb" stroke-width="8" stroke-linecap="round"/>`;
+ }
+ const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><radialGradient id="hg" cx="30%" cy="24%" r="74%"><stop offset="0%" stop-color="#fff27a"/><stop offset="58%" stop-color="#f8c93a"/><stop offset="100%" stop-color="#e49a16"/></radialGradient></defs><circle cx="100" cy="104" r="75" fill="url(#hg)"/><ellipse cx="69" cy="66" rx="15" ry="21" transform="rotate(-32 69 66)" fill="white" opacity=".18"/>${eyes}${mouth}${extra}</svg>`;
+ return "data:image/svg+xml;utf8,"+encodeURIComponent(svg)
+}
+function hydrateHuangStickerTray(){
+ document.querySelectorAll("[data-huang-sticker]").forEach(img=>img.src=huangStickerSrc(img.dataset.huangSticker||"hello"))
+}
+function updateHuangStickerUnlockUI(){
+ const unlocked=huangStickerFeatureUnlocked();
+ const btn=$("huangStickerBtn");
+ const lock=$("huangStickerLock");
+ const tray=$("huangStickerTray");
+ if(btn){
+   btn.classList.toggle("sticker-locked",!unlocked);
+   btn.setAttribute("aria-disabled",unlocked?"false":"true");
+   btn.title=unlocked?"黃黃表情":"通過主線第 5 關解鎖黃黃表情";
+   btn.textContent=unlocked?"😛":"🔒"
+ }
+ if(lock)lock.classList.toggle("hidden",unlocked);
+ if(!unlocked&&tray)tray.classList.add("hidden");
+ return unlocked
+}
+function friendChatSetStatus(msg,kind=""){
+ const el=$("friendChatStatus");if(!el)return;
+ el.textContent=msg||"";
+ el.className=`friend-chat-status muted ${kind||""}`
+}
+function friendMessageTime(v){
+ const d=new Date(v);
+ if(!Number.isFinite(d.getTime()))return "";
+ return d.toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})
+}
+function renderFriendMessages(rows){
+ const box=$("friendChatMessages");if(!box)return;
+ const arr=Array.isArray(rows)?rows:[];
+ if(!arr.length){
+   box.innerHTML='<div class="friend-chat-empty">還沒有訊息，傳一個黃黃貼圖吧 😛</div>';
+   return
+ }
+ box.innerHTML=arr.map(m=>{
+   const mine=String(m.sender_id)===String(friendChat.meId);
+   const sticker=m.kind==="sticker";
+   const content=sticker
+     ?`<img src="${huangStickerSrc(String(m.body||"hello"))}" alt="黃黃貼圖">`
+     :`<div class="friend-msg-text">${esc(String(m.body||""))}</div>`;
+   return `<div class="friend-msg-row ${mine?"mine":"theirs"}"><div class="friend-msg ${sticker?"sticker":"text"}">${content}<div class="friend-msg-time">${esc(friendMessageTime(m.created_at))}</div></div></div>`
+ }).join("")
+}
+async function openFriendChat(userId){
+ const profile=(friendState.friends||[]).find(x=>String(x.user_id)===String(userId));
+ if(!profile)return;
+ friendChat.friendId=String(profile.user_id);
+ friendChat.profile=profile;
+ friendChat.lastSignature="";
+ if(friendChat.timer){clearInterval(friendChat.timer);friendChat.timer=null}
+ $("friendsHome")?.classList.add("hidden");
+ $("friendChatPanel")?.classList.remove("hidden");
+ $("huangStickerTray")?.classList.add("hidden");
+ $("friendChatName").textContent=profile.nickname||"好友";
+ const p=friendPresenceLabel(profile.last_seen);
+ $("friendChatPresence").textContent=p.txt;
+ $("friendChatPresence").className=`muted friend-presence ${p.cls}`;
+ renderAvatarInto($("friendChatAvatar"),{
+   avatar_type:profile.avatar_type||"symbol",
+   avatar_symbol:profile.avatar_symbol||DEFAULT_AVATAR_SYMBOL,
+   avatar_data:safeRemoteAvatarData(profile.avatar_data,profile.avatar_type||"symbol")
+ });
+ hydrateHuangStickerTray();
+ updateHuangStickerUnlockUI();
+ friendChatSetStatus("載入訊息中…");
+ await loadFriendChat(false);
+ friendChat.timer=setInterval(()=>loadFriendChat(true),2500)
+}
+function closeFriendChat(){
+ if(friendChat.timer){clearInterval(friendChat.timer);friendChat.timer=null}
+ friendChat.friendId=null;
+ friendChat.profile=null;
+ friendChat.lastSignature="";
+ $("friendChatPanel")?.classList.add("hidden");
+ $("friendsHome")?.classList.remove("hidden");
+ $("huangStickerTray")?.classList.add("hidden");
+ $("huangStickerLock")?.classList.add("hidden");
+ friendChatSetStatus("");
+ loadFriendUnreadCounts().then(()=>renderFriendsList()).catch(()=>{})
+}
+function toggleHuangStickerTray(){
+ if(!friendChat.friendId)return;
+ if(!updateHuangStickerUnlockUI()){
+   friendChatSetStatus("🔒 黃黃表情要通過主線第 5 關才會解鎖。","bad");
+   return
+ }
+ const tray=$("huangStickerTray");if(!tray)return;
+ tray.classList.toggle("hidden");
+ if(!tray.classList.contains("hidden"))hydrateHuangStickerTray();
+ friendChatSetStatus("")
+}
+async function loadFriendChat(silent=true){
+ if(friendChat.loading||!friendChat.friendId||!db)return false;
+ friendChat.loading=true;
+ try{
+   const u=await ensureAuth();if(!u)throw new Error("not authenticated");
+   friendChat.meId=u.id;
+   const r=await db.rpc("list_friend_messages_v1",{p_friend:friendChat.friendId});
+   if(r.error)throw r.error;
+   const rows=Array.isArray(r.data)?r.data:[];
+   const sig=rows.map(x=>`${x.message_id}:${x.read_at||""}`).join("|");
+   const box=$("friendChatMessages");
+   const nearBottom=box ? (box.scrollHeight-box.scrollTop-box.clientHeight<90) : true;
+   if(sig!==friendChat.lastSignature){
+     renderFriendMessages(rows);
+     friendChat.lastSignature=sig;
+     if(box&&(nearBottom||!silent))box.scrollTop=box.scrollHeight
+   }
+   const mr=await db.rpc("mark_friend_messages_read_v1",{p_friend:friendChat.friendId});
+   if(mr.error)console.warn("mark friend read",mr.error);
+   friendState.unread[String(friendChat.friendId)]=0;
+   updateFriendBadge();
+   if(!silent)friendChatSetStatus("");
+   return true
+ }catch(e){
+   console.warn("friend chat load",e);
+   if(!silent)friendChatSetStatus("聊天資料庫尚未安裝。請 Run V14.63 Friends Chat SQL。","bad");
+   return false
+ }finally{
+   friendChat.loading=false
+ }
+}
+async function sendFriendText(){
+ if(!friendChat.friendId||!db)return;
+ const input=$("friendChatInput");
+ const body=String(input?.value||"").trim();
+ if(!body)return;
+ const btn=$("friendChatSend");if(btn)btn.disabled=true;
+ try{
+   const r=await db.rpc("send_friend_message_v1",{p_friend:friendChat.friendId,p_kind:"text",p_body:body});
+   if(r.error)throw r.error;
+   if(input)input.value="";
+   friendChatSetStatus("");
+   await loadFriendChat(false)
+ }catch(e){
+   console.warn("send friend text",e);
+   friendChatSetStatus("訊息傳送失敗。確認 V14.63 SQL 已成功 Run。","bad")
+ }finally{
+   if(btn)btn.disabled=false
+ }
+}
+async function sendHuangSticker(id){
+ if(!friendChat.friendId||!db||!HUANG_STICKER_IDS.includes(id))return;
+ if(!huangStickerFeatureUnlocked()){
+   updateHuangStickerUnlockUI();
+   friendChatSetStatus("🔒 通過主線第 5 關才能使用黃黃表情。","bad");
+   return
+ }
+ try{
+   const r=await db.rpc("send_friend_message_v1",{p_friend:friendChat.friendId,p_kind:"sticker",p_body:id});
+   if(r.error)throw r.error;
+   $("huangStickerTray")?.classList.add("hidden");
+   friendChatSetStatus("");
+   await loadFriendChat(false)
+ }catch(e){
+   console.warn("send Huang sticker",e);
+   friendChatSetStatus("黃黃貼圖傳送失敗。確認 V14.63 SQL 已成功 Run。","bad")
  }
 }
 
@@ -11095,6 +11429,11 @@ function openMainlineTab(){
  tab("line",true)
 }
 function tab(x,force=false){
+ if(x!=="friends"&&friendChat.timer){
+   clearInterval(friendChat.timer);
+   friendChat.timer=null
+ }
+
  // V14.51：iPad/Safari 在 display:none 時可能把 scrollTop 變成 0，先保存。
  if(s.tab==="line" && x!=="line"){
    const oldScroll=$("mainlinePathScroll");
