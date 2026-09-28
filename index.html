@@ -5651,6 +5651,7 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 .gui-bg-choice.locked .gui-bg-thumb{filter:brightness(.58) saturate(.7)!important;}
 .gui-bg-lock{position:absolute;inset:7px 7px 29px;display:grid;place-items:center;font-size:24px;text-shadow:0 3px 10px #000;pointer-events:none;}
 .bg-nebula{background-image:var(--nebula-reward-bg)!important;background-position:center!important;background-size:cover!important;}
+.bg-rednebula{background-image:linear-gradient(rgba(180,0,25,.58),rgba(70,0,15,.68)),var(--nebula-reward-bg)!important;background-blend-mode:screen,multiply;background-position:center!important;background-size:cover!important;}
 /* Avatar preview: structural center, with no inherited translation. */
 #avatarModal .avatar-preview-row{width:100%!important;display:grid!important;grid-template-columns:1fr!important;place-items:center!important;margin:14px 0 16px!important;padding:0!important;position:static!important;transform:none!important;}
 #avatarModal #avatarModalPreview{grid-column:1!important;justify-self:center!important;align-self:center!important;margin:0!important;position:static!important;left:auto!important;right:auto!important;transform:none!important;}
@@ -5660,9 +5661,73 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 /* ===== V14.80 External lazy-cacheable GUI backgrounds =====
    Photo assets live in /backgrounds instead of Base64 inside index.html. */
 
+
+/* V14.84 社團：木地板活動室 + 共同黃黃 + 10³塔 + 無限塔 */
+.club-top-btn{min-width:58px;height:44px;border-radius:13px;display:flex;gap:4px;align-items:center;justify-content:center}.club-top-btn span{font-size:12px;font-weight:900}
+.club-shell{overflow:hidden}.club-head{display:flex;align-items:center;justify-content:space-between;gap:10px}.club-refresh{width:42px;height:42px}.club-join-card{margin-top:14px;padding:18px;border:1px solid #38536e;border-radius:16px;background:rgba(255,255,255,.045)}.club-form-row{display:flex;gap:8px;margin-top:10px}.club-form-row input{flex:1;min-width:0}
+.club-room{margin-top:14px;border:1px solid #6f5139;border-radius:18px;overflow:hidden;background:#8d6647;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}.club-room-top{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:linear-gradient(#6d4a32,#563823);color:#fff}.club-room-top small{display:block;opacity:.8;margin-top:3px}.club-code{font-size:12px}.club-wall{height:130px;position:relative;background:linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(#d8b889,#c99f6c);background-size:46px 100%,100% 100%;padding:18px}.club-blackboard{width:min(65%,360px);height:82px;padding:10px 14px;background:#17382f;border:7px solid #6c452b;border-radius:5px;color:#e8f4df;box-shadow:0 5px 12px #0004}.club-blackboard span{display:block;font-size:12px;margin-top:10px}.club-trophy{position:absolute;right:25px;bottom:14px;font-size:46px}.club-floor{height:180px;position:relative;background:repeating-linear-gradient(90deg,#9a6842 0 70px,#825637 70px 73px),linear-gradient(#9a6842,#75482e);perspective:400px}.club-floor:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 38px,#0002 39px 41px)}.club-huang{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:grid;place-items:center;cursor:pointer;user-select:none;transition:.18s}.club-huang span{font-size:78px;filter:drop-shadow(0 8px 5px #0005)}.club-huang b,.club-huang small{z-index:2;background:#142333dd;padding:3px 9px;border-radius:10px}.club-huang small{margin-top:3px}.club-huang.bounce{transform:translateX(-50%) translateY(-14px) scale(1.06)}
+.club-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:12px 0}.club-tabs button{padding:10px 5px}.club-tabs button.active{outline:2px solid #75baff}.club-pane{padding:14px;border:1px solid #314a64;border-radius:14px;background:rgba(8,20,35,.55)}.club-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.club-stats>div{padding:10px;border-radius:12px;background:#ffffff0b;text-align:center}.club-stats small,.club-stats b{display:block}.club-progress,.tower-progress{height:12px;background:#07111d;border-radius:999px;overflow:hidden;margin:12px 0}.club-progress i,.tower-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#5cbcff,#b687ff)}.club-unlock{font-size:12px;color:#a9bad0}.tower-title{display:flex;justify-content:space-between;align-items:center}.tower-big{text-align:center;font-size:48px;font-weight:950;margin:14px}.club-question{min-height:76px;margin:14px 0;padding:16px;display:grid;place-items:center;text-align:center;border-radius:14px;background:#0b1a2b;font-size:22px;font-weight:900}.club-pane input{width:100%;box-sizing:border-box;margin:0 0 8px}.club-pane>.primary{width:100%}.club-member-list{display:grid;gap:8px}.club-member{display:flex;justify-content:space-between;gap:10px;padding:10px;border-radius:12px;background:#ffffff0b}
+@media(max-width:700px){.club-stats{grid-template-columns:repeat(2,1fr)}.club-tabs{grid-template-columns:repeat(2,1fr)}.club-wall{height:120px}.club-floor{height:160px}.club-huang span{font-size:68px}}
+
+
+/* ===== V14.84 regression repair ===== */
+.modal-wrap{padding:12px!important;box-sizing:border-box!important;overflow:auto!important;align-items:center!important}
+.modal-card{position:relative!important;max-height:calc(100dvh - 24px)!important;overflow:auto!important;box-sizing:border-box!important}
+.modal-top{position:sticky!important;top:0!important;z-index:30!important;display:grid!important;grid-template-columns:42px minmax(0,1fr) 42px!important;align-items:center!important;min-height:46px!important}
+.modal-top>.modal-close{grid-column:3!important;position:static!important;justify-self:end!important;align-self:center!important;width:42px!important;height:42px!important;margin:0!important;padding:0!important;display:grid!important;place-items:center!important;line-height:1!important;transform:none!important}
+#avatarModal .modal-card{overflow-x:hidden!important}
+#avatarModal .gui-background-panel,#avatarModal .profile-cosmetics,#avatarModal .avatar-section,#avatarModal .avatar-color-panel{width:100%!important;max-width:100%!important;box-sizing:border-box!important;overflow:hidden!important}
+#avatarModal .gui-bg-grid{width:100%!important;max-width:100%!important;box-sizing:border-box!important}
+#avatarModal .gui-bg-choice{min-width:0!important;max-width:100%!important;box-sizing:border-box!important}
+.club-form-row.club-stage-row{align-items:center}.club-stage-row label{font-size:12px;font-weight:900;white-space:nowrap}.club-stage-row input{max-width:110px}
+@media(max-width:700px){.modal-wrap{padding:8px!important}.modal-card{max-height:calc(100dvh - 16px)!important}.gui-bg-grid{gap:8px!important}.gui-bg-thumb{height:68px!important}}
+
+
+/* ===== V14.89 Exam isolation repair =====
+   Midterm/final progress and best scores persist; exam runs keep a separate
+   30-question de-dup history and no longer get erased by UI initialization.
+*/
+/* ===== V14.89 modal vertical-position canonical override =====
+   Keep dialogs near the top of the viewport; long content scrolls inside the card. */
+.modal-wrap{
+  align-items:flex-start!important;
+  justify-content:center!important;
+  padding:12px!important;
+  padding-top:max(12px,env(safe-area-inset-top))!important;
+  padding-bottom:max(12px,env(safe-area-inset-bottom))!important;
+  overflow-y:auto!important;
+  box-sizing:border-box!important;
+}
+.modal-card{
+  margin:0 auto!important;
+  max-height:calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom))!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  box-sizing:border-box!important;
+}
+@media(max-width:700px){
+  .modal-wrap{padding:8px!important;padding-top:max(8px,env(safe-area-inset-top))!important;padding-bottom:max(8px,env(safe-area-inset-bottom))!important}
+  .modal-card{max-height:calc(100dvh - 16px - env(safe-area-inset-top) - env(safe-area-inset-bottom))!important}
+}
+
+
+/* ===== V14.89 Tower GUI redesign ===== */
+.mega-tower-wrap{position:relative;width:min(520px,94%);margin:16px auto 18px;padding:58px 92px 8px 12px;box-sizing:border-box;min-height:390px}
+.mega-tower-spire{position:absolute;top:0;left:12px;width:calc(100% - 104px);height:72px;display:grid;place-items:center;font-size:34px;font-weight:950;color:#d9ecff;background:linear-gradient(145deg,#173b68,#0b1e39);clip-path:polygon(50% 0,100% 100%,0 100%);text-shadow:0 0 18px #65b8ff}
+.mega-tower-body{border:3px solid #78bdff;border-top:0;border-radius:0 0 18px 18px;overflow:hidden;background:linear-gradient(180deg,rgba(18,49,86,.94),rgba(8,24,47,.96));box-shadow:0 16px 35px #0006,0 0 30px #4ca7ff22}
+.mega-floor{min-height:66px;padding:9px 12px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-top:2px solid rgba(137,199,255,.65);text-align:center}.mega-floor:first-child{border-top:0}.mega-floor b{font-size:24px}.mega-floor span{font-size:11px;color:#bcd0e6;margin-top:3px}.mega-floor.current{min-height:82px;background:linear-gradient(90deg,#268fff33,#76c7ff22);box-shadow:inset 0 0 24px #58b4ff26}.mega-floor.current b{font-size:34px;color:#fff}.mega-current-arrow{position:absolute;right:0;bottom:42px;width:86px;font-size:17px;color:#dcecff;text-align:left;filter:drop-shadow(0 2px 5px #000)}
+.infinite-terminal-wrap{position:relative;width:min(330px,86%);margin:20px auto 16px;padding-top:78px}.infinite-spire{position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:90px;display:grid;place-items:center;padding-top:18px;box-sizing:border-box;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(145deg,#164d88,#091d37);font-size:48px;font-weight:950;color:#d9f0ff;text-shadow:0 0 22px #63bdff}.infinite-terminal{position:relative;border:3px solid #70baff;border-radius:16px;padding:24px 18px 16px;text-align:center;background:linear-gradient(180deg,#102e52,#08192e);box-shadow:0 15px 34px #0007,0 0 34px #389fff24}.infinite-terminal small{display:block;color:#abc7e2;font-weight:800}.infinite-terminal strong{display:inline-block;font-size:44px;line-height:1.1;margin:8px 5px 4px;color:#fff}.infinite-terminal em{font-style:normal;font-weight:950;color:#7dc8ff}.infinite-substats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.infinite-substats span{padding:8px;border-radius:10px;background:#ffffff0a;font-size:12px}.infinite-substats b{display:block;font-size:16px;margin-top:2px}.infinite-note{text-align:center;margin-bottom:8px}
+@media(max-width:700px){.mega-tower-wrap{width:100%;padding-right:72px;min-height:350px}.mega-tower-spire{width:calc(100% - 84px)}.mega-current-arrow{width:66px;font-size:14px}.mega-floor{min-height:58px}.mega-floor.current{min-height:72px}.mega-floor b{font-size:20px}.mega-floor.current b{font-size:30px}.infinite-terminal-wrap{width:92%}}
+.profile-cosmetics{display:none!important}
+
+/* V14.89 — mainline question navigation lock */
+button.mainline-nav-locked, .mainline-nav-locked{
+  opacity:.38!important;filter:grayscale(.9) saturate(.25)!important;cursor:not-allowed!important;
+  pointer-events:none!important;box-shadow:none!important;transform:none!important;
+}
 </style>
 <meta name="theme-color" content="#0b1220">
-<!-- V14.82 single-file iPad deploy: all required local assets embedded. -->
+<!-- V14.89 single-file iPad deploy: all required local assets embedded. -->
 </head>
 <body><div class="app">
 
@@ -5678,7 +5743,7 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 <div id="game" class="hidden">
 
 <div class="app-title-row">
-  <h1>Math Free Learning <span class="version-badge">V14.82</span></h1>
+  <h1>Math Free Learning <span class="version-badge">V14.89</span></h1>
   <div class="top-actions">
     <button id="shopBtn" type="button" class="coin-shop-btn" onclick="openHuangShop()" aria-label="開啟黃黃商店">
       <img id="topCoinIcon" class="coin-icon" alt="" aria-hidden="true">
@@ -5694,6 +5759,7 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
       <span class="friends-top-label">好友</span>
       <span id="friendRequestBadge" class="friend-request-badge hidden">0</span>
     </button>
+    <button id="clubTopBtn" type="button" class="club-top-btn" onclick="tab('club')" title="社團" aria-label="社團">🏫<span>社團</span></button>
     <button id="globalTopBtn" type="button" class="global-top-btn" onclick="tab('global')" title="全球總答題" aria-label="全球總答題">🌍</button>
     <button id="rankTopBtn" type="button" class="rank-top-btn" onclick="tab('rank')" title="排行榜" aria-label="排行榜">🏆</button>
     <button id="onboardingReplayBtn" type="button" class="help-btn" onclick="showOnboarding(true)">❓ 新手教學</button>
@@ -5857,6 +5923,53 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 <div class="battle-actions"><button id="leaveBattleBtn" type="button" onclick="leaveBattle(true)">退出對戰</button></div>
 </div><div id="battleResult" class="hidden battle-status"></div></div></section>
 
+<section id="club" class="hidden"><div class="panel club-shell">
+  <div class="club-head"><div><b>🏫 社團</b><div class="muted">最多 30 人 · 一起養共同黃黃、爬塔、累積社團進度</div></div><button type="button" class="club-refresh" onclick="loadClubHub()">↻</button></div>
+  <div id="clubNoClub" class="club-join-card">
+    <h3>加入一個社團</h3><div class="muted">建立社團，或輸入 6 位社團碼加入。</div>
+    <div class="club-form-row"><input id="clubNameInput" maxlength="24" placeholder="社團名稱"><button onclick="createClub()">建立社團</button></div>
+    <div class="club-form-row club-stage-row"><label for="clubMinStageInput">加入門檻</label><input id="clubMinStageInput" type="number" inputmode="numeric" min="0" max="400" value="0" aria-label="最低主線關卡"><span class="muted">0～400 關</span></div>
+    <div class="club-form-row"><input id="clubCodeInput" maxlength="6" placeholder="社團碼"><button onclick="joinClub()">加入社團</button></div>
+    <div id="clubStatus" class="muted"></div>
+  </div>
+  <div id="clubHome" class="hidden">
+    <div class="club-room">
+      <div class="club-room-top"><div><b id="clubName">社團</b><small id="clubMeta">Lv.1 · 0/30</small></div><div class="club-code">碼 <b id="clubCode">------</b></div></div>
+      <div class="club-wall"><div class="club-blackboard"><b>📋 社團黑板</b><span id="clubBoard">一起答題，一起變強！</span></div><div class="club-trophy">🏆</div></div>
+      <div class="club-floor"><div class="club-huang" onclick="clubHuangBounce(this)"><span>🐥</span><b id="clubHuangLevel">共同黃黃 Lv.1</b><small id="clubHuangXp">0 XP</small></div></div>
+    </div>
+    <div class="club-tabs"><button class="active" data-clubtab="lobby" onclick="clubTab('lobby',this)">🏠 大廳</button><button data-clubtab="tower" onclick="clubTab('tower',this)">🗼 10³塔</button><button data-clubtab="infinite" onclick="clubTab('infinite',this)">♾️ 無限塔</button><button data-clubtab="members" onclick="clubTab('members',this)">👥 成員</button></div>
+    <div id="clubLobby" class="club-pane"><div class="club-stats"><div><small>社團等級</small><b id="clubLevel">Lv.1</b></div><div><small>社團 XP</small><b id="clubXp">0</b></div><div><small>共同答題</small><b id="clubAnswers">0</b></div><div><small>成員</small><b id="clubMembersCount">0/30</b></div></div><div class="club-progress"><i id="clubXpFill"></i></div><div class="club-unlock" id="clubUnlockText">Lv.10 解鎖 10³ 數學塔 · Lv.50 解鎖無限塔</div></div>
+    <div id="clubTower" class="club-pane hidden">
+      <div class="tower-title"><b>🗼 10³ 數學塔</b><span id="towerFloor">1F / 1000F</span></div>
+      <div class="mega-tower-wrap" aria-label="10³數學塔進度">
+        <div class="mega-tower-spire">Ω</div>
+        <div class="mega-tower-body">
+          <div class="mega-floor milestone top"><b>1000F</b><span>👑 Ω 頭像 · 塔頂獎勵</span></div>
+          <div class="mega-floor milestone"><b>500F</b><span>🖼️ 數學塔背景</span></div>
+          <div class="mega-floor milestone"><b>100F</b><span>🎁 塔箱</span></div>
+          <div class="mega-floor current"><b id="towerBig">1F</b><span id="towerProgressText">0 / 5 題</span></div>
+        </div>
+        <div class="mega-current-arrow">← <b>目前</b></div>
+      </div>
+      <div class="tower-progress"><i id="towerFill"></i></div>
+      <div id="towerQuestion" class="club-question">按開始取得本層題目</div><input id="towerAnswer" inputmode="decimal" placeholder="答案"><button class="primary" onclick="submitClubTower()">🔥 作答</button><div id="towerFeedback"></div>
+    </div>
+    <div id="clubInfinite" class="club-pane hidden">
+      <div class="tower-title"><b>♾️ 無限塔</b><span>全社團排名只看 ∞P</span></div>
+      <div class="infinite-terminal-wrap">
+        <div class="infinite-spire">∞</div>
+        <div class="infinite-terminal">
+          <small>社團無限點數</small><strong id="infPoints">0</strong><em>∞P</em>
+          <div class="infinite-substats"><span>進度 <b id="infFloor">0F</b></span><span>Combo <b id="infCombo">0 ×1</b></span></div>
+        </div>
+      </div>
+      <div class="muted infinite-note">每題隨機，未解鎖題型也可能出現 😈 · Combo 最高 ×10</div>
+      <div id="infQuestion" class="club-question">按作答開始隨機題目</div><input id="infAnswer" inputmode="decimal" placeholder="答案"><button class="primary" onclick="submitInfiniteTower()">♾️ 作答</button><div id="infFeedback"></div>
+    </div>
+    <div id="clubMembers" class="club-pane hidden"><div id="clubMemberList" class="club-member-list"></div></div>
+  </div>
+</div></section>
 <section id="global" class="hidden"><div class="panel global-page-panel"><div id="globalAnswerCard" class="global-answer-card global-answer-hero"><div class="global-answer-head"><div><b>🌍 全球總答題</b><div class="muted">所有玩家主課程共同累積</div></div><div id="globalAnswerNumber" class="global-answer-number">—</div></div><div id="globalContributor" class="global-contributor">正在等待新的貢獻…</div><div class="global-answer-track"><i id="globalAnswerFill" style="width:0%"></i></div><div id="globalAnswerNext" class="muted">正在讀取…</div><div id="globalMilestones" class="global-milestones"></div></div></div></section>
 <section id="rank" class="hidden"><div class="panel rank-page-panel"><div class="rank-list-head"><b>🏆 TOP 100</b><div class="muted">依主課程總作答題數排序；錯題複習與對戰不計。</div></div><div id="ranks"></div></div></section>
 
@@ -6052,14 +6165,9 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
         <div class="muted">更換整個遊戲後方的背景圖片。</div>
         <div id="guiBackgroundChoices" class="gui-bg-grid"></div>
       </div>
-      <div class="profile-cosmetics">
-        <b>✨ 個人檔案外觀</b><div class="muted">全球里程碑解鎖後可裝備。</div>
-        <div class="avatar-section-title" style="margin-top:10px">頭像框</div><div id="profileFrameChoices" class="cosmetic-row"></div>
-        <div class="avatar-section-title" style="margin-top:10px">個人檔案背景</div><div id="profileBgChoices" class="cosmetic-row"></div>
-      </div>
-
-    </div>
+     </div>
   </div>
+</div>
 </div>
 
 <div id="publicProfileModal" class="modal-wrap hidden" role="dialog" aria-modal="true" aria-label="玩家個人檔案"><div class="modal-card public-profile-card"><div id="publicProfileBg" class="public-profile-bg"><button type="button" class="modal-close" style="position:absolute;right:14px;top:14px" onclick="closePublicProfile()">✕</button><div id="publicProfileAvatar" class="public-profile-avatar"></div><div><div id="publicProfileName" class="modal-title">玩家</div><div id="publicProfileAnswered" class="muted"></div></div></div></div></div>
@@ -6303,7 +6411,7 @@ async function loadRanks(){
  if(!db){players=[];renderRanksLocal();return}
  try{
    let res=await db.from("players")
-     .select("nickname,term,unit,question,answered,avatar_type,avatar_symbol,avatar_data,profile_frame,profile_background")
+     .select("nickname,term,unit,question,answered,avatar_type,avatar_symbol,avatar_data")
      .order("answered",{ascending:false})
      .order("updated_at",{ascending:false})
      .limit(100);
@@ -6507,6 +6615,7 @@ function updateNameCounter(){
  if(count)count.textContent=`${el.value.length} / ${NAME_MAX}`
 }
 function normalizeProfileState(){
+ if(typeof s.redNebulaUnlocked!=="boolean")s.redNebulaUnlocked=false;
  // V13.58: name font color feature removed; old saved value is discarded.
  if(!s||typeof s!=="object")return;
  s.name=normalizePlayerName(s.name);
@@ -6519,7 +6628,7 @@ function normalizeProfileState(){
  if(typeof s.avatarImage!=="string")s.avatarImage="";
  s.coins=Math.max(0,Math.floor(Number(s.coins)||0));
  if(typeof s.customBgUnlocked!=="boolean")s.customBgUnlocked=false;
- if(!["default","galaxy","aurora","ocean","sunset","nebula"].includes(s.guiBackground))s.guiBackground="default";
+ if(!["default","galaxy","aurora","ocean","sunset","nebula","rednebula"].includes(s.guiBackground))s.guiBackground="default";
  if(s.guiBackground==="nebula"&&mainlineClearedCount()<10)s.guiBackground="default";
  if(!Array.isArray(s.customBgColors)||s.customBgColors.length!==3)s.customBgColors=["#223758","#111b2c","#0b1220"];
  if(!Array.isArray(s.fontGradient)||s.fontGradient.length!==2)s.fontGradient=["#f8fbff","#8fc5ff"];
@@ -6897,17 +7006,18 @@ function applyCustomBackground(){
 }
 function renderGuiBackgroundChoices(){
  const el=$("guiBackgroundChoices");if(!el)return;
- const opts=[["default","預設"],["galaxy","🌌 銀河系"],["aurora","✨ 極光"],["ocean","🌊 深海"],["sunset","🌇 暮色"],["nebula","💙 藍色星雲"]];
+ const opts=[["default","預設"],["galaxy","🌌 銀河系"],["aurora","✨ 極光"],["ocean","🌊 深海"],["sunset","🌇 暮色"],["nebula","💙 藍色星雲"],["rednebula","🔴 紅色星雲"]];
  const cleared=mainlineClearedCount();
  el.innerHTML=opts.map(([id,name])=>{
-   const locked=id==="nebula"&&cleared<10;
-   const note=locked?`<span class="gui-bg-lock">🔒</span><small>主線第 10 關解鎖</small>`:"";
+   const locked=(id==="nebula"&&cleared<10)||(id==="rednebula"&&!s.redNebulaUnlocked);
+   const note=locked?`<span class="gui-bg-lock">🔒</span><small>${id==="rednebula"?"全球 1,500 題里程碑解鎖":"主線第 10 關解鎖"}</small>`:"";
    return `<button type="button" class="gui-bg-choice ${s.guiBackground===id?'active':''} ${locked?'locked':''}" onclick="equipGuiBackground('${id}')"><span class="gui-bg-thumb bg-${id}"></span>${locked?'':`<b>${name}</b>`}${note}</button>`
  }).join("")
 }
 function equipGuiBackground(id){
- if(!["default","galaxy","aurora","ocean","sunset","nebula"].includes(id))return;
+ if(!["default","galaxy","aurora","ocean","sunset","nebula","rednebula"].includes(id))return;
  if(id==="nebula"&&mainlineClearedCount()<10){showUnlockAnnouncement("💙 藍色星雲背景尚未解鎖","通過主線第 10 關即可永久解鎖。",null);return}
+ if(id==="rednebula"&&!s.redNebulaUnlocked){showUnlockAnnouncement("🔴 紅色星雲背景尚未解鎖","全球總答題達 1,500 題並領取里程碑即可永久解鎖。",null);return}
  s.guiBackground=id;saveGame();applyCustomBackground();
 }
 
@@ -7060,7 +7170,7 @@ function addCoins(n){
   const add=Math.max(0,Math.floor(Number(n)||0));
   if(!add)return;
   s.coins=Math.max(0,Math.floor(Number(s.coins)||0))+add;
-  renderCoinUI();renderProfileCosmetics();renderGlobalAnswered()
+  renderCoinUI();renderGlobalAnswered()
 }
 
 
@@ -7710,7 +7820,7 @@ function make(t,u,n){
 
 
  // 小學：直接作答，不再掉到「選主題名稱」的 fallback。
- // V14.82 — elementary question-bank repair: each topic now has multiple on-topic templates.
+ // V14.84 — elementary question-bank repair: each topic now has multiple on-topic templates.
  // Avoid the old symptom where a unit looked like it only had one question pattern.
  if(topic==="5以內的數"||topic==="20以內的數"||topic==="30以內的數"||topic==="100以內的數"){
    const cap=topic==="5以內的數"?5:topic==="20以內的數"?20:topic==="30以內的數"?30:100;
@@ -8286,13 +8396,19 @@ function initStateExtras(){
  if(!Number.isInteger(s.mainlineStage))s.mainlineStage=0;
  if(typeof s.mainlineExamActive!=="boolean")s.mainlineExamActive=false;
  if(!Number.isInteger(s.mainlineExamStage))s.mainlineExamStage=-1;
- if(!s.examScores||typeof s.examScores!=="object")s.examScores={};
+ if(!s.examScores||typeof s.examScores!=="object"||Array.isArray(s.examScores))s.examScores={};
+ if(!s.examRecent||typeof s.examRecent!=="object"||Array.isArray(s.examRecent))s.examRecent={};
  if(s.examScheduleVersion!==2){
    s.examScores={};
    s.examScheduleVersion=2
  }
- // V13.41：舊 考試 制已移除，舊 考試 狀態不再沿用到新考試制。
- delete s.mainlineExamActive;delete s.mainlineExamBlock;delete s.examScores;
+ // V14.89: keep the current exam run + best exam scores.
+ // Older builds deleted these on every initStateExtras() call, which made
+ // midterm/final progress and pass records disappear while navigating UI.
+ if(typeof s.mainlineExamActive!=="boolean")s.mainlineExamActive=false;
+ if(!Number.isInteger(s.mainlineExamStage))s.mainlineExamStage=-1;
+ if(!s.examScores||typeof s.examScores!=="object"||Array.isArray(s.examScores))s.examScores={};
+ delete s.mainlineExamBlock;
  if(!Array.isArray(s.visited))s.visited=[];
  s.level=0;
  if(!Number.isInteger(s.unitCorrect))s.unitCorrect=0;
@@ -9178,7 +9294,7 @@ function updateFeatureUnlockUI(){
 
  const tr=$("tr");
  if(tr){
-   const lockRank=!socialUnlocked;
+   const lockRank=!socialUnlocked || !!mainlineRunUnfinished();
    tr.disabled=lockRank;
    tr.classList.toggle("feature-locked",lockRank);
    tr.textContent=lockRank?"🔒 排行榜":(tr.dataset.unlockedLabel||"排行榜");
@@ -9187,10 +9303,31 @@ function updateFeatureUnlockUI(){
 
  const friendsBtn=$("friendsBtn");
  if(friendsBtn){
-   const lockFriends=!socialUnlocked;
+   const lockFriends=!socialUnlocked || !!mainlineRunUnfinished();
    friendsBtn.disabled=lockFriends;
    friendsBtn.classList.toggle("feature-locked",lockFriends);
-   friendsBtn.title=lockFriends?socialLockHint:"好友"
+   friendsBtn.title=lockFriends?(mainlineRunUnfinished()?"先退出目前關卡":socialLockHint):"好友"
+ }
+ const rankTopBtn=$("rankTopBtn");
+ if(rankTopBtn){
+   const lockRankTop=!socialUnlocked || !!mainlineRunUnfinished();
+   rankTopBtn.disabled=lockRankTop;
+   rankTopBtn.classList.toggle("mainline-nav-locked",lockRankTop);
+   rankTopBtn.title=lockRankTop?(mainlineRunUnfinished()?"先退出目前關卡":socialLockHint):"排行榜"
+ }
+ const globalTopBtn=$("globalTopBtn");
+ if(globalTopBtn){
+   const lockGlobal=!!mainlineRunUnfinished();
+   globalTopBtn.disabled=lockGlobal;
+   globalTopBtn.classList.toggle("mainline-nav-locked",lockGlobal);
+   globalTopBtn.title=lockGlobal?"先退出目前關卡":"全球總答題"
+ }
+ const profileBtn=$("profileBtn");
+ if(profileBtn){
+   const lockProfile=!!mainlineRunUnfinished();
+   profileBtn.disabled=lockProfile;
+   profileBtn.classList.toggle("mainline-nav-locked",lockProfile);
+   profileBtn.title=lockProfile?"先退出目前關卡":"個人檔案"
  }
 
  const shop=$("shopBtn");
@@ -9630,25 +9767,34 @@ function generateExamQuestion(stageIndex,n){
  const stage=MAINLINE[stageIndex];
  const sources=stage?.sources||[];
  if(!stage?.exam||!sources.length)return lessonQ("綜合考試");
+ if(!s.examRecent||typeof s.examRecent!=="object")s.examRecent={};
+ const recent=Array.isArray(s.examRecent[stage.examKey])?s.examRecent[stage.examKey]:[];
 
- // 16 單元期中：30 題跨單元混合。
- // 32 單元期末：30 題跨單元混合。
- // 7 與 12、24 互質，題型會交錯而不是一整段同單元。
- for(let shift=0;shift<sources.length;shift++){
-   const si=(n*7+stage.afterNormal*3+shift)%sources.length;
+ // V14.89: exams have their own 30-question run.  Pick across the full
+ // 16/32-unit scope and reject questions already used in this exam run.
+ let fallback=null;
+ for(let attempt=0;attempt<240;attempt++){
+   const si=(n*7+stage.afterNormal*3+attempt*11)%sources.length;
    const src=sources[si];
-   const q=generateUniqueQuestion(src.t,src.u,n+stage.afterNormal*50000+shift*701);
-   if(q&&q.mode!=="lesson"){
-     q.sourceT=src.t;
-     q.sourceU=src.u;
-     q.sourceTitle=src.title;
-     q.examQuestion=true;
-     q.examType=stage.examType;
+   const q=generateUniqueQuestion(src.t,src.u,n+stage.afterNormal*50000+attempt*701);
+   if(!q||q.mode==="lesson"||!validQuestion(topicName(src.t,src.u),q))continue;
+   q.sourceT=src.t;
+   q.sourceU=src.u;
+   q.sourceTitle=src.title;
+   q.examQuestion=true;
+   q.examType=stage.examType;
+   fallback=q;
+   const sig=questionSignature(q);
+   if(!recent.includes(sig)){
+     recent.push(sig);
+     while(recent.length>EXAM_QUESTIONS)recent.shift();
+     s.examRecent[stage.examKey]=recent;
      return q
    }
  }
+ // Extremely defensive fallback: still return a valid generated question.
  const src=sources[n%sources.length];
- const q=generateUniqueQuestion(src.t,src.u,n+99173);
+ const q=fallback||generateUniqueQuestion(src.t,src.u,n+99173);
  q.sourceT=src.t;q.sourceU=src.u;q.sourceTitle=src.title;
  q.examQuestion=true;q.examType=stage.examType;
  return q
@@ -9663,6 +9809,8 @@ function startExamStage(stageIndex){
  s.practiceN=0;
  s.unitCorrect=0;
  s.input="";
+ if(!s.examRecent||typeof s.examRecent!=="object")s.examRecent={};
+ if(stage.examKey)s.examRecent[stage.examKey]=[];
  activePracticeQ=null;
  const first=stage.sources?.[0];
  if(first){s.t=first.t;s.u=first.u}
@@ -9844,6 +9992,11 @@ function finishExamSettlement(){
 }
 
 function restartUnit(){
+ const restartingExam=s.mainlineExamActive?currentExamStage():null;
+ if(restartingExam?.examKey){
+   if(!s.examRecent||typeof s.examRecent!=="object")s.examRecent={};
+   s.examRecent[restartingExam.examKey]=[]
+ }
  $("practiceBox")?.classList.remove("stage-cleared");
  document.body.classList.remove("completion-focus");
  s.practiceN=0;
@@ -10830,25 +10983,25 @@ function renderLessonStep(){
    const body=renderLessonRules(it.text)||formatTeachingText(it.text);
    p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div class="lesson-concept">${body}</div></div>${nav}`
  }else if(it.type==="compactExample"){
-   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div id="lessonMath" class="lesson-example"></div><div class="lesson-example-arrow">↓</div><div class="lesson-method-note">${esc(it.text)}</div></div>${nav}`;
-   const lm=$("lessonMath");lm.classList.toggle("plain-question",!!it.q.plainPrompt);
+   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div class="lesson-example lesson-math-current"></div><div class="lesson-example-arrow">↓</div><div class="lesson-method-note">${esc(it.text)}</div></div>${nav}`;
+   const lm=p.querySelector(".lesson-math-current");lm.classList.toggle("plain-question",!!it.q.plainPrompt);
    if(it.q.plainPrompt)lm.textContent=it.q.txt||it.q.tex||"";else renderMath(lm,it.q.tex||it.q.txt)
  }else if(it.type==="exampleFocus"){
-   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div id="lessonMath" class="lesson-example"></div><div class="lesson-example-arrow">↓</div><div class="lesson-focus"><div class="lesson-focus-title">箭頭先看這些地方</div>${(it.note||[]).map(x=>`<div class="lesson-focus-row"><div class="lesson-focus-arrow">${x.slice(0,1)}</div><div>${esc(x.slice(1).trim())}</div></div>`).join("")}</div></div>${nav}`;
-   const lm=$("lessonMath");lm.classList.toggle("plain-question",!!it.q.plainPrompt);
+   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div class="lesson-example lesson-math-current"></div><div class="lesson-example-arrow">↓</div><div class="lesson-focus"><div class="lesson-focus-title">箭頭先看這些地方</div>${(it.note||[]).map(x=>`<div class="lesson-focus-row"><div class="lesson-focus-arrow">${x.slice(0,1)}</div><div>${esc(x.slice(1).trim())}</div></div>`).join("")}</div></div>${nav}`;
+   const lm=p.querySelector(".lesson-math-current");lm.classList.toggle("plain-question",!!it.q.plainPrompt);
    if(it.q.plainPrompt)lm.textContent=it.q.txt||it.q.tex||"";else renderMath(lm,it.q.tex||it.q.txt)
  }else if(it.type==="exampleStep"){
    const safeStep=String(it.step||"").trim()||"這一步的教學內容暫時缺失，請按下一步。";
-   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div id="lessonMath" class="lesson-example"></div><div class="lesson-example-arrow">↓</div><div class="lesson-step-big"><div class="lesson-step-count">第 ${it.stepIndex} / ${it.stepCount} 步</div>${esc(safeStep)}</div></div>${nav}`;
-   const lm=$("lessonMath");lm.classList.toggle("plain-question",!!it.q.plainPrompt);
+   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div class="lesson-example lesson-math-current"></div><div class="lesson-example-arrow">↓</div><div class="lesson-step-big"><div class="lesson-step-count">第 ${it.stepIndex} / ${it.stepCount} 步</div>${esc(safeStep)}</div></div>${nav}`;
+   const lm=p.querySelector(".lesson-math-current");lm.classList.toggle("plain-question",!!it.q.plainPrompt);
    if(it.q.plainPrompt)lm.textContent=it.q.txt||it.q.tex||"";else renderMath(lm,it.q.tex||it.q.txt)
  }else if(it.type==="exampleResult"){
-   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div id="lessonMath" class="lesson-example"></div><div class="lesson-example-arrow">↓</div><div class="lesson-result-box"><div class="muted">答案</div><div class="result">${esc(answerText(it.q))}</div><div class="lesson-hint">${esc(it.check||"")}</div></div></div>${nav}`;
-   const lm=$("lessonMath");lm.classList.toggle("plain-question",!!it.q.plainPrompt);
+   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div class="lesson-example lesson-math-current"></div><div class="lesson-example-arrow">↓</div><div class="lesson-result-box"><div class="muted">答案</div><div class="result">${esc(answerText(it.q))}</div><div class="lesson-hint">${esc(it.check||"")}</div></div></div>${nav}`;
+   const lm=p.querySelector(".lesson-math-current");lm.classList.toggle("plain-question",!!it.q.plainPrompt);
    if(it.q.plainPrompt)lm.textContent=it.q.txt||it.q.tex||"";else renderMath(lm,it.q.tex||it.q.txt)
  }else{
-   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div id="lessonMath" class="lesson-example"></div><div class="lesson-work lesson-order">${formatTeachingText(it.work||"")}</div></div>${nav}`;
-   const lm=$("lessonMath");if(lm)renderMath(lm,it.q?.tex||it.q?.txt||"")
+   p.innerHTML=`${topbar}${mascot}<div class="lesson-page"><div class="lesson-step-title">${it.title}</div><div class="lesson-example lesson-math-current"></div><div class="lesson-work lesson-order">${formatTeachingText(it.work||"")}</div></div>${nav}`;
+   const lm=p.querySelector(".lesson-math-current");if(lm)renderMath(lm,it.q?.tex||it.q?.txt||"")
  }
  renderInlineLessonMath(p);
  fitAllText()
@@ -10896,6 +11049,7 @@ function submit(){
  }
  if(correct){
    s.right++;
+   clubNormalAnswerContribution();
    s.q++;
    s.unitCorrect=(s.unitCorrect||0)+1;
    // 頭像解鎖進度仍會在背景計算，但不干擾一般答題畫面。
@@ -11844,6 +11998,12 @@ function mainlineRunUnfinished(){
 function updateMainlineNavLock(){
  const locked=mainlineRunUnfinished();
  const ts=$("ts"),tb=$("tb"),tr=$("tr"),shop=$("shopBtn");
+ const topLockedIds=["profileBtn","friendsBtn","globalTopBtn","rankTopBtn","tbi"];
+ topLockedIds.forEach(id=>{
+   const el=$(id);if(!el)return;
+   if(locked){el.disabled=true;el.classList.add("mainline-nav-locked");el.title="先退出目前關卡"}
+   else{el.classList.remove("mainline-nav-locked")}
+ });
  if(shop){
    shop.disabled=locked;
    shop.classList.toggle("mainline-nav-locked",locked);
@@ -11970,7 +12130,7 @@ function tab(x,force=false){
  s.tab=x;
  // Build/update the map while #line is still hidden, so users do not see an empty/reflow frame.
  if(x==="line")renderMainline();
- ["main","line","bingo","study","battle","global","rank","friends"].forEach(v=>$(v).classList.toggle("hidden",v!==x));
+ ["main","line","bingo","study","battle","club","global","rank","friends"].forEach(v=>$(v).classList.toggle("hidden",v!==x));
 
  if(x==="line"){
    const focusIndex=mainlineCurrentIndex();
@@ -11987,9 +12147,11 @@ function tab(x,force=false){
  $("ts").classList.toggle("active",x==="study");
  $("tb").classList.toggle("active",x==="battle");
  $("tr").classList.toggle("active",x==="rank");
+ $("clubTopBtn")?.classList.toggle("active",x==="club");
  $("globalTopBtn")?.classList.toggle("active",x==="global");
  $("rankTopBtn")?.classList.toggle("active",x==="rank");
  $("friendsBtn")?.classList.toggle("active",x==="friends");
+ if(x==="club")loadClubHub();
  if(x==="global")loadGlobalAnswered();
  if(x==="rank")loadRanks();
  if(x==="friends")refreshFriendHub();
@@ -12072,7 +12234,7 @@ function submitStudy(){
 
 
 const GLOBAL_MILESTONES=[
- {n:10,r:"🪙 50 金幣",coin:50},{n:25,r:"🪙 100 金幣",coin:100},{n:50,r:"🟡 黃黃限定表情",sticker:"global50"},{n:100,r:"🪙 200 金幣",coin:200},{n:200,r:"🖼️ 青銅頭像框",frame:"bronze"},{n:350,r:"🪙 350 金幣",coin:350},{n:500,r:"😎 黃黃限定表情",sticker:"global500"},{n:750,r:"🪙 500 金幣",coin:500},{n:1000,r:"✨ 特殊頭像框",frame:"star"},{n:1500,r:"🎨 全球個人檔案背景",bg:"global"},{n:2500,r:"😈 稀有黃黃表情",sticker:"global2500"},{n:5000,r:"👑 金色頭像框",frame:"gold"},{n:7500,r:"🪙 2,000 金幣",coin:2000},{n:10000,r:"🌌 傳說頭像框 + 傳說黃黃表情",frame:"legend",sticker:"global10000"}
+ {n:10,r:"🪙 50 金幣",coin:50},{n:25,r:"🪙 100 金幣",coin:100},{n:50,r:"🟡 黃黃限定表情",sticker:"global50"},{n:100,r:"🪙 200 金幣",coin:200},{n:200,r:"🪙 250 金幣",coin:250},{n:350,r:"🪙 350 金幣",coin:350},{n:500,r:"😎 黃黃限定表情",sticker:"global500"},{n:750,r:"🪙 500 金幣",coin:500},{n:1000,r:"🪙 1,000 金幣",coin:1000},{n:1500,r:"🔴 紅色星雲 GUI 背景",redNebula:true},{n:2500,r:"😈 稀有黃黃表情",sticker:"global2500"},{n:5000,r:"🪙 2,500 金幣",coin:2500},{n:7500,r:"🪙 2,000 金幣",coin:2000},{n:10000,r:"👑 5,000 金幣 + 傳說黃黃表情",coin:5000,sticker:"global10000"}
 ];
 let globalAnsweredTotal=0;
 let globalMilestoneClaimsServer=[];
@@ -12084,15 +12246,18 @@ async function loadGlobalAnswered(){
    await db.rpc("import_global_milestone_claims_v1",{p_milestones:s.globalMilestoneClaims.map(Number).filter(Number.isFinite)}).catch(()=>{})
   }
   const [t,c]=await Promise.all([db.rpc("global_answer_total_v2"),db.rpc("list_global_milestone_claims_v1")]);
-  if(t.error)throw t.error;
-  globalAnsweredTotal=Math.max(0,Number(t.data)||0);
+  if(t.error){
+   const fb=await db.from("players").select("answered");
+   if(fb.error)throw t.error;
+   globalAnsweredTotal=(fb.data||[]).reduce((sum,row)=>sum+Math.max(0,Number(row.answered)||0),0);
+  }else globalAnsweredTotal=Math.max(0,Number(t.data)||0);
   if(!c.error){
    globalMilestoneClaimsServer=(c.data||[]).map(x=>Number(x.milestone||x)).filter(Number.isFinite);
    /* Restore non-consumable cosmetics on a new browser/device; coins are never replayed. */
-   for(const n of globalMilestoneClaimsServer){const m=GLOBAL_MILESTONES.find(x=>x.n===n);if(!m)continue;if(m.frame&&!s.ownedProfileFrames.includes(m.frame))s.ownedProfileFrames.push(m.frame);if(m.bg&&!s.ownedProfileBackgrounds.includes(m.bg))s.ownedProfileBackgrounds.push(m.bg);if(m.sticker&&!s.ownedGlobalStickers?.includes(m.sticker)){if(!Array.isArray(s.ownedGlobalStickers))s.ownedGlobalStickers=[];s.ownedGlobalStickers.push(m.sticker)}}
-   saveGame();renderProfileCosmetics();hydrateHuangStickerTray()
+   for(const n of globalMilestoneClaimsServer){const m=GLOBAL_MILESTONES.find(x=>x.n===n);if(!m)continue;if(m.redNebula)s.redNebulaUnlocked=true;if(m.sticker&&!s.ownedGlobalStickers?.includes(m.sticker)){if(!Array.isArray(s.ownedGlobalStickers))s.ownedGlobalStickers=[];s.ownedGlobalStickers.push(m.sticker)}}
+   saveGame();hydrateHuangStickerTray()
   }
- }catch(e){console.warn("global total",e)}
+ }catch(e){console.warn("global total",e);if($("globalAnswerNext"))$("globalAnswerNext").textContent="⚠️ 全球答題同步失敗，請確認 Supabase V14.66 / V14.69 SQL"}
  try{
   if(db){const recent=await db.from("players").select("nickname,updated_at").order("updated_at",{ascending:false}).limit(1);if(!recent.error&&recent.data?.[0]?.nickname)latestGlobalContributorName=recent.data[0].nickname}
  }catch(e){}
@@ -12121,18 +12286,11 @@ async function claimGlobalMilestone(n,btn){
   if(m.frame&&!s.ownedProfileFrames.includes(m.frame))s.ownedProfileFrames.push(m.frame);
   if(m.bg&&!s.ownedProfileBackgrounds.includes(m.bg))s.ownedProfileBackgrounds.push(m.bg);
   if(m.sticker&&!s.ownedGlobalStickers?.includes(m.sticker)){if(!Array.isArray(s.ownedGlobalStickers))s.ownedGlobalStickers=[];s.ownedGlobalStickers.push(m.sticker)}
-  globalMilestoneClaimsServer.push(n);s.globalMilestoneClaims=[...new Set([...(s.globalMilestoneClaims||[]),n])];saveGame();renderGlobalAnswered();renderProfileCosmetics();hydrateHuangStickerTray();syncAvatarOnline()
+  globalMilestoneClaimsServer.push(n);s.globalMilestoneClaims=[...new Set([...(s.globalMilestoneClaims||[]),n])];saveGame();renderGlobalAnswered();hydrateHuangStickerTray();syncAvatarOnline()
  }catch(e){console.warn("global milestone claim",e);if(btn){btn.disabled=false;btn.textContent="領取"}}
 }
-function frameClass(id){return id&&id!=="none"?`avatar-frame frame-${id}`:"avatar-frame"}
-function applyProfileFrame(el,p=s){if(!el)return;el.classList.remove("avatar-frame","frame-bronze","frame-star","frame-gold","frame-legend");frameClass(p.profile_frame||p.profileFrame||"none").split(" ").forEach(c=>el.classList.add(c))}
-function renderProfileCosmetics(){
- const f=$("profileFrameChoices"),b=$("profileBgChoices");if(f)f.innerHTML=s.ownedProfileFrames.map(id=>`<button class="${s.profileFrame===id?'active':''}" onclick="equipProfileFrame('${id}')">${({none:'無',bronze:'🥉 青銅',star:'✨ 特殊',gold:'👑 金色',legend:'🌌 傳說'})[id]||id}</button>`).join("");
- if(b)b.innerHTML=s.ownedProfileBackgrounds.map(id=>`<button class="${s.profileBackground===id?'active':''}" onclick="equipProfileBackground('${id}')">${id==='global'?'🌍 全球背景':'無'}</button>`).join("")
-}
-function equipProfileFrame(id){if(!s.ownedProfileFrames.includes(id))return;s.profileFrame=id;saveGame();renderProfileUI();syncAvatarOnline()}
-function equipProfileBackground(id){if(!s.ownedProfileBackgrounds.includes(id))return;s.profileBackground=id;saveGame();renderProfileUI();syncAvatarOnline()}
-function openPublicProfile(i){const p=players[i];if(!p)return;const a=$("publicProfileAvatar"),bg=$("publicProfileBg");renderAvatarInto(a,p);applyProfileFrame(a,p);$("publicProfileName").textContent=p.name||"玩家";$("publicProfileAnswered").textContent=`總作答 ${Number(p.answered)||0} 題`;bg.className="public-profile-bg"+((p.profile_background||p.profileBackground)==="global"?" bg-global":" ");$("publicProfileModal").classList.remove("hidden")}
+function applyProfileFrame(el){if(!el)return;el.classList.remove("avatar-frame","frame-bronze","frame-star","frame-gold","frame-legend")}
+function openPublicProfile(i){const p=players[i];if(!p)return;const a=$("publicProfileAvatar"),bg=$("publicProfileBg");renderAvatarInto(a,p);applyProfileFrame(a);$("publicProfileName").textContent=p.name||"玩家";$("publicProfileAnswered").textContent=`總作答 ${Number(p.answered)||0} 題`;bg.className="public-profile-bg";$("publicProfileModal").classList.remove("hidden")}
 function closePublicProfile(){$("publicProfileModal")?.classList.add("hidden")}
 
 function renderRanks(){renderRanksLocal()}
@@ -12144,7 +12302,7 @@ function renderRanksLocal(){
    .slice(0,100);
 
  $("ranks").innerHTML=arr.length
-   ?arr.map((p,i)=>`<div class="rankrow"><b>#${i+1}</b><div class="rank-avatar ${frameClass(p.profile_frame||p.profileFrame)}" onclick="openPublicProfile(${i})">${avatarMarkupFromProfile(p)}</div><b class="rank-name">${esc(p.name||"玩家")}</b><span class="muted">作答 ${Number(p.answered)||0} 題</span></div>`).join("")
+   ?arr.map((p,i)=>`<div class="rankrow"><b>#${i+1}</b><div class="rank-avatar" onclick="openPublicProfile(${i})">${avatarMarkupFromProfile(p)}</div><b class="rank-name">${esc(p.name||"玩家")}</b><span class="muted">作答 ${Number(p.answered)||0} 題</span></div>`).join("")
    :`<div class="muted">排行榜目前還沒有資料</div>`
 }
 function esc(x){return x.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
@@ -13169,6 +13327,40 @@ function notifyBattleLeaveKeepalive(){
 window.addEventListener("pagehide",e=>{if(!e.persisted)notifyBattleLeaveKeepalive()});
 
 function resetGame(){if(!confirm("確定重置所有進度？頭像解鎖進度也會重置。"))return;let name=s.name,avatarType=s.avatarType,avatarImage=s.avatarImage,avatarStyles=s.avatarStyles||{};s={name,tab:"line",t:0,u:0,q:0,input:"",right:0,wrong:0,studyInput:"",practiceN:0,wrongs:[],reviewIndex:-1,level:0,visited:[],category:"國小",recentQ:{},avatarType:avatarType==="image"?"image":"symbol",avatarSymbol:DEFAULT_AVATAR_SYMBOL,avatarImage,avatarProgress:{},avatarStyles,coins:0,ownedHuangDecor:["none"],huangDecor:"none",ownedHuangColors:["yellow"],huangColor:"yellow",mainlineActive:false,mainlineStage:0,mainlineExamActive:false,mainlineExamStage:-1,examScores:{},examScheduleVersion:2,dailyChallenge:{date:challengeDateKey(),correct:0,streak:0,bestStreak:0,playSeconds:0,rewardClaimed:false}};players=[];saveGame();fillTerms();tab("line");$("fb").textContent="";render();pushProgress();restoreBattle()}
+
+// ===== V14.84 Club system =====
+let clubState={club:null,members:[],towerQ:null,infQ:null,combo:0};
+function clubHuangBounce(el){el.classList.add('bounce');setTimeout(()=>el.classList.remove('bounce'),220)}
+function clubTab(name,btn){['Lobby','Tower','Infinite','Members'].forEach(x=>$('club'+x)?.classList.add('hidden'));const m={lobby:'Lobby',tower:'Tower',infinite:'Infinite',members:'Members'};$('club'+m[name])?.classList.remove('hidden');document.querySelectorAll('.club-tabs button').forEach(b=>b.classList.remove('active'));btn?.classList.add('active');if(name==='tower')ensureTowerQ();if(name==='infinite')ensureInfQ()}
+function clubSetStatus(t){if($('clubStatus'))$('clubStatus').textContent=t||''}
+function clubLevelFromXp(xp){return Math.min(100,1+Math.floor(Math.sqrt(Math.max(0,Number(xp)||0)/20)))}
+async function createClub(){if(!db){clubSetStatus('Supabase 未連線');return}const name=String($('clubNameInput')?.value||'').trim();if(name.length<2){clubSetStatus('社團名稱至少 2 個字');return}const minStage=Math.max(0,Math.min(400,Math.floor(Number($('clubMinStageInput')?.value)||0)));if($('clubMinStageInput'))$('clubMinStageInput').value=String(minStage);clubSetStatus('建立中…');try{await ensureAuth();const r=await db.rpc('club_create_v1',{p_name:name,p_min_stage:minStage});if(r.error)throw r.error;clubSetStatus('建立成功 🔥');await loadClubHub()}catch(e){console.error(e);clubSetStatus('建立失敗：請先執行 V14.84 社團 SQL')}}
+async function joinClub(){if(!db)return;const code=String($('clubCodeInput')?.value||'').trim().toUpperCase();if(code.length!==6){clubSetStatus('請輸入 6 位社團碼');return}clubSetStatus('加入中…');try{await ensureAuth();const r=await db.rpc('club_join_v1',{p_code:code,p_stage:Math.min(400,mainlineClearedCount())});if(r.error)throw r.error;clubSetStatus('加入成功 🎉');await loadClubHub()}catch(e){console.error(e);clubSetStatus('加入失敗：社團可能已滿、條件不足，或 SQL 尚未安裝')}}
+async function loadClubHub(){if(!db)return;try{await ensureAuth();const r=await db.rpc('club_my_v1');if(r.error)throw r.error;const d=Array.isArray(r.data)?r.data[0]:r.data;if(!d||!d.club_id){$('clubNoClub')?.classList.remove('hidden');$('clubHome')?.classList.add('hidden');return}clubState.club=d;$('clubNoClub')?.classList.add('hidden');$('clubHome')?.classList.remove('hidden');renderClub();const m=await db.rpc('club_members_v1');if(!m.error){clubState.members=m.data||[];renderClubMembers()}}catch(e){console.warn('club load',e);clubSetStatus('社團資料讀取失敗；請確認 V14.84 SQL 已執行')}}
+function renderClub(){const c=clubState.club||{};const lv=clubLevelFromXp(c.xp);$('clubName').textContent=c.name||'社團';$('clubCode').textContent=c.code||'------';$('clubMeta').textContent=`Lv.${lv} · ${c.member_count||0}/30`;$('clubLevel').textContent='Lv.'+lv;$('clubXp').textContent=Number(c.xp||0).toLocaleString();$('clubAnswers').textContent=Number(c.total_answers||0).toLocaleString();$('clubMembersCount').textContent=`${c.member_count||0}/30`;$('clubHuangLevel').textContent='共同黃黃 Lv.'+Math.min(100,1+Math.floor(Number(c.huang_xp||0)/100));$('clubHuangXp').textContent=Number(c.huang_xp||0).toLocaleString()+' XP';const base=(lv-1)**2*20,next=lv>=100?base:lv**2*20;$('clubXpFill').style.width=lv>=100?'100%':`${Math.max(0,Math.min(100,(Number(c.xp||0)-base)/(next-base)*100))}%`;$('towerFloor').textContent=`${Math.min(1000,Number(c.tower_floor||1))}F / 1000F`;$('towerBig').textContent=Math.min(1000,Number(c.tower_floor||1))+'F';$('towerProgressText').textContent=`${Number(c.tower_progress||0)} / 5 題`;$('towerFill').style.width=`${Math.min(100,Number(c.tower_progress||0)*20)}%`;$('infFloor').textContent=Number(c.infinite_floor||0).toLocaleString()+'F';$('infPoints').textContent=Number(c.infinite_points||0).toLocaleString();$('infCombo').textContent=`${clubState.combo} ×${Math.max(1,Math.min(10,clubState.combo||1))}`}
+function renderClubMembers(){const el=$('clubMemberList');if(!el)return;el.innerHTML=(clubState.members||[]).map(m=>`<div class="club-member"><b>${esc(m.nickname||'玩家')}</b><span>${m.role==='owner'?'👑 社長':m.role==='admin'?'⭐ 管理員':'成員'} · 貢獻 ${Number(m.contribution||0).toLocaleString()}</span></div>`).join('')||'<div class="muted">尚無成員資料</div>'}
+function clubRandomQuestion(hard=false){
+ const maxType=hard?12:7;let type=Math.floor(Math.random()*maxType),a,b,c,ans,text;
+ if(type===0){a=1+Math.floor(Math.random()*199);b=1+Math.floor(Math.random()*199);ans=a+b;text=`${a} + ${b} = ?`}
+ else if(type===1){a=20+Math.floor(Math.random()*180);b=Math.floor(Math.random()*a);ans=a-b;text=`${a} − ${b} = ?`}
+ else if(type===2){a=2+Math.floor(Math.random()*23);b=2+Math.floor(Math.random()*18);ans=a*b;text=`${a} × ${b} = ?`}
+ else if(type===3){b=2+Math.floor(Math.random()*18);ans=2+Math.floor(Math.random()*25);a=b*ans;text=`${a} ÷ ${b} = ?`}
+ else if(type===4){a=2+Math.floor(Math.random()*20);ans=a*a;text=`${a}² = ?`}
+ else if(type===5){ans=2+Math.floor(Math.random()*25);a=ans*ans;text=`√${a} = ?`}
+ else if(type===6){a=1+Math.floor(Math.random()*40);b=1+Math.floor(Math.random()*40);c=1+Math.floor(Math.random()*20);ans=a+b-c;text=`${a} + ${b} − ${c} = ?`}
+ else if(type===7){ans=2+Math.floor(Math.random()*30);a=2+Math.floor(Math.random()*12);b=a*ans;text=`${a}x = ${b}，x = ?`}
+ else if(type===8){a=(1+Math.floor(Math.random()*9))*10;b=10*(1+Math.floor(Math.random()*9));ans=a*b/100;text=`${a}% × ${b} = ?`}
+ else if(type===9){a=2+Math.floor(Math.random()*8);b=2+Math.floor(Math.random()*5);ans=a**b;text=`${a}^${b} = ?`}
+ else if(type===10){a=2+Math.floor(Math.random()*15);b=2+Math.floor(Math.random()*15);ans=2*(a+b);text=`長 ${a}、寬 ${b} 的長方形周長 = ?`}
+ else {a=2+Math.floor(Math.random()*12);b=2+Math.floor(Math.random()*12);c=1+Math.floor(Math.random()*9);ans=a*b+c;text=`${a} × ${b} + ${c} = ?`}
+ return{text,ans}
+}
+function ensureTowerQ(){if(!clubState.towerQ)clubState.towerQ=clubRandomQuestion(Number(clubState.club?.tower_floor||1)>500);$('towerQuestion').textContent=clubState.towerQ.text}
+function ensureInfQ(){if(!clubState.infQ)clubState.infQ=clubRandomQuestion(true);$('infQuestion').textContent=clubState.infQ.text}
+async function submitClubTower(){ensureTowerQ();const v=Number($('towerAnswer')?.value);if(!Number.isFinite(v))return;if(v!==clubState.towerQ.ans){$('towerFeedback').textContent='❌ 再試一次';return}try{const r=await db.rpc('club_tower_answer_v1');if(r.error)throw r.error;$('towerFeedback').textContent='✅ +1 塔進度';clubState.towerQ=null;$('towerAnswer').value='';await loadClubHub();ensureTowerQ()}catch(e){$('towerFeedback').textContent='同步失敗；確認社團 SQL'} }
+async function submitInfiniteTower(){ensureInfQ();const v=Number($('infAnswer')?.value);if(!Number.isFinite(v))return;if(v!==clubState.infQ.ans){clubState.combo=0;$('infFeedback').textContent='❌ Combo 歸 0';clubState.infQ=null;$('infAnswer').value='';ensureInfQ();renderClub();return}clubState.combo++;const mult=Math.min(10,clubState.combo);try{const r=await db.rpc('club_infinite_answer_v1',{p_points:mult});if(r.error)throw r.error;$('infFeedback').textContent=`✅ +${mult} ∞P · Combo ${clubState.combo}`;clubState.infQ=null;$('infAnswer').value='';await loadClubHub();ensureInfQ()}catch(e){$('infFeedback').textContent='同步失敗；確認社團 SQL'}}
+async function clubNormalAnswerContribution(){if(!db)return;try{await db.rpc('club_answer_contribute_v1')}catch(e){}}
+
 loadGame();initStateExtras();renderProfileUI();updateNameCounter();$("pickerCancelBtn")?.classList.add("hidden");
 $("avatarModalClose")?.addEventListener("click",e=>{
  e.preventDefault();e.stopPropagation();closeAvatarModal()
