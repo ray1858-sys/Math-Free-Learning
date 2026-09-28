@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Math Free Learning V14.52</title>
+<title>Math Free Learning V14.53</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
@@ -4981,7 +4981,7 @@ body{
 <div id="game" class="hidden">
 
 <div class="app-title-row">
-  <h1>Math Free Learning <span class="version-badge">V14.52</span></h1>
+  <h1>Math Free Learning <span class="version-badge">V14.53</span></h1>
   <div class="top-actions">
     <button id="shopBtn" type="button" class="coin-shop-btn" onclick="openHuangShop()" aria-label="開啟黃黃商店">
       <img id="topCoinIcon" class="coin-icon" alt="" aria-hidden="true">
@@ -10508,7 +10508,7 @@ const BATTLE_SUBJECTS={
 };
 
 let battle={
- searching:false,timer:null,matchId:null,row:null,input:"",
+ searching:false,timer:null,matchId:null,waitingId:null,row:null,input:"",
  startedAt:0,answered:false,difficulty:null,subject:null,finished:false,
  phase:"idle",lastStatus:null,searchStartedAt:0,
  searchToken:0,
@@ -10806,6 +10806,7 @@ function stopBattleTimer(){
 
 function stopSearching(){
  battle.searching=false;
+ battle.waitingId=null;
  stopBattleTimer();
  if($("cancelMatch"))$("cancelMatch").classList.add("hidden")
 }
@@ -10813,7 +10814,13 @@ function stopSearching(){
 function startSearchTimer(token=battle.searchToken){
  if(!battle.searching||token!==battle.searchToken)return;
  if(battle.timer)return;
- battle.timer=setInterval(()=>tryMatch(token),1200)
+ // V14.53: once the server gives us a one-player waiting row, keep that row
+ // stable and only poll it. Re-running find_math_match_v5 every 1.2s could
+ // churn/recreate the queue row and make two browsers miss each other forever.
+ battle.timer=setInterval(()=>{
+   if(battle.waitingId)pollWaitingBattle(token);
+   else tryMatch(token)
+ },900)
 }
 
 function battleErrorText(e){
@@ -10839,9 +10846,10 @@ async function startMatchmaking(d,subject){
    battle.searching=true;
    battle.phase="searching";
    battle.searchStartedAt=Date.now();
+   battle.waitingId=null;
    battle.difficulty=d;
    battle.subject=subject;
-   $("battleWait").textContent=`🔎 尋找 ${battleDiffName(d)}・隨機題目 對手…（保持排隊中）`;
+   $("battleWait").textContent=`🔎 尋找 ${battleDiffName(d)}・隨機題目 對手…`;
    $("cancelMatch").classList.remove("hidden");
    await tryMatch(token);
    startSearchTimer(token)
@@ -10941,14 +10949,101 @@ async function settleBattleCandidate(initialId,token=battle.searchToken){
  }
 }
 
+
+async function inspectBattleQueueRow(id){
+ if(!id||!db)return null;
+ try{
+   const u=await ensureAuth();if(!u)return null;
+   const q=await db.from("battle_matches")
+     .select("id,p1,p2,status,created_at,p1_heartbeat,p2_heartbeat")
+     .eq("id",id).single();
+   if(q.error||!q.data)return null;
+   const row=q.data;
+   if(row.p1!==u.id&&row.p2!==u.id)return null;
+   return row
+ }catch(e){
+   console.warn("inspect battle queue",e);
+   return null
+ }
+}
+
+async function adoptBattleQueueRow(id,token=battle.searchToken){
+ if(!id||!battle.searching||token!==battle.searchToken)return false;
+ const row=await inspectBattleQueueRow(id);
+ if(!battle.searching||token!==battle.searchToken)return false;
+ if(!row)return false;
+
+ const hasP1=!!row.p1,hasP2=!!row.p2;
+ if(hasP1&&hasP2&&row.p1!==row.p2&&(row.status==="waiting"||row.status==="active")){
+   battle.waitingId=null;
+   stopSearching();
+   battle.matchId=row.id;
+   await openBattle(row.id,token);
+   return true
+ }
+
+ // This is the NORMAL first-player queue state. Hold this exact row stable.
+ if(row.status==="waiting" && ((hasP1&&!hasP2)||(!hasP1&&hasP2))){
+   battle.waitingId=row.id;
+   battle.phase="searching";
+   if($("battleWait"))$("battleWait").textContent=
+     `🟡 已加入 ${battleDiffName(battle.difficulty)} 配對隊列，等待另一位玩家…`;
+   return true
+ }
+
+ if(hasP1&&hasP2&&row.p1===row.p2){
+   await rejectStaleBattle(row.id);
+ }
+ return false
+}
+
+async function pollWaitingBattle(token=battle.searchToken){
+ if(!battle.searching||!battle.waitingId||token!==battle.searchToken)return;
+ if(battle.matchAttemptInFlight&&battle.matchAttemptToken===token)return;
+ battle.matchAttemptInFlight=true;
+ battle.matchAttemptToken=token;
+ const id=battle.waitingId;
+ try{
+   const handled=await adoptBattleQueueRow(id,token);
+   if(!battle.searching||token!==battle.searchToken)return;
+   if(!handled){
+     // The row disappeared/expired. Only then ask the matchmaking RPC for a
+     // fresh queue row; do not constantly recreate it while it is healthy.
+     battle.waitingId=null;
+     if($("battleWait"))$("battleWait").textContent="🔎 配對隊列已更新，重新加入中…";
+   }
+ }catch(e){
+   console.warn("poll waiting battle",e);
+ }finally{
+   if(battle.matchAttemptToken===token){
+     battle.matchAttemptInFlight=false;
+     battle.matchAttemptToken=0
+   }
+ }
+}
+
 async function tryMatch(token=battle.searchToken){
  if(!battle.searching||!db||token!==battle.searchToken)return;
- // Only block a duplicate request from THIS search generation. A cancelled old
- // request is allowed to finish in the background without blocking a new search.
+
+ // If we already own a valid waiting row, do not run the create/join RPC again.
+ if(battle.waitingId){
+   return pollWaitingBattle(token)
+ }
+
  if(battle.matchAttemptInFlight&&battle.matchAttemptToken===token)return;
  battle.matchAttemptInFlight=true;
  battle.matchAttemptToken=token;
  try{
+   // First reuse any queue/match the server already knows about for this user.
+   let existing=await currentMatch();
+   if(!battle.searching||token!==battle.searchToken)return;
+   if(existing){
+     const handled=await adoptBattleQueueRow(existing,token);
+     if(handled)return
+   }
+
+   // No usable existing row: ask the server to join another waiting player
+   // or create exactly one waiting row for us.
    let {data,error}=await db.rpc("find_math_match_v5",{
      p_nickname:normalizePlayerName(s.name),
      p_difficulty:battle.difficulty,
@@ -10956,35 +11051,27 @@ async function tryMatch(token=battle.searchToken){
    });
    if(error)throw error;
    if(!battle.searching||token!==battle.searchToken)return;
+
    if(data){
-     const settled=await settleBattleCandidate(data,token);
-     if(!battle.searching||token!==battle.searchToken)return;
-     if(settled&&await validateBattleCandidate(settled)){
-       if(!battle.searching||token!==battle.searchToken)return;
-       stopSearching();
-       battle.matchId=settled;
-       return openBattle(settled,token)
-     }
-     battle.matchId=null;
+     const handled=await adoptBattleQueueRow(data,token);
+     if(handled)return
    }
-   if(!battle.searching||token!==battle.searchToken)return;
-   let existing=await currentMatch();
+
+   // Some backend versions return null while get_my_math_match_v4 already has
+   // the newly-created queue row. Check once, then leave it stable.
+   existing=await currentMatch();
    if(!battle.searching||token!==battle.searchToken)return;
    if(existing){
-     const settled=await settleBattleCandidate(existing,token);
-     if(!battle.searching||token!==battle.searchToken)return;
-     if(settled&&await validateBattleCandidate(settled)){
-       if(!battle.searching||token!==battle.searchToken)return;
-       stopSearching();
-       battle.matchId=settled;
-       return openBattle(settled,token)
-     }
-     battle.matchId=null;
+     const handled=await adoptBattleQueueRow(existing,token);
+     if(handled)return
    }
+
+   if($("battleWait"))$("battleWait").textContent=
+     `🔎 尚未取得配對隊列，正在重試 ${battleDiffName(battle.difficulty)}…`;
  }catch(e){
-   // A response from an obsolete search must never alter the current UI/state.
    if(token!==battle.searchToken)return;
    console.error("matchmaking",e);
+   battle.waitingId=null;
    stopSearching();
    $("battleWait").textContent=battleErrorText(e)
  }finally{
@@ -11002,6 +11089,7 @@ async function cancelMatchmaking(){
  stopSearching();
  battle.matchAttemptInFlight=false;
  battle.matchAttemptToken=0;
+ battle.waitingId=null;
  if(db){
    try{await db.rpc("cancel_my_math_queue_v3")}catch(e){console.error("cancel queue",e)}
  }
@@ -11010,6 +11098,7 @@ async function cancelMatchmaking(){
 
 async function openBattle(id,token=battle.searchToken){
  if(token!==battle.searchToken)return;
+ battle.waitingId=null;
  if(!(await validateBattleCandidate(id))){
    if(token!==battle.searchToken)return;
    battle.matchId=null;
@@ -11114,6 +11203,7 @@ async function abandonBattle(message){
  stopBattleTimer();
  battle.searching=false;
  battle.matchId=null;
+ battle.waitingId=null;
  battle.row=null;
  battle.input="";
  battle.answered=false;
@@ -11344,6 +11434,7 @@ async function leaveBattle(notify=true){
  }
  stopBattleTimer();
  battle.matchId=null;
+ battle.waitingId=null;
  battle.row=null;
  battle.input="";
  battle.finished=false;
