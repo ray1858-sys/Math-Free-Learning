@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Math Free Learning V14.60</title>
+<title>Math Free Learning V14.62</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
@@ -5332,6 +5332,37 @@ html,body{
   }
 }
 
+
+
+/* V14.61 — remove the hard dark rectangle at the bottom of the mainline map. */
+.path-mainline-hills{
+  display:none!important;
+}
+.path-mainline-card,
+.path-mainline-scroll{
+  background:linear-gradient(180deg,#1d4478 0%,#173965 40%,#102d56 100%)!important;
+}
+.path-mainline-inner{
+  background:transparent!important;
+}
+
+
+
+/* V14.62 — leaderboard rows show only total answered count. */
+#ranks .rankrow > .muted{
+  white-space:nowrap!important;
+  text-align:right!important;
+}
+@media(max-width:680px){
+  #ranks .rankrow{
+    grid-template-columns:34px 38px minmax(0,1fr) auto!important;
+  }
+  #ranks .rankrow > .muted{
+    grid-column:auto!important;
+    text-align:right!important;
+  }
+}
+
 </style>
 </head>
 <body><div class="app">
@@ -5348,7 +5379,7 @@ html,body{
 <div id="game" class="hidden">
 
 <div class="app-title-row">
-  <h1>Math Free Learning <span class="version-badge">V14.60</span></h1>
+  <h1>Math Free Learning <span class="version-badge">V14.62</span></h1>
   <div class="top-actions">
     <button id="shopBtn" type="button" class="coin-shop-btn" onclick="openHuangShop()" aria-label="開啟黃黃商店">
       <img id="topCoinIcon" class="coin-icon" alt="" aria-hidden="true">
@@ -5519,7 +5550,7 @@ html,body{
 <div class="battle-actions"><button id="leaveBattleBtn" type="button" onclick="leaveBattle(true)">退出對戰</button></div>
 </div><div id="battleResult" class="hidden battle-status"></div></div></section>
 
-<section id="rank" class="hidden"><div class="panel"><b>排行榜 🏆 · TOP 100</b><div class="muted" style="margin-top:5px">按主課程「作答總題數」排序；答對、答錯都會計入，錯題複習與對戰不計。最多顯示前 100 名。</div><div id="ranks"></div></div></section>
+<section id="rank" class="hidden"><div class="panel"><b>排行榜 🏆 · TOP 100</b><div class="muted" style="margin-top:5px">只按主課程「總作答題數」排序；答對、答錯都會計入，錯題複習與對戰不計。最多顯示前 100 名。</div><div id="ranks"></div></div></section>
 
 <section id="friends" class="hidden">
   <div class="panel friends-panel">
@@ -5913,7 +5944,6 @@ async function loadRanks(){
    let res=await db.from("players")
      .select("nickname,term,unit,question,answered,avatar_type,avatar_symbol,avatar_data")
      .order("answered",{ascending:false})
-     .order("question",{ascending:false})
      .order("updated_at",{ascending:false})
      .limit(100);
 
@@ -5932,7 +5962,6 @@ async function loadRanks(){
          ?"nickname,term,unit,question,answered"
          :"nickname,term,unit,question")
        .order(hasAnsweredColumn?"answered":"question",{ascending:false})
-       .order("question",{ascending:false})
        .limit(100)
    }
 
@@ -8202,7 +8231,7 @@ function renderMainline(){
   const laneX=[18,34,51,68,82,64,46,28];
   const step=132;
   const topPad=120;
-  const bottomPad=34;
+  const bottomPad=150;
   const totalHeight=Math.max(680,topPad+bottomPad+(MAINLINE.length-1)*step);
   const yFor=i=>totalHeight-bottomPad-i*step;
 
@@ -11210,13 +11239,12 @@ function renderRanks(){renderRanksLocal()}
 function renderRanksLocal(){
  let arr=[...players]
    .sort((a,b)=>
-     (Number(b.answered)||0)-(Number(a.answered)||0) ||
-     (Number(b.q)||0)-(Number(a.q)||0)
+     (Number(b.answered)||0)-(Number(a.answered)||0)
    )
    .slice(0,100);
 
  $("ranks").innerHTML=arr.length
-   ?arr.map((p,i)=>`<div class="rankrow"><b>#${i+1}</b><div class="rank-avatar">${avatarMarkupFromProfile(p)}</div><b class="rank-name">${esc(p.name||"玩家")}</b><span class="muted">${terms[p.t]?.[0]||"—"} · ${terms[p.t]?.[1]?.[p.u]||"—"}　作答 ${Number(p.answered)||0} 題</span></div>`).join("")
+   ?arr.map((p,i)=>`<div class="rankrow"><b>#${i+1}</b><div class="rank-avatar">${avatarMarkupFromProfile(p)}</div><b class="rank-name">${esc(p.name||"玩家")}</b><span class="muted">作答 ${Number(p.answered)||0} 題</span></div>`).join("")
    :`<div class="muted">排行榜目前還沒有資料</div>`
 }
 function esc(x){return x.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
