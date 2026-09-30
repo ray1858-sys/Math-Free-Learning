@@ -3146,7 +3146,7 @@ body{
 .bg-custom-buy{
   min-width:104px!important;
   background:linear-gradient(180deg,#ffd75b,#f4a711)!important;
-  border-color:#ffe28a!important;color:#172033!important
+  border-color:#ffe28a!important;color:#334155!important
 }
 .bg-custom-buy img{width:17px;height:17px;vertical-align:-3px;margin-right:4px}
 .bg-custom-controls{margin-top:13px}
@@ -5437,7 +5437,7 @@ html,body{
 .path-node-label{position:relative!important;z-index:7!important;background:rgba(9,25,43,.78)!important;border-radius:8px!important;padding:3px 5px!important;box-shadow:0 2px 8px rgba(0,0,0,.22)!important}
 .path-current-cluster{z-index:8!important}
 
-/* V15.02 — global answered milestones + GUI rewards */
+/* V15.07 — global answered milestones + GUI rewards */
 .global-answer-card{margin:0 0 14px;padding:16px;border:1px solid #29445f;border-radius:16px;background:linear-gradient(145deg,rgba(20,45,70,.9),rgba(10,24,39,.92))}
 .global-answer-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.global-answer-number{font-size:26px;font-weight:950}.global-answer-track{height:10px;background:#0a1420;border-radius:999px;overflow:hidden;margin:10px 0}.global-answer-track>i{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,#a78bfa);border-radius:inherit}.global-milestones{display:flex;gap:7px;overflow-x:auto;padding:5px 0 2px}.global-milestone{min-width:86px;padding:8px;border:1px solid #30465d;border-radius:11px;text-align:center;font-size:11px;background:#0d1927}.global-milestone.done{border-color:#5e8f68}.global-milestone.claimable{box-shadow:0 0 0 2px rgba(250,204,21,.22) inset}.global-milestone button{padding:5px 8px;margin-top:5px;font-size:10px}
 .public-profile-card{overflow:hidden;padding:0!important}.public-profile-bg{min-height:230px;padding:24px;background:linear-gradient(145deg,#172638,#0a111b);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}.public-profile-avatar{width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:42px;background:#111}.public-profile-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}.rank-avatar{cursor:pointer}
@@ -5498,7 +5498,7 @@ body.bingo-focus>#bingoPlay .bingo-answer-row{width:100%!important;max-width:700
 .rank-list-head{margin:18px 0 8px}.rank-list-head>b{font-size:18px}
 #avatarModal .modal-card{position:relative}
 #avatarModal .avatar-preview{display:flex!important;align-items:center!important;justify-content:center!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;margin:14px 0 16px!important}
-/* ===== V15.02 Deep cleanup: removed GUI backgrounds; obsolete embedded galaxy removed. ===== */
+/* ===== V15.07 Deep cleanup: removed GUI backgrounds; obsolete embedded galaxy removed. ===== */
 .gui-background-panel{margin:14px 0;padding:12px;border:1px solid #2c3f56;border-radius:14px;background:rgba(255,255,255,.035)}
 .gui-bg-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}.gui-bg-choice{padding:6px!important;min-width:0;display:grid;gap:6px;text-align:center}.gui-bg-choice.active{box-shadow:0 0 0 2px #79b8ff inset}.gui-bg-thumb{display:block;height:52px;border-radius:8px;background:#101c2d center/cover no-repeat}.gui-bg-choice b{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bg-default{background:linear-gradient(180deg,#223758,#0b1220)}.bg-galaxy{background-image:none!important}.bg-aurora{background-image:none!important}.bg-ocean{background-image:none!important}.bg-sunset{background-image:none!important}
 body.has-gui-image{background-image:linear-gradient(rgba(2,7,15,.02),rgba(2,7,15,.08)),var(--gui-bg-image)!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;background-color:#081628!important;background-blend-mode:normal!important}
@@ -5687,11 +5687,11 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 @media(max-width:700px){.modal-wrap{padding:8px!important}.modal-card{max-height:calc(100dvh - 16px)!important}.gui-bg-grid{gap:8px!important}.gui-bg-thumb{height:68px!important}}
 
 
-/* ===== V15.02 Exam isolation repair =====
+/* ===== V15.07 Exam isolation repair =====
    Midterm/final progress and best scores persist; exam runs keep a separate
    30-question de-dup history and no longer get erased by UI initialization.
 */
-/* ===== V15.02 modal vertical-position canonical override =====
+/* ===== V15.07 modal vertical-position canonical override =====
    Keep dialogs near the top of the viewport; long content scrolls inside the card. */
 .modal-wrap{
   align-items:flex-start!important;
@@ -5715,7 +5715,7 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 }
 
 
-/* ===== V15.02 Tower GUI redesign ===== */
+/* ===== V15.07 Tower GUI redesign ===== */
 .mega-tower-wrap{position:relative;width:min(520px,94%);margin:16px auto 18px;padding:58px 92px 8px 12px;box-sizing:border-box;min-height:390px}
 .mega-tower-spire{position:absolute;top:0;left:12px;width:calc(100% - 104px);height:72px;display:grid;place-items:center;font-size:34px;font-weight:950;color:#d9ecff;background:linear-gradient(145deg,#173b68,#0b1e39);clip-path:polygon(50% 0,100% 100%,0 100%);text-shadow:0 0 18px #65b8ff}
 .mega-tower-body{border:3px solid #78bdff;border-top:0;border-radius:0 0 18px 18px;overflow:hidden;background:linear-gradient(180deg,rgba(18,49,86,.94),rgba(8,24,47,.96));box-shadow:0 16px 35px #0006,0 0 30px #4ca7ff22}
@@ -5723,7 +5723,7 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 .infinite-terminal-wrap{position:relative;width:min(330px,86%);margin:20px auto 16px;padding-top:78px}.infinite-spire{position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:90px;display:grid;place-items:center;padding-top:18px;box-sizing:border-box;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(145deg,#164d88,#091d37);font-size:48px;font-weight:950;color:#d9f0ff;text-shadow:0 0 22px #63bdff}.infinite-terminal{position:relative;border:3px solid #70baff;border-radius:16px;padding:24px 18px 16px;text-align:center;background:linear-gradient(180deg,#102e52,#08192e);box-shadow:0 15px 34px #0007,0 0 34px #389fff24}.infinite-terminal small{display:block;color:#abc7e2;font-weight:800}.infinite-terminal strong{display:inline-block;font-size:44px;line-height:1.1;margin:8px 5px 4px;color:#fff}.infinite-terminal em{font-style:normal;font-weight:950;color:#7dc8ff}.infinite-substats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.infinite-substats span{padding:8px;border-radius:10px;background:#ffffff0a;font-size:12px}.infinite-substats b{display:block;font-size:16px;margin-top:2px}.infinite-note{text-align:center;margin-bottom:8px}
 @media(max-width:700px){.mega-tower-wrap{width:100%;padding-right:72px;min-height:350px}.mega-tower-spire{width:calc(100% - 84px)}.mega-current-arrow{width:66px;font-size:14px}.mega-floor{min-height:58px}.mega-floor.current{min-height:72px}.mega-floor b{font-size:20px}.mega-floor.current b{font-size:30px}.infinite-terminal-wrap{width:92%}}
 
-/* V15.02 — mainline question navigation lock */
+/* V15.07 — mainline question navigation lock */
 button.mainline-nav-locked, .mainline-nav-locked{
   opacity:.38!important;filter:grayscale(.9) saturate(.25)!important;cursor:not-allowed!important;
   pointer-events:none!important;box-shadow:none!important;transform:none!important;
@@ -5731,7 +5731,7 @@ button.mainline-nav-locked, .mainline-nav-locked{
 
 
 
-/* ===== V15.02 Pure White GUI =====
+/* ===== V15.07 Pure White GUI =====
    Default GUI is solid white. Existing photo backgrounds remain selectable,
    but old saves migrate to Pure White once. The main answer area/input are white too. */
 body.white-gui,
@@ -5739,9 +5739,9 @@ body.white-gui:not(.has-gui-image){
   background:#fff!important;
   background-image:none!important;
   background-color:#fff!important;
-  color:#172033!important;
+  color:#334155!important;
 }
-body.white-gui .app{filter:none!important;color:#172033!important;}
+body.white-gui .app{filter:none!important;color:#334155!important;}
 body.white-gui .card,
 body.white-gui .panel,
 body.white-gui .modal-card,
@@ -5760,7 +5760,7 @@ body.white-gui .global-answer-card{
   box-shadow:0 8px 24px rgba(15,23,42,.08)!important;
   -webkit-backdrop-filter:none!important;
   backdrop-filter:none!important;
-  color:#172033!important;
+  color:#334155!important;
 }
 body.white-gui .modal-wrap{background:rgba(15,23,42,.18)!important;}
 body.white-gui h1,
@@ -5776,7 +5776,7 @@ body.white-gui #unit,
 body.white-gui .lesson-example,
 body.white-gui .lesson-formula,
 body.white-gui .lesson-work{
-  color:#111827!important;
+  color:#334155!important;
 }
 body.white-gui .muted,
 body.white-gui .battle-meta,
@@ -5799,7 +5799,7 @@ body.white-gui .avatar-option:not(.locked){
   background:#f5f7fa!important;
   border-color:#d5dbe5!important;
   border-bottom-color:#c7ced9!important;
-  color:#172033!important;
+  color:#334155!important;
   box-shadow:0 2px 7px rgba(15,23,42,.06)!important;
   -webkit-backdrop-filter:none!important;
   backdrop-filter:none!important;
@@ -5820,7 +5820,7 @@ body.white-gui .answer-input,
 body.white-gui .text-answer-input{
   background:#fff!important;
   border-color:#cbd5e1!important;
-  color:#111827!important;
+  color:#334155!important;
   -webkit-backdrop-filter:none!important;
   backdrop-filter:none!important;
   box-shadow:none!important;
@@ -5837,7 +5837,7 @@ body.white-gui .answer,
 body.white-gui .club-question,
 body.white-gui .bingo-answer-row input{
   background:#fff!important;
-  color:#111827!important;
+  color:#334155!important;
   border-color:#d8dee8!important;
 }
 body.white-gui .progress,
@@ -5856,47 +5856,213 @@ body.white-gui .club-event-mini span,
 body.white-gui .club-event-milestones>div{
   background:#f8fafc!important;
   border-color:#e2e8f0!important;
-  color:#172033!important;
+  color:#334155!important;
 }
 body.white-gui .gui-bg-thumb.bg-white{background:#fff!important;border:1px solid #cbd5e1!important;}
 body.white-gui #avatarModal .modal-card{background:#fff!important;}
-body.white-gui #avatarModal .modal-close{background:#f5f7fa!important;border-color:#d5dbe5!important;color:#172033!important;}
+body.white-gui #avatarModal .modal-close{background:#f5f7fa!important;border-color:#d5dbe5!important;color:#334155!important;}
 
-/* ===== V15.02 canonical white/high-contrast GUI ===== */
-html,body{background:#fff!important;color:#111827!important}
+/* ===== V15.07 canonical white/high-contrast GUI ===== */
+html,body{background:#fff!important;color:#334155!important}
 body{--user-bg-1:#fff!important;--user-bg-2:#fff!important;--user-bg-3:#fff!important;--gui-bg-image:none!important;background-image:none!important}
 body::before,body::after{background-image:none!important}
-.app{filter:none!important;color:#111827!important}
+.app{filter:none!important;color:#334155!important}
 .card,.panel,.modal-card,.lesson-card,.profile-card,.mainline-wrap,.feature-card,.main-card,.club-pane,.global-answer-card,.friends-panel,.rank-page-panel,.bingo-panel,.study-panel,.battle-panel,.huang-shop-card,.huang-products-panel,.huang-preview-panel{
- background:#fff!important;color:#111827!important;border-color:#cbd5e1!important;box-shadow:0 6px 22px rgba(15,23,42,.08)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important
+ background:#fff!important;color:#334155!important;border-color:#cbd5e1!important;box-shadow:0 6px 22px rgba(15,23,42,.08)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important
 }
 .muted,.mastery-sub,.modal-sub,.huang-shop-sub,.friend-chat-note,.global-answer-sub,.club-sub,.progress-text,.theme-custom-sub,.avatar-unlock-help{color:#475569!important}
 small,label,.club-stage-row label{color:#334155!important}
-input,select,textarea,.study-select,.answer-input,.text-answer-input,.topic-search{background:#fff!important;color:#111827!important;border-color:#94a3b8!important;box-shadow:none!important}
+input,select,textarea,.study-select,.answer-input,.text-answer-input,.topic-search{background:#fff!important;color:#334155!important;border-color:#94a3b8!important;box-shadow:none!important}
 input::placeholder,textarea::placeholder{color:#64748b!important;opacity:1!important}
-button,.tabs button,.top-actions button,.profile-mini,.friends-top-btn,.club-top-btn,.global-top-btn,.rank-top-btn,.help-btn{background:#fff!important;color:#172033!important;border-color:#cbd5e1!important;text-shadow:none!important}
+button,.tabs button,.top-actions button,.profile-mini,.friends-top-btn,.club-top-btn,.global-top-btn,.rank-top-btn,.help-btn{background:#fff!important;color:#334155!important;border-color:#cbd5e1!important;text-shadow:none!important}
 button.primary,.tabs button.active,.top-actions button.active{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
 button:disabled,.feature-locked,.mainline-nav-locked{color:#64748b!important;background:#f1f5f9!important;opacity:.66!important}
 /* Never allow old font-gradient rules to turn white-background titles transparent. */
 h1,h2,h3,.mainline-title,.path-detail-title,.huang-preview-name,.panel-title,.section-title,.modal-title,.avatar-section-title,.huang-shop-title,.club-title,.rank-list-head b,.global-answer-head b{
- color:#111827!important;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;-webkit-text-fill-color:#111827!important;text-shadow:none!important
+ color:#334155!important;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;-webkit-text-fill-color:#334155!important;text-shadow:none!important
 }
-#challengeDock,.challenge-dock,.daily-challenge{background:#fff!important;color:#111827!important;border-color:#cbd5e1!important}
+#challengeDock,.challenge-dock,.daily-challenge{background:#fff!important;color:#334155!important;border-color:#cbd5e1!important}
 #challengeDock .muted,#challengeDock small,#challengeDock span{color:#334155!important}
-.rankrow{border-bottom-color:#e2e8f0!important;color:#111827!important}.rank-avatar{background:#f8fafc!important;border-color:#cbd5e1!important}.rank-name{color:#111827!important}
-#club,.club-pane,#club .panel{color:#111827!important}#club .muted{color:#475569!important}
-#global,.global-answer-card{color:#111827!important}
-.question,.math-display,#q{color:#111827!important;background:#fff!important;border-color:#d7dee8!important}
-#practiceBox,#practiceWorkArea,.native-answer-wrap,.text-answer-wrap{background:#fff!important;color:#111827!important}
-.feedback{color:#111827!important}
-/* Mainline path itself remains a game map, but surrounding GUI is white. */
+.rankrow{border-bottom-color:#e2e8f0!important;color:#334155!important}.rank-avatar{background:#f8fafc!important;border-color:#cbd5e1!important}.rank-name{color:#334155!important}
+#club,.club-pane,#club .panel{color:#334155!important}#club .muted{color:#475569!important}
+#global,.global-answer-card{color:#334155!important}
+.question,.math-display,#q{color:#334155!important;background:#fff!important;border-color:#d7dee8!important}
+#practiceBox,#practiceWorkArea,.native-answer-wrap,.text-answer-wrap{background:#fff!important;color:#334155!important}
+.feedback{color:#334155!important}
+/* Mainline path is also part of the pure-white GUI. */
 body.white-gui{background:#fff!important;background-image:none!important}
 .gui-background-panel,.gui-bg-grid,.bg-custom-card{display:none!important}
 
+
+
+/* ===== V15.07 complete pure-white pass =====
+   Mainline map + daily challenge now follow the white GUI too. */
+body.white-gui .path-mainline-card,
+body.white-gui .path-mainline-scroll,
+body.white-gui .path-mainline-inner,
+body.white-gui #mainlineMap,
+body.white-gui .path-mainline-wrap{
+  background:#fff!important;
+  background-image:none!important;
+  color:#334155!important;
+  border-color:#cbd5e1!important;
+  box-shadow:0 6px 22px rgba(15,23,42,.08)!important;
+}
+body.white-gui .path-mainline-card::before,
+body.white-gui .path-mainline-hills{
+  display:none!important;
+  background:none!important;
+}
+body.white-gui .path-mainline-scroll::-webkit-scrollbar-thumb{
+  background:#cbd5e1!important;
+}
+body.white-gui .path-mainline-road .road-shadow{
+  stroke:#e5e7eb!important;
+  opacity:1!important;
+}
+body.white-gui .path-mainline-road .road,
+body.white-gui .path-mainline-road .road-seg-base{
+  stroke:#cbd5e1!important;
+  opacity:1!important;
+  filter:none!important;
+}
+body.white-gui .path-mainline-road .road-light{
+  stroke:#e2e8f0!important;
+  opacity:1!important;
+}
+body.white-gui .path-mainline-road .road-dash{
+  stroke:#94a3b8!important;
+  opacity:.9!important;
+}
+body.white-gui .path-mainline-road .road-seg-done{
+  stroke:#60a5fa!important;
+  filter:none!important;
+}
+body.white-gui .path-node-label{
+  background:#fff!important;
+  color:#334155!important;
+  border:1px solid #d7dee8!important;
+  text-shadow:none!important;
+  box-shadow:0 2px 8px rgba(15,23,42,.08)!important;
+}
+body.white-gui .path-node.locked .path-node-label{
+  color:#64748b!important;
+}
+body.white-gui .path-map-hint,
+body.white-gui .path-swipe-hint,
+body.white-gui .path-detail-position{
+  background:#fff!important;
+  color:#334155!important;
+  border-color:#d7dee8!important;
+  text-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+body.white-gui .path-node-btn{
+  box-shadow:0 5px 14px rgba(15,23,42,.16),inset 0 2px 4px rgba(255,255,255,.45)!important;
+}
+body.white-gui .path-node.locked .path-node-btn,
+body.white-gui .path-node-btn.mainline-node-locked{
+  background:#f1f5f9!important;
+  color:#64748b!important;
+  border-color:#cbd5e1!important;
+  box-shadow:0 4px 10px rgba(15,23,42,.08)!important;
+}
+body.white-gui .challenge-dock,
+body.white-gui #challengeDock{
+  background:#fff!important;
+  background-image:none!important;
+  color:#334155!important;
+  border:2px solid #cbd5e1!important;
+  box-shadow:0 6px 18px rgba(15,23,42,.08)!important;
+}
+body.white-gui .challenge-title,
+body.white-gui .challenge-item-top b{
+  color:#334155!important;
+}
+body.white-gui .challenge-sub,
+body.white-gui .challenge-item-top span{
+  color:#475569!important;
+}
+body.white-gui .challenge-count{
+  background:#f1f5f9!important;
+  color:#334155!important;
+  border:1px solid #cbd5e1!important;
+}
+body.white-gui .challenge-item{
+  border-top-color:#e2e8f0!important;
+}
+body.white-gui .challenge-bar{
+  background:#e5e7eb!important;
+  border:1px solid #d1d5db!important;
+}
+body.white-gui .challenge-bar i{
+  background:#3b82f6!important;
+}
+body.white-gui .challenge-complete{
+  background:#f0fdf4!important;
+  border-color:#86efac!important;
+  color:#166534!important;
+}
+body.white-gui .challenge-dock.all-done{
+  border-color:#86efac!important;
+}
+
+/* ===== V15.07 canonical all-white GUI + club layout repair ===== */
+body.white-gui .mainline-detail-card,body.white-gui .unlock-announce-card,body.white-gui .club-room,body.white-gui .club-room-top,body.white-gui .club-wall,body.white-gui .club-blackboard,body.white-gui .club-floor,body.white-gui .club-event-hero,body.white-gui .mega-tower-body,body.white-gui .mega-floor,body.white-gui .mega-floor.current,body.white-gui .infinite-terminal,body.white-gui .infinite-substats span,body.white-gui .friend-code-box,body.white-gui .friends-block,body.white-gui .friend-row,body.white-gui .friend-chat-head,body.white-gui .friend-chat-messages,body.white-gui .bingo-card,body.white-gui .battle-card,body.white-gui .battle-game,body.white-gui .battle-question,body.white-gui .lesson-only,body.white-gui .unit-complete{background:#fff!important;background-image:none!important;color:#334155!important;border-color:#cbd5e1!important;text-shadow:none!important;box-shadow:0 5px 18px rgba(15,23,42,.07)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+body.white-gui .mainline-detail-modal,body.white-gui .unlock-announce{background:rgba(241,245,249,.88)!important;backdrop-filter:blur(5px)!important}
+body.white-gui .mainline-detail-card .sub,body.white-gui .mainline-detail-card .position,body.white-gui .mainline-detail-card .desc,body.white-gui .mainline-detail-card .mini-note,body.white-gui .unlock-announce-desc{color:#475569!important}
+body.white-gui .mainline-detail-card .desc,body.white-gui .mainline-detail-card .meta>div{background:#f8fafc!important;border:1px solid #e2e8f0!important}
+body.white-gui .mainline-detail-card .meta b{color:#64748b!important}.mainline-enter-confirm{margin-top:12px;padding:11px 13px;border-radius:13px;background:#eff6ff;color:#1e3a8a;font-weight:900;border:1px solid #bfdbfe;text-align:center}
+#club .club-shell{overflow:visible!important}#club .club-head{align-items:flex-start!important;flex-wrap:wrap!important}#club .club-join-card{background:#fff!important;border-color:#cbd5e1!important;color:#334155!important}#club .club-form-row{display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;gap:10px!important;align-items:center!important}#club .club-stage-row{grid-template-columns:auto 110px minmax(0,1fr)!important}#club .club-form-row button{min-width:96px!important;white-space:nowrap!important}
+#club .club-room{margin-top:14px!important;border:1px solid #cbd5e1!important;border-radius:18px!important;overflow:hidden!important}#club .club-room-top{padding:13px 15px!important;border-bottom:1px solid #e2e8f0!important}#club .club-room-top,#club .club-room-top *{color:#334155!important}#club .club-wall{height:auto!important;min-height:0!important;padding:12px 14px!important;display:flex!important;align-items:center!important;gap:12px!important;border-bottom:1px solid #e2e8f0!important}#club .club-blackboard{width:auto!important;max-width:none!important;flex:1!important;height:auto!important;min-height:64px!important;padding:11px 13px!important;background:#f8fafc!important;border:1px solid #dbe3ee!important;border-radius:12px!important;color:#334155!important;box-shadow:none!important}#club .club-blackboard span{color:#475569!important;margin-top:6px!important}#club .club-trophy{position:static!important;font-size:34px!important;flex:0 0 auto!important}#club .club-floor{height:auto!important;min-height:110px!important;padding:12px!important;display:grid!important;place-items:center!important;perspective:none!important}#club .club-floor::before{display:none!important}#club .club-huang{position:static!important;left:auto!important;bottom:auto!important;transform:none!important;display:grid!important;place-items:center!important}#club .club-huang.bounce{transform:translateY(-8px) scale(1.04)!important}#club .club-huang span{font-size:58px!important;filter:drop-shadow(0 5px 4px rgba(15,23,42,.15))!important}#club .club-huang b,#club .club-huang small{background:#f8fafc!important;color:#334155!important;border:1px solid #e2e8f0!important}
+#club .club-tabs{display:flex!important;grid-template-columns:none!important;gap:8px!important;overflow-x:auto!important;padding:2px 1px 6px!important;scrollbar-width:thin!important}#club .club-tabs button{flex:1 0 108px!important;min-width:108px!important;padding:10px 9px!important}#club .club-tabs button.active{outline:none!important;background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}#club .club-pane{overflow:hidden!important;padding:15px!important;background:#fff!important}#club .club-stats{grid-template-columns:repeat(3,minmax(0,1fr))!important}#club .club-stats>div{background:#f8fafc!important;border:1px solid #e2e8f0!important}#club .club-event-hero{background:#fff!important;border-color:#cbd5e1!important;box-shadow:none!important}#club .club-event-hero small,#club .club-event-hero strong,#club .club-event-hero em{color:#334155!important}#club .club-event-badge{background:#f0fdf4!important;color:#166534!important;border-color:#86efac!important}#club .club-question{min-height:72px!important;background:#fff!important;color:#334155!important;border:1px solid #cbd5e1!important;box-shadow:none!important}#club .club-member{align-items:center!important;flex-wrap:wrap!important;background:#f8fafc!important;border:1px solid #e2e8f0!important}#club .club-member span{color:#475569!important}
+body.white-gui .mega-tower-spire,body.white-gui .infinite-spire{background:#f8fafc!important;color:#334155!important;text-shadow:none!important;filter:none!important}body.white-gui .mega-tower-body{border-color:#94a3b8!important}body.white-gui .mega-floor{border-top-color:#dbe3ee!important}body.white-gui .mega-floor span,body.white-gui .mega-current-arrow,body.white-gui .infinite-terminal small{color:#475569!important;filter:none!important}body.white-gui .mega-floor.current b,body.white-gui .infinite-terminal strong{color:#334155!important}body.white-gui .infinite-terminal{border-color:#94a3b8!important}body.white-gui .infinite-terminal em{color:#2563eb!important}
+.practice-choice-wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:10px 0}.practice-choice-wrap.hidden{display:none!important}.practice-choice-btn{min-height:52px!important;padding:10px 12px!important;border-radius:12px!important;background:#fff!important;color:#334155!important;border:1px solid #94a3b8!important;font-weight:850!important;white-space:normal!important;line-height:1.35!important}.practice-choice-btn:active{transform:scale(.985)}.answer-locked .practice-choice-btn{pointer-events:none!important;opacity:.55!important}
+@media(max-width:700px){#club .club-form-row{grid-template-columns:minmax(0,1fr) auto!important}#club .club-stage-row{grid-template-columns:auto 92px minmax(0,1fr)!important}#club .club-stats{grid-template-columns:1fr!important}#club .club-wall{align-items:stretch!important}#club .club-trophy{display:grid!important;place-items:center!important}.practice-choice-wrap{grid-template-columns:1fr!important}}
+
+/* ===== V15.07 question-bank expansion =====
+   Fresh run seeds: replaying a unit no longer repeats the same deterministic ten questions.
+   Club 10³ tower: 24 early / 36 later procedural families with anti-repeat.
+   Root event: 10–24 families by progress with anti-repeat.
+   Advanced concept topics: hand-written bank + generated definition/name choices. */
 </style>
 <meta name="theme-color" content="#ffffff">
-<!-- V15.02 deploy: single-file; upload index.html only. -->
-<!-- V15.02 reliability cleanup: visible async sync failures; corrected flower SQL guidance. -->
+<!-- V15.07 deploy: single-file; upload index.html only. -->
+<!-- V15.07 reliability cleanup: visible async sync failures; corrected flower SQL guidance. -->
+
+<style id="v1506-mainline-stars">
+/* V15.07 — mainline 5/10/20 question star progression */
+.path-node-stars{margin-top:4px;font-size:13px;line-height:1;letter-spacing:1px;color:#f3b61f;font-weight:950;text-shadow:0 1px 0 #fff}
+.path-node.locked .path-node-stars{opacity:.35;filter:grayscale(1)}
+.mainline-detail-stars{color:#f2b51d!important;font-size:19px!important;letter-spacing:2px;font-weight:950!important}
+.mainline-star-earned{display:inline-block;margin-top:6px;color:#9a6500;font-weight:950;font-size:15px}
+@media(max-width:700px){.path-node-stars{font-size:12px;letter-spacing:.5px}.mainline-detail-stars{font-size:17px!important}}
+</style>
+
+<style id="v1507-soft-text">
+/* V15.07 — softer slate typography on the pure-white GUI. */
+html,body,body.white-gui,.app{color:#334155!important}
+body.white-gui h1,body.white-gui h2,body.white-gui h3,
+body.white-gui .question,body.white-gui .question.plain-question,
+body.white-gui .mainline-title,body.white-gui .path-detail-title,
+body.white-gui .panel-title,body.white-gui .section-title,body.white-gui .modal-title,
+body.white-gui .club-title,body.white-gui .rank-name,body.white-gui #unit,
+body.white-gui .challenge-title,body.white-gui .challenge-item-top b{
+  color:#2f4057!important;-webkit-text-fill-color:#2f4057!important;text-shadow:none!important
+}
+body.white-gui p,body.white-gui span,body.white-gui label,body.white-gui small,
+body.white-gui .club-question,body.white-gui .club-member,body.white-gui .rankrow,
+body.white-gui .lesson-example,body.white-gui .lesson-formula,body.white-gui .lesson-work{color:#415269!important}
+body.white-gui .muted,body.white-gui .modal-sub,body.white-gui .club-sub,
+body.white-gui .challenge-sub,body.white-gui .challenge-item-top span,body.white-gui .progress-text{color:#66758a!important}
+body.white-gui input,body.white-gui select,body.white-gui textarea,body.white-gui .study-select,
+body.white-gui .answer-input,body.white-gui .text-answer-input{color:#3b4b61!important}
+body.white-gui button:not(.primary):not(.active){color:#3b4b61!important}
+/* Primary blue buttons keep white labels for contrast. */
+body.white-gui button.primary,body.white-gui .tabs button.active,body.white-gui .top-actions button.active{color:#fff!important;-webkit-text-fill-color:#fff!important}
+</style>
+
 </head>
 <body><div class="app">
 
@@ -5912,7 +6078,7 @@ body.white-gui{background:#fff!important;background-image:none!important}
 <div id="game" class="hidden">
 
 <div class="app-title-row">
-  <h1>Math Free Learning <span class="version-badge">V15.02</span></h1>
+  <h1>Math Free Learning <span class="version-badge">V15.07</span></h1>
   <div class="top-actions">
     <button id="shopBtn" type="button" class="coin-shop-btn" onclick="openHuangShop()" aria-label="開啟黃黃商店">
       <img id="topCoinIcon" class="coin-icon" alt="" aria-hidden="true">
@@ -5966,6 +6132,7 @@ body.white-gui{background:#fff!important;background-image:none!important}
   <input id="textAnswerInput" class="text-answer-input" enterkeyhint="done" autocomplete="off" autocapitalize="off" placeholder="輸入答案">
   <button id="textAnswerSubmitBtn" type="button" class="primary answer-submit-btn" onclick="submit()" aria-label="送出答案">回答</button>
 </div>
+<div id="choiceAnswerWrap" class="practice-choice-wrap hidden" aria-label="選擇答案"></div>
 <div id="lessonOnlyWrap" class="lesson-only hidden"><b>📖 這個單元先用教學與完整例題學習</b><div class="muted">已刪除「輸入目前主題名稱」這種沒有學習價值的題目。</div><button type="button" onclick="showLesson()">打開教學與例題 →</button></div>
 <div class="feedback" id="fb"></div>
 <div id="unitCompleteWrap" class="unit-complete hidden">
@@ -5973,7 +6140,7 @@ body.white-gui{background:#fff!important;background-image:none!important}
   <div class="unit-complete-title">✅ 單元完成</div>
   <div id="unitCompleteScore" class="unit-complete-score"></div>
   <div class="unit-complete-actions">
-    <button id="restartUnitBtn" type="button" onclick="restartUnit()">再做 10 題</button>
+    <button id="restartUnitBtn" type="button" onclick="restartUnit()">再挑戰</button>
     <button id="mainlineMapBtn" type="button" class="hidden" onclick="goMainline()">🧭 主線地圖</button>
     <button id="mainlineNextBtn" type="button" class="hidden" onclick="continueMainline()">下一關 →</button>
   </div>
@@ -6359,7 +6526,7 @@ const categoryNames=["國小","國中","高中","大學核心","超運算","集�
 
 const BUILD_CHANNEL="official";
 
-let s={name:"",tab:"line",t:0,u:0,q:0,input:"",right:0,wrong:0,studyInput:"",practiceN:0,wrongs:[],reviewIndex:-1,level:0,visited:[],category:"國小",avatarType:"symbol",avatarSymbol:"∫",avatarImage:"",avatarProgress:{},avatarStyles:{},coins:0,customBgUnlocked:false,customBgColors:["#223758","#111b2c","#0b1220"],guiBackground:"white",whiteGuiV1500Migrated:false,ownedHuangDecor:["none"],huangDecor:"none",ownedHuangColors:["yellow"],huangColor:"yellow",mainlineActive:false,mainlineStage:0,mainlineExamActive:false,mainlineExamStage:-1,examScores:{},examScheduleVersion:2,dailyChallenge:{date:"",correct:0,streak:0,bestStreak:0,playSeconds:0,rewardClaimed:false},bingo:null,dailyRewardRerollTickets:0,flowerInventory:{},flowerGiftSeen:[],flowerBoxes:0,flowerServerMigrated:false,flowerSyncing:false};
+let s={name:"",tab:"line",t:0,u:0,q:0,input:"",right:0,wrong:0,studyInput:"",practiceN:0,wrongs:[],reviewIndex:-1,level:0,visited:[],category:"國小",avatarType:"symbol",avatarSymbol:"∫",avatarImage:"",avatarProgress:{},avatarStyles:{},coins:0,customBgUnlocked:false,customBgColors:["#223758","#111b2c","#0b1220"],guiBackground:"white",whiteGuiV1500Migrated:false,ownedHuangDecor:["none"],huangDecor:"none",ownedHuangColors:["yellow"],huangColor:"yellow",mainlineActive:false,mainlineStage:0,mainlineRunQuestionLimit:0,mainlineStars:{},mainlineExamActive:false,mainlineExamStage:-1,examScores:{},examScheduleVersion:2,dailyChallenge:{date:"",correct:0,streak:0,bestStreak:0,playSeconds:0,rewardClaimed:false},bingo:null,dailyRewardRerollTickets:0,flowerInventory:{},flowerGiftSeen:[],flowerBoxes:0,flowerServerMigrated:false,flowerSyncing:false};
 let players=[];
 const SAVE_KEY="mathFreeLearningSaveV12";
 const SUPABASE_URL="https://dgxkrfuidadpamwihmhl.supabase.co";
@@ -6633,7 +6800,7 @@ async function loadRanks(){
  }catch(e){
    console.warn("排行榜讀取失敗",e);
    players=[];renderRanksLocal();
-   const el=$("ranks");if(el)el.innerHTML='<div class="muted">⚠️ 排行榜同步失敗，請執行 V15.02 修復 SQL。</div>'
+   const el=$("ranks");if(el)el.innerHTML='<div class="muted">⚠️ 排行榜同步失敗，請確認最新版排行榜 / 計分 SQL 已執行。</div>'
  }
 }
 
@@ -6725,7 +6892,7 @@ const AVATAR_SPECS=[
  {s:"Ric",c1:"#7f1d1d",c2:"#be123c",need:100,label:"里奇曲率",match:/Ricci|標量曲率|黎曼幾何/},
  {s:"χ",c1:"#ca8a04",c2:"#f59e0b",need:100,label:"歐拉示性數",match:/Gauss–Bonnet|Euler|同調|拓撲/},
  {s:"κ",c1:"#0f766e",c2:"#06b6d4",need:100,label:"基數 / 曲率",match:/基數|不可達基數|Mahlo|曲率/},
- {s:"BB",c1:"#111827",c2:"#ef4444",need:100,label:"忙碌海狸",match:/Busy Beaver|可計算性|停機問題/},
+ {s:"BB",c1:"#334155",c2:"#ef4444",need:100,label:"忙碌海狸",match:/Busy Beaver|可計算性|停機問題/},
  {s:"TREE",c1:"#14532d",c2:"#84cc16",need:100,label:"樹數（3）",match:/TREE\\(3\\)|巨大數|Fast-growing/}];
 
 const AVATAR_SYMBOLS=AVATAR_SPECS.map(x=>x.s);
@@ -7031,11 +7198,11 @@ function huangDecorArt(id){
       return `<img class="decor-generated-art" src="${HUANG_DECOR_ASSETS.glasses}" alt="">`;
     case "sunglasses":
       return `<svg viewBox="0 0 220 100" aria-hidden="true">
-        <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#475569"/><stop offset=".35" stop-color="#111827"/><stop offset="1" stop-color="#020617"/></linearGradient></defs>
+        <defs><linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#475569"/><stop offset=".35" stop-color="#334155"/><stop offset="1" stop-color="#020617"/></linearGradient></defs>
         <path d="M8 22 Q22 11 51 13 H89 Q103 14 110 29 Q117 14 131 13 H169 Q198 11 212 22 L202 65 Q197 87 167 89 H142 Q120 87 113 66 L110 56 L107 66 Q100 87 78 89 H53 Q23 87 18 65Z" fill="#05070b" stroke="#64748b" stroke-width="6"/>
         <path d="M27 28 H87 Q99 30 101 43 L96 63 Q92 76 75 78 H52 Q35 77 31 65Z" fill="url(#sg)"/>
         <path d="M133 28 H193 L189 65 Q185 77 168 78 H145 Q128 76 124 63 L119 43 Q121 30 133 28Z" fill="url(#sg)"/>
-        <path d="M101 38 Q110 31 119 38" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>
+        <path d="M101 38 Q110 31 119 38" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round"/>
         <path d="M42 35 Q55 25 72 28" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="7" stroke-linecap="round"/>
         <path d="M148 35 Q161 25 178 28" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="7" stroke-linecap="round"/>
       </svg>`;
@@ -7453,18 +7620,18 @@ const ONBOARDING_PAGES=[
     body:()=>`
       <div class="onboard-big">🧭</div>
       <div class="onboard-lead">所有單元都已經排進主線，不用另外找「課程」。</div>
-      <div class="onboard-text">一般關 10 題；熟練度達 70% 才能往下一關。第 16、48、80… 關後是 😡 期中考；第 32、64、96… 關後改成 💀 期末考，不會同時出兩個考試。</div>
+      <div class="onboard-text">一般關第一次只要 5 題；達 70% 就通關並拿第 1 顆星。再挑戰 10 題可拿第 2 顆、20 題可拿第 3 顆。第 16、48、80… 關後是 😡 期中考；第 32、64、96… 關後改成 💀 期末考。</div>
       <div class="onboard-demo">
         <div class="onboard-demo-title">主線流程</div>
-        <div class="onboard-flow"><div>目前關卡</div><div class="onboard-arrow">↓</div><div>完成 10 題</div><div class="onboard-arrow">↓</div><div>熟練度 ≥70%</div><div class="onboard-arrow">↓</div><div>下一關</div></div>
+        <div class="onboard-flow"><div>目前關卡</div><div class="onboard-arrow">↓</div><div>第一次完成 5 題</div><div class="onboard-arrow">↓</div><div>熟練度 ≥70%</div><div class="onboard-arrow">↓</div><div>下一關</div></div>
       </div>`
   },
   {
-    title:"② 一個單元固定 10 題",
+    title:"② 主線 5 → 10 → 20 題星星制",
     body:()=>`
       <div class="onboard-big">✏️</div>
-      <div class="onboard-lead">每次進入單元會開始一輪 10 題。</div>
-      <div class="onboard-text">上方會顯示「第幾題 / 10」和答題進度條。第 10 題完成後會顯示這輪成績。</div>
+      <div class="onboard-lead">主線第一次挑戰 5 題；通關後可用 10 題挑戰第 2 顆星，再用 20 題挑戰第 3 顆星。</div>
+      <div class="onboard-text">上方會依本次星星挑戰顯示「第幾題 / 5、10 或 20」和進度條。完成後會顯示本輪成績與星星。</div>
       <div class="onboard-demo">
         <div class="onboard-demo-title">例：目前完成 12 / 30</div>
         <div class="onboard-progress"><div></div></div>
@@ -7500,7 +7667,7 @@ const ONBOARDING_PAGES=[
     body:()=>`
       <div class="onboard-big">📈</div>
       <div class="onboard-lead">「進度」是這一輪做了幾題；「熟練度」是這個單元的最佳表現。</div>
-      <div class="onboard-text">做完 10 題後，答對 8 題就是本輪 80%。熟練度採最佳紀錄，所以之後失常一次，不會把原本高熟練度扣掉。</div>
+      <div class="onboard-text">第一次 5 題答對 4 題就是 80%，可通關並拿第 1 顆星。熟練度採最佳紀錄，所以之後失常一次，不會把原本高熟練度扣掉。</div>
       <div class="onboard-checks"><div>0%：未練習</div><div>70%：熟練</div><div>90%：非常熟練</div><div>100%：精通 👑</div></div>`
   },
   {
@@ -7534,7 +7701,7 @@ const ONBOARDING_PAGES=[
       <div class="onboard-big">🚀</div>
       <div class="onboard-lead">現在你已經知道整個網站怎麼用了。</div>
       <div class="onboard-text">第一次直接從「🧭 主線」的目前關卡開始；不會的題目就打開教學，再繼續往下一關。</div>
-      <div class="onboard-checks"><div>1. 不知道從哪學 → 打開「🧭 主線」，全部單元都排在裡面</div><div>2. 一般關 10 題；每 16 關一次期中考、每 32 關一次期末考，兩者都 30 題</div><div>3. 考試前面的所有指定關卡都要 ≥70%，考試本身也要 ≥70%</div><div>4. 不會就看教學與錯題複習</div><div>5. 熟悉後再玩對戰</div></div>
+      <div class="onboard-checks"><div>1. 不知道從哪學 → 打開「🧭 主線」，全部單元都排在裡面</div><div>2. 一般關採 5 → 10 → 20 題星星制；每 16 關一次期中考、每 32 關一次期末考，考試仍是 30 題</div><div>3. 考試前面的所有指定關卡都要 ≥70%，考試本身也要 ≥70%</div><div>4. 不會就看教學與錯題複習</div><div>5. 熟悉後再玩對戰</div></div>
       <div class="onboard-rule">只有完成這一頁後，新手教學才會標記為「已看完」。之後仍可按右上「❓ 新手教學」重看。</div>`
   }
 ];
@@ -7695,7 +7862,30 @@ function textQ(prompt,ans,aliases=[],solution=null){
  const q=qobj(prompt,ans,"text",prompt,null,aliases,solution);q.plainPrompt=true;return q
 }
 function shortQ(tex,ans,choices,solution=null){
- const q=qobj(tex,ans,"text",null,null,[],solution);q.plainPrompt=false;return q
+ const opts=Array.isArray(choices)?choices.map(x=>String(x)).filter(Boolean):[];
+ const q=qobj(tex,ans,opts.length>=2?"choice":"text",null,opts,[],solution);
+ q.plainPrompt=false;return q
+}
+function plainChoiceQ(prompt,ans,choices,solution=null){
+ const opts=Array.isArray(choices)?choices.map(x=>String(x)).filter(Boolean):[];
+ const q=qobj(prompt,ans,"choice",prompt,opts,[],solution);q.plainPrompt=true;return q
+}
+function shuffleByR(list,r){
+ const a=[...list];for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a
+}
+function conceptDefinitionVariant(topic,r){
+ const def=CONCEPT_DEFS[topic];if(!def)return null;
+ const keys=Object.keys(CONCEPT_DEFS).filter(k=>k!==topic);
+ const wrongTopics=[];const seen=new Set([topic]);
+ for(let guard=0;guard<100&&wrongTopics.length<3;guard++){const k=keys[Math.floor(r()*keys.length)];if(k&&!seen.has(k)){seen.add(k);wrongTopics.push(k)}}
+ const kind=Math.floor(r()*3);
+ if(kind===0){
+   return plainChoiceQ(`下面這個定義是在描述哪個概念？\n${def}`,topic,shuffleByR([topic,...wrongTopics],r))
+ }
+ const wrongDefs=wrongTopics.map(k=>CONCEPT_DEFS[k]).filter(Boolean);
+ const choices=shuffleByR([def,...wrongDefs],r);
+ if(kind===1)return plainChoiceQ(`「${displayTopicName(topic)}」最符合哪個敘述？`,def,choices);
+ return plainChoiceQ(`下列哪個敘述是在說「${displayTopicName(topic)}」？`,def,choices)
 }
 function symbolQ(tex,ans,aliases=[],solution=null){return qobj(tex,ans,"symbol",null,null,aliases,solution)}
 
@@ -7706,10 +7896,13 @@ function symbolQ(tex,ans,aliases=[],solution=null){return qobj(tex,ans,"symbol",
 
 function makeConceptQuestion(topic,t,r){
  const bank=SPECIAL_BANKS[topic];
+ const generated=conceptDefinitionVariant(topic,r);
+ if(generated&&(!bank||!bank.length||r()<0.48))return generated;
  if(bank&&bank.length){
    const row=bank[Math.floor(r()*bank.length)];
-   return shortQ(row[0],row[1],row[2]||[])
+   return shortQ(row[0],row[1],shuffleByR(row[2]||[],r))
  }
+ if(generated)return generated;
  return lessonQ(topic)
 }
 
@@ -8504,6 +8697,8 @@ function initStateExtras(){
  if(s.tab==="main")s.tab="line";
  if(typeof s.mainlineActive!=="boolean")s.mainlineActive=false;
  if(!Number.isInteger(s.mainlineStage))s.mainlineStage=0;
+ if(!Number.isInteger(s.mainlineRunQuestionLimit)||s.mainlineRunQuestionLimit<0)s.mainlineRunQuestionLimit=0;
+ if(!s.mainlineStars||typeof s.mainlineStars!=="object"||Array.isArray(s.mainlineStars))s.mainlineStars={};
  if(typeof s.mainlineExamActive!=="boolean")s.mainlineExamActive=false;
  if(!Number.isInteger(s.mainlineExamStage))s.mainlineExamStage=-1;
  if(!s.examScores||typeof s.examScores!=="object"||Array.isArray(s.examScores))s.examScores={};
@@ -8512,7 +8707,7 @@ function initStateExtras(){
    s.examScores={};
    s.examScheduleVersion=2
  }
- // V15.02: keep the current exam run + best exam scores.
+ // V15.07: keep the current exam run + best exam scores.
  // Older builds deleted these on every initStateExtras() call, which made
  // midterm/final progress and pass records disappear while navigating UI.
  if(typeof s.mainlineExamActive!=="boolean")s.mainlineExamActive=false;
@@ -8704,6 +8899,35 @@ function mainlineMastered(i){
  if(n.exam)return examScore(n)>=70;
  return masteryValue(n.t,n.u)>=70
 }
+function mainlineStarKey(i){return String(Math.max(0,Number(i)||0))}
+function mainlineStarCount(i){
+ const n=MAINLINE[i];
+ if(!n||n.exam)return 0;
+ if(!s.mainlineStars||typeof s.mainlineStars!=="object"||Array.isArray(s.mainlineStars))s.mainlineStars={};
+ const key=mainlineStarKey(i);
+ const raw=Number(s.mainlineStars[key]);
+ if(Number.isFinite(raw))return Math.max(0,Math.min(3,Math.floor(raw)));
+ // V15.07 migration: an old save that already passed a stage starts with its first star.
+ return mainlineMastered(i)?1:0
+}
+function mainlineStarText(i){
+ const n=MAINLINE[i];if(!n||n.exam)return "";
+ const got=mainlineStarCount(i);
+ return `${"★".repeat(got)}${"☆".repeat(3-got)}`
+}
+function mainlineRequiredQuestions(i){
+ const n=MAINLINE[i];
+ if(n?.exam)return EXAM_QUESTIONS;
+ const stars=mainlineStarCount(i);
+ if(stars<=0)return 5;
+ if(stars===1)return 10;
+ return 20
+}
+function mainlineNextStarLabel(i){
+ const stars=mainlineStarCount(i);
+ if(stars>=3)return "★★★ 已滿星";
+ return `第 ${stars+1} 顆星 · ${mainlineRequiredQuestions(i)} 題`
+}
 function examPrereqsMet(stage){
  if(!stage?.exam)return false;
  const expected=stage.examType==="final"?32:16;
@@ -8821,8 +9045,13 @@ function pathStageDescription(n,i,ctx,mv){
       ? `這個${n.examType==="final"?"期末考":"期中考"}已通過，目前最佳成績 ${mv}%。`
       : `這是${n.examType==="final"?"期末考":"期中考"}，共 30 題，成績要到 70% 才算通過。`;
   }
-  if(ctx.current)return "這就是你現在的主線關卡。完成題目，把熟練度練到 70% 以上，就可以往下一關前進。";
-  if(ctx.done)return `這一關已通過，熟練度 ${mv}%。可以再回來重練。`;
+  if(ctx.current)return `這就是你現在的主線關卡。第一次只要 ${mainlineRequiredQuestions(i)} 題；達到 70% 以上可通關並拿到第 1 顆星。`;
+  if(ctx.done){
+    const stars=mainlineStarCount(i);
+    return stars>=3
+      ? `這一關已通過，熟練度 ${mv}%，而且已經拿滿 ★★★。`
+      : `這一關已通過，熟練度 ${mv}%。下一次完成 ${mainlineRequiredQuestions(i)} 題並達 70% 可拿第 ${stars+1} 顆星。`;
+  }
   return `這一關已解鎖，目前熟練度 ${mv}%。`;
 }
 
@@ -8919,6 +9148,7 @@ function renderMainline(){
 
   const renderKey=[
     currentNow,selected,cleared,selectedMv,
+    MAINLINE.map((n,i)=>n.exam?"E":mainlineStarCount(i)).join(""),
     String(s.huangColor||""),String(s.huangDecor||""),
     mainlineJumpIndex>=0?mainlineJumpIndex:""
   ].join("|");
@@ -8953,6 +9183,7 @@ function renderMainline(){
         <span class="${ctx.unlocked?"path-node-badge":"path-node-lock"}">${esc(badge)}</span>
       </button>
       <div class="path-node-label">${esc(n.title)}</div>
+      ${n.exam?"":`<div class="path-node-stars" aria-label="${mainlineStarCount(i)} 顆星">${mainlineStarText(i)}</div>`}
     </div>`;
     if(i===currentNow){
       currentCluster=`<div class="path-current-cluster" style="left:${x}%;--cluster-top:${Math.max(16,y-44)}px">
@@ -8971,7 +9202,7 @@ function renderMainline(){
 
   map.innerHTML=`<div class="path-mainline-wrap">
     <div class="path-mainline-card">
-      <div class="path-map-hint">點一下直接開始 · 長按看詳細</div>
+      <div class="path-map-hint">點一下查看關卡 · 按「進入」才開始 · 長按看詳細</div>
       <div class="path-mainline-scroll" id="mainlinePathScroll">
         <div class="path-mainline-inner" style="height:${totalHeight}px">
           <div class="path-mainline-hills"></div>
@@ -9056,16 +9287,12 @@ function handleMainlineNodeTap(i,ev){
    ev?.preventDefault?.();
    return false
  }
- if(!mainlineUnlocked(i)){
-   showMainlineStageDetail(i);
-   return false
- }
  s.mainlineSelected=i;
  s.mainlineViewIndex=i;
  mainlineJumpIndex=i;
  renderMainline();
  setTimeout(()=>scrollMainlineNodeIntoView(i,"smooth"),20);
- startMainlineStage(i);
+ showMainlineStageDetail(i);
  return false
 }
 function mainlineStageMetaText(i){
@@ -9083,7 +9310,8 @@ function showMainlineStageDetail(i){
  const modal=$("mainlineStageDetailModal");
  const body=$("mainlineStageDetailBody");
  if(!modal||!body)return;
- const buttonText=!ctx.unlocked?"尚未解鎖":ctx.done?(n.exam?"重新挑戰":"重新開始"):n.exam?(n.examType==="final"?"挑戰期末考":"挑戰期中考"):"開始這關";
+ const stars=n.exam?0:mainlineStarCount(i);
+ const buttonText=!ctx.unlocked?"尚未解鎖":ctx.done?(n.exam?"重新挑戰":stars>=3?"再練這關":`挑戰第 ${stars+1} 顆星`):n.exam?(n.examType==="final"?"挑戰期末考":"挑戰期中考"):"開始這關";
  body.innerHTML=`<div class="mainline-detail-card">
    <div class="head">
      <div class="head-left">
@@ -9096,17 +9324,19 @@ function showMainlineStageDetail(i){
      <div class="position">第 ${i+1} 關 / 目前到第 ${mainlineCurrentIndex()+1} 關</div>
    </div>
    <div class="desc">${esc(pathStageDescription(n,i,ctx,mv))}</div>
+   <div class="mainline-enter-confirm">${ctx.unlocked?'要進入這一關嗎？':'這一關尚未解鎖。'}</div>
    <div class="meta">
      <div><b>${n.exam?"最佳成績":"熟練度"}</b><span>${mv}%</span></div>
      <div><b>狀態</b><span>${ctx.done?"已通過":ctx.current?"目前主線":ctx.unlocked?"已解鎖":"未解鎖"}</span></div>
      <div><b>關卡類型</b><span>${n.exam?(n.examType==="final"?"期末考":"期中考"):"一般練習"}</span></div>
-     <div><b>題數</b><span>${n.exam?EXAM_QUESTIONS:QUESTIONS_PER_UNIT} 題</span></div>
+     <div><b>題數</b><span>${n.exam?EXAM_QUESTIONS:mainlineRequiredQuestions(i)} 題</span></div>
+     ${n.exam?"":`<div><b>星星</b><span class="mainline-detail-stars">${mainlineStarText(i)}</span></div>`}
    </div>
    <div class="actions">
-     <button type="button" class="btn primary" ${ctx.unlocked?"":"disabled"} onclick="closeMainlineStageDetail();startMainlineStage(${i})">▶ ${buttonText}</button>
+     <button type="button" class="btn primary" ${ctx.unlocked?"":"disabled"} onclick="closeMainlineStageDetail();startMainlineStage(${i})">▶ ${ctx.unlocked?"進入 · "+buttonText:buttonText}</button>
      <button type="button" class="btn close-btn" onclick="closeMainlineStageDetail()">×</button>
    </div>
-   <div class="mini-note">${ctx.current?"把這關練到 70% 以上就能繼續往上。":ctx.done?"這關已通過，可以隨時回來重練。":"先把前面主線通過，這關才會解鎖。"}</div>
+   <div class="mini-note">${ctx.current?"第一次 5 題；達 70% 可通關並拿 ★。":ctx.done?(stars>=3?"已拿滿 ★★★；仍可用 20 題模式重練。":`下一顆星：${mainlineRequiredQuestions(i)} 題，達 70% 即可取得。`):"先把前面主線通過，這關才會解鎖。"}</div>
  </div>`;
  modal.classList.remove("hidden");
  s.mainlineSelected=i;
@@ -9208,6 +9438,7 @@ function actuallyStartMainlineStage(i){
  }
  s.mainlineExamActive=false;
  s.mainlineExamStage=-1;
+ s.mainlineRunQuestionLimit=mainlineRequiredQuestions(i);
  $("unitCompleteWrap")?.classList.add("hidden");
  $("practiceBox")?.classList.remove("stage-cleared");
  s.practiceN=0; s.unitCorrect=0; activePracticeQ=null;
@@ -9718,31 +9949,25 @@ function openTopicPicker(){
 function renderActivePracticeQuestion(){
  if(!activePracticeQ){nextPractice();return}
  const q=activePracticeQ;
- if(q&&q.mode==="choice"){q.mode="text";q.aliases=q.aliases||[]}
  $("unit").textContent=displayTopicName(topicName(s.t,s.u));
- $("counter").textContent=`第 ${Math.min(QUESTIONS_PER_UNIT,(s.practiceN||0)+1)} / ${QUESTIONS_PER_UNIT} 題`;
- updateUnitProgress(s.practiceN||0);
- updateUnitMasteryUI();
-
- const qel=$("q"),aw=$("answerNativeWrap"),ai=$("answerInput"),
-       tw=$("textAnswerWrap"),ti=$("textAnswerInput"),lw=$("lessonOnlyWrap");
- aw.classList.add("hidden");tw.classList.add("hidden");lw.classList.add("hidden");
- qel.classList.remove("hidden");
-
+ const limit=currentQuestionLimit();
+ $("counter").textContent=`第 ${Math.min(limit,(s.practiceN||0)+1)} / ${limit} 題`;
+ updateUnitProgress(s.practiceN||0);updateUnitMasteryUI();
+ const qel=$("q"),aw=$("answerNativeWrap"),ai=$("answerInput"),tw=$("textAnswerWrap"),ti=$("textAnswerInput"),cw=$("choiceAnswerWrap"),lw=$("lessonOnlyWrap");
+ aw?.classList.add("hidden");tw?.classList.add("hidden");cw?.classList.add("hidden");lw?.classList.add("hidden");qel?.classList.remove("hidden");
  if(q.mode==="lesson"){
-   qel.classList.add("hidden");lw.classList.remove("hidden")
- }else{
-   qel.classList.toggle("plain-question",!!q.plainPrompt);
-   if(q.plainPrompt)qel.textContent=q.txt||q.tex||"";
-   else renderMath(qel,q.tex||q.txt||"");
-   if(q.mode==="text"){
-     tw.classList.remove("hidden");
-     if(ti)ti.value=topicPickerSnapshot?.textAnswerInput||s.input||""
-   }else{
-     aw.classList.remove("hidden");
-     if(ai)ai.value=topicPickerSnapshot?.answerInput||s.input||""
-   }
+   qel?.classList.add("hidden");lw?.classList.remove("hidden");setPracticeAnswerLocked(false);return
  }
+ qel?.classList.toggle("plain-question",!!q.plainPrompt);
+ if(q.plainPrompt)qel.textContent=q.txt||q.tex||"";else renderMath(qel,q.tex||q.txt||"");
+ if(q.mode==="choice"){
+   if(cw){cw.classList.remove("hidden");cw.innerHTML=(q.choices||[]).map((choice,idx)=>`<button type="button" class="practice-choice-btn" onclick="submitPracticeChoice(${idx})">${esc(String(choice))}</button>`).join("")}
+ }else if(q.mode==="text"){
+   tw?.classList.remove("hidden");if(ti)ti.value=topicPickerSnapshot?.textAnswerInput||s.input||""
+ }else{
+   aw?.classList.remove("hidden");if(ai){ai.inputMode=nativeInputModeFor(q);ai.placeholder=q.mode==="symbol"?"輸入答案（可打 omega、eps0、^^）":"輸入答案";ai.value=topicPickerSnapshot?.answerInput||s.input||""}
+ }
+ setPracticeAnswerLocked(false)
 }
 
 function cancelTopicPicker(){
@@ -9777,10 +10002,11 @@ function chooseTopic(t,u,fromMainline=false){
  s.mainlineExamStage=-1;
  s.mainlineActive=!!fromMainline;
  if(fromMainline)s.mainlineStage=Math.max(0,mainlineIndexFor(t,u));
+ else s.mainlineRunQuestionLimit=0;
  $("pickerCancelBtn")?.classList.add("hidden");
  try{setLessonMode(false)}catch(e){console.error("lesson mode reset",e)}
  const lp=$("lessonPanel");if(lp)lp.classList.add("hidden");
- s.t=t;s.u=u;s.practiceN=0;s.unitCorrect=0;s.input="";s.level=0;activePracticeQ=null;updateUnitProgress(0);updateUnitMasteryUI();
+ s.t=t;s.u=u;s.practiceN=0;s.unitCorrect=0;s.input="";s.level=0;s.questionRunSeed=((Date.now()^Math.floor(Math.random()*0x7fffffff))>>>0);activePracticeQ=null;updateUnitProgress(0);updateUnitMasteryUI();
  let key=t+"|"+u;if(!s.visited.includes(key))s.visited.push(key);
  $("picker").classList.add("hidden");
  $("practiceBox").classList.remove("hidden");
@@ -9819,16 +10045,20 @@ function generateUniqueQuestion(t,u,n){
  const key=t+"|"+u,topic=topicName(t,u);
  if(!s.recentQ||typeof s.recentQ!=="object")s.recentQ={};
  const recent=Array.isArray(s.recentQ[key])?s.recentQ[key]:[];
- let q=null,sig="";
- for(let attempt=0;attempt<180;attempt++){
-   q=make(t,u,n+attempt*10007);
-   sig=questionSignature(q);
-   if(validQuestion(topic,q)&&!recent.includes(sig))break
+ const runSeed=Number(s.questionRunSeed||0)>>>0;
+ let chosen=null,firstValid=null;
+ for(let attempt=0;attempt<48;attempt++){
+   let q;try{q=make(t,u,(runSeed+n*104729+attempt*10007)>>>0)}catch(e){continue}
+   if(!validQuestion(topic,q)||q?.mode==="lesson")continue;
+   if(!firstValid)firstValid=q;
+   const sig=questionSignature(q);if(!recent.includes(sig)){chosen=q;break}
  }
- if(!validQuestion(topic,q))q=lessonQ(topic);
- sig=questionSignature(q);
- recent.push(sig);while(recent.length>100)recent.shift();s.recentQ[key]=recent;
- return q
+ chosen=chosen||firstValid;
+ if(!chosen){
+   const a=2+Math.abs((runSeed+(Number(n)||0))%31),b=1+Math.abs((runSeed+(Number(n)||0)*7+3)%19);
+   chosen=qobj(`${a}+${b}=?`,frac(a+b),"number",null,null,[],`先把 ${a} 和 ${b} 相加。`);chosen._fallbackTopic=topic
+ }
+ const sig=questionSignature(chosen);recent.push(sig);while(recent.length>80)recent.shift();s.recentQ[key]=recent;return chosen
 }
 
 function currentQ(){
@@ -9882,7 +10112,13 @@ const QUESTIONS_PER_UNIT=10;
 const EXAM_QUESTIONS=30;
 
 function currentQuestionLimit(){
- return s.mainlineExamActive?EXAM_QUESTIONS:QUESTIONS_PER_UNIT
+ if(s.mainlineExamActive)return EXAM_QUESTIONS;
+ if(s.mainlineActive){
+   const remembered=Number(s.mainlineRunQuestionLimit||0);
+   if(Number.isInteger(remembered)&&remembered>0)return remembered;
+   return mainlineRequiredQuestions(Number.isInteger(s.mainlineStage)?s.mainlineStage:0)
+ }
+ return QUESTIONS_PER_UNIT
 }
 function currentExamStage(){
  const n=MAINLINE[s.mainlineExamStage];
@@ -9890,19 +10126,20 @@ function currentExamStage(){
 }
 function generateExamQuestion(stageIndex,n){
  const stage=MAINLINE[stageIndex],sources=stage?.sources||[];
- if(!stage?.exam||!sources.length)return lessonQ("綜合考試");
+ if(!stage?.exam||!sources.length)return qobj("1+1=?",frac(2));
  if(!s.examRecent||typeof s.examRecent!=="object")s.examRecent={};
  const recent=Array.isArray(s.examRecent[stage.examKey])?s.examRecent[stage.examKey]:[];
- // V15.02: never intentionally return a question already used in this 30-question exam run.
- for(let attempt=0;attempt<5000;attempt++){
-   const si=(n*7+stage.afterNormal*3+attempt*11)%sources.length,src=sources[si];
-   const q=generateUniqueQuestion(src.t,src.u,n+stage.afterNormal*50000+attempt*701);
+ let firstValid=null;
+ for(let attempt=0;attempt<360;attempt++){
+   const si=(n*7+stage.afterNormal*3+attempt*11)%sources.length,src=sources[si];let q;
+   try{q=make(src.t,src.u,((Number(s.examRunSeed||0)>>>0)+n*65537+stage.afterNormal*50000+attempt*701)>>>0)}catch(e){continue}
    if(!q||q.mode==="lesson"||!validQuestion(topicName(src.t,src.u),q))continue;
+   if(!firstValid)firstValid={q,src};const sig=questionSignature(q);if(recent.includes(sig))continue;
    q.sourceT=src.t;q.sourceU=src.u;q.sourceTitle=src.title;q.examQuestion=true;q.examType=stage.examType;
-   const sig=questionSignature(q);if(recent.includes(sig))continue;
    recent.push(sig);while(recent.length>EXAM_QUESTIONS)recent.shift();s.examRecent[stage.examKey]=recent;return q
  }
- throw new Error("Exam unique-question pool exhausted: "+stage.examKey)
+ if(firstValid){const {q,src}=firstValid;q.sourceT=src.t;q.sourceU=src.u;q.sourceTitle=src.title;q.examQuestion=true;q.examType=stage.examType;return q}
+ return qobj("1+1=?",frac(2),"number",null,null,[],"2")
 }
 
 function startExamStage(stageIndex){
@@ -9912,11 +10149,13 @@ function startExamStage(stageIndex){
  s.mainlineStage=stageIndex;
  s.mainlineExamActive=true;
  s.mainlineExamStage=stageIndex;
+ s.mainlineRunQuestionLimit=EXAM_QUESTIONS;
  s.practiceN=0;
  s.unitCorrect=0;
  s.input="";
  if(!s.examRecent||typeof s.examRecent!=="object")s.examRecent={};
  if(stage.examKey)s.examRecent[stage.examKey]=[];
+ s.examRunSeed=((Date.now()^Math.floor(Math.random()*0x7fffffff))>>>0);
  activePracticeQ=null;
  const first=stage.sources?.[0];
  if(first){s.t=first.t;s.u=first.u}
@@ -9945,11 +10184,9 @@ function updateBattleProgress(done){
 }
 
 function setPracticeAnswerLocked(locked){
- ["answerInput","textAnswerInput","answerSubmitBtn","textAnswerSubmitBtn"].forEach(id=>{
-   const el=$(id); if(el)el.disabled=!!locked
- });
- const work=$("practiceWorkArea");
- if(work)work.classList.toggle("answer-locked",!!locked)
+ ["answerInput","textAnswerInput","answerSubmitBtn","textAnswerSubmitBtn"].forEach(id=>{const el=$(id);if(el)el.disabled=!!locked});
+ document.querySelectorAll("#choiceAnswerWrap .practice-choice-btn").forEach(el=>el.disabled=!!locked);
+ const work=$("practiceWorkArea");if(work)work.classList.toggle("answer-locked",!!locked)
 }
 function finishUnit(){
  if(document.body.classList.contains("stage-finish-lock"))return;
@@ -9957,7 +10194,8 @@ function finishUnit(){
  setPracticeAnswerLocked(true);
  document.body.classList.add("completion-focus");
  if(s.mainlineExamActive){finishExam();return}
- const score=Math.round((s.unitCorrect||0)/QUESTIONS_PER_UNIT*100);
+ const total=currentQuestionLimit();
+ const score=Math.round((s.unitCorrect||0)/Math.max(1,total)*100);
  let old=0;
  try{old=Number(unitMastery(s.t,s.u)||0)}catch(e){console.warn("[mastery] read failed",e)}
  showHuangClearPraise(Math.max(old,score),()=>runStageBlackout(()=>finishUnitSettlement()))
@@ -10021,6 +10259,9 @@ function playSettlementAnimation(done){
 function finishUnitSettlement(){
  if(s.mainlineExamActive){finishExamSettlement();return}
  const prevCleared=mainlineClearedCount();
+ const runTotal=currentQuestionLimit();
+ const stageIndex=(s.mainlineActive&&Number.isInteger(s.mainlineStage))?s.mainlineStage:-1;
+ const starsBefore=stageIndex>=0?mainlineStarCount(stageIndex):0;
  $("practiceBox")?.classList.add("stage-cleared");
  activePracticeQ=null;
  updateMainlineExitButton();
@@ -10031,11 +10272,23 @@ function finishUnitSettlement(){
  if(lw)lw.classList.add("hidden");
  if(qel){qel.textContent="";qel.classList.remove("plain-question")}
  if($("unitCompleteWrap"))$("unitCompleteWrap").classList.remove("hidden");
- if($("counter"))$("counter").textContent=`完成 ${QUESTIONS_PER_UNIT} / ${QUESTIONS_PER_UNIT}`;
- if($("restartUnitBtn"))$("restartUnitBtn").textContent=`再做 ${QUESTIONS_PER_UNIT} 題`;
- updateUnitProgress(QUESTIONS_PER_UNIT);
- const roundScore=Math.round((s.unitCorrect||0)/QUESTIONS_PER_UNIT*100);
+ if($("counter"))$("counter").textContent=`完成 ${runTotal} / ${runTotal}`;
+ updateUnitProgress(runTotal);
+ const roundScore=Math.round((s.unitCorrect||0)/Math.max(1,runTotal)*100);
  const masteryResult=saveUnitMastery(roundScore);
+ let starEarned=0;
+ if(stageIndex>=0 && !MAINLINE[stageIndex]?.exam && roundScore>=70 && starsBefore<3){
+   if(!s.mainlineStars||typeof s.mainlineStars!=="object"||Array.isArray(s.mainlineStars))s.mainlineStars={};
+   starEarned=starsBefore+1;
+   s.mainlineStars[mainlineStarKey(stageIndex)]=starEarned;
+ }
+ const starsAfter=stageIndex>=0?mainlineStarCount(stageIndex):0;
+ if($("restartUnitBtn")){
+   if(stageIndex>=0){
+     const nextNeed=starsAfter>=3?20:mainlineRequiredQuestions(stageIndex);
+     $("restartUnitBtn").textContent=starsAfter>=3?"再練 20 題":`挑戰第 ${starsAfter+1} 顆星 · ${nextNeed} 題`;
+   }else $("restartUnitBtn").textContent=`再做 ${QUESTIONS_PER_UNIT} 題`;
+ }
  const latestMainline=mainlineCurrentIndex();
  s.mainlineSelected=latestMainline;
  s.mainlineViewIndex=latestMainline;
@@ -10048,9 +10301,12 @@ function finishUnitSettlement(){
  handleFeatureUnlockMilestones(prevCleared,mainlineClearedCount());
  renderMainline();
  if($("unitCompleteScore")){
-   $("unitCompleteScore").innerHTML=`這輪答對 <b>${s.unitCorrect||0} / ${QUESTIONS_PER_UNIT}</b> 題。<br>本輪 ${roundScore}% ・ 最佳熟練度 <b>${masteryResult.next}%（${esc(masteryResult.label)}）</b><br><span class="muted">重做單元可以提高熟練度；較低分不會把原本熟練度扣掉。</span>`
+   const starLine=stageIndex>=0
+     ? (starEarned?`<br><span class="mainline-star-earned">⭐ 取得第 ${starEarned} 顆星！ ${mainlineStarText(stageIndex)}</span>`:(roundScore<70?`<br><span class="muted">這次未達 70%，星星維持 ${mainlineStarText(stageIndex)}。</span>`:`<br><span class="muted">星星：${mainlineStarText(stageIndex)}</span>`))
+     : "";
+   $("unitCompleteScore").innerHTML=`這輪答對 <b>${s.unitCorrect||0} / ${runTotal}</b> 題。<br>本輪 ${roundScore}% ・ 最佳熟練度 <b>${masteryResult.next}%（${esc(masteryResult.label)}）</b>${starLine}<br><span class="muted">主線星星規則：第 1 顆 5 題、第 2 顆 10 題、第 3 顆 20 題；每次都要達 70%。</span>`
  }
- animateSettlementScore(roundScore,s.unitCorrect||0,QUESTIONS_PER_UNIT,()=>playSettlementAnimation(()=>setSettlementInteractionLocked(false)));
+ animateSettlementScore(roundScore,s.unitCorrect||0,runTotal,()=>playSettlementAnimation(()=>setSettlementInteractionLocked(false)));
  saveGame()
 }
 
@@ -10111,6 +10367,9 @@ function restartUnit(){
  }
  $("practiceBox")?.classList.remove("stage-cleared");
  document.body.classList.remove("completion-focus");
+ if(s.mainlineActive&&!s.mainlineExamActive&&Number.isInteger(s.mainlineStage))s.mainlineRunQuestionLimit=mainlineRequiredQuestions(s.mainlineStage);
+ else if(s.mainlineExamActive)s.mainlineRunQuestionLimit=EXAM_QUESTIONS;
+ else s.mainlineRunQuestionLimit=0;
  s.practiceN=0;
  s.unitCorrect=0;
  updateUnitProgress(0);
@@ -10130,69 +10389,27 @@ function restartUnit(){
 
 function nextPractice(){
  const completeWrap=$("unitCompleteWrap");
- if($("practiceBox")?.classList.contains("stage-cleared") ||
-    (completeWrap && !completeWrap.classList.contains("hidden"))){
-   setPracticeAnswerLocked(true);
-   return;
- }
- const limit=currentQuestionLimit();
- updateMainlineExitButton();
- if((s.practiceN||0)>=limit){setPracticeAnswerLocked(true);finishUnit();return}
- setPracticeAnswerLocked(false);
-
- if($("unitCompleteWrap"))$("unitCompleteWrap").classList.add("hidden");
- let q=currentQ();
-
+ if($("practiceBox")?.classList.contains("stage-cleared")||(completeWrap&&!completeWrap.classList.contains("hidden"))){setPracticeAnswerLocked(true);return}
+ const limit=currentQuestionLimit();updateMainlineExitButton();if((s.practiceN||0)>=limit){setPracticeAnswerLocked(true);finishUnit();return}
+ setPracticeAnswerLocked(false);$("unitCompleteWrap")?.classList.add("hidden");let q=currentQ();
  if(s.mainlineExamActive){
-   const stage=currentExamStage();
-   const examName=stage?.examType==="final"?"期末考":"期中考";
-   const emoji=stage?.examType==="final"?"💀":"😡";
-   const scope=stage?.examType==="final"?32:16;
-   $("unit").textContent=`${emoji} ${examName}・${scope} 單元綜合考試`;
-   $("course").textContent=`${examName}綜合考試`;
-   $("counter").textContent=`第 ${s.practiceN+1} / ${EXAM_QUESTIONS} 題 · ${q.sourceTitle||"綜合題"}`;
-   const ev=examScore(stage);
-   if($("unitMasteryText")){$("unitMasteryText").textContent=`${examName}最佳 ${ev}%`;$("unitMasteryText").dataset.tier=masteryTier(ev)}
-   if($("unitMasteryFill")){$("unitMasteryFill").style.width=`${ev}%`;$("unitMasteryFill").dataset.tier=masteryTier(ev)}
- }else{
-   $("unit").textContent=displayTopicName(terms[s.t][1][s.u]);
-   $("course").textContent=displayTopicName(topicName(s.t,s.u));
-   $("counter").textContent=q.mode==="lesson"?"教學單元":`第 ${s.practiceN+1} / ${QUESTIONS_PER_UNIT} 題`;
-   updateUnitMasteryUI();
- }
+   const stage=currentExamStage(),examName=stage?.examType==="final"?"期末考":"期中考",emoji=stage?.examType==="final"?"💀":"😡",scope=stage?.examType==="final"?32:16;
+   $("unit").textContent=`${emoji} ${examName}・${scope} 單元綜合考試`;$("course").textContent=`${examName}綜合考試`;$("counter").textContent=`第 ${s.practiceN+1} / ${EXAM_QUESTIONS} 題 · ${q.sourceTitle||"綜合題"}`;
+   const ev=examScore(stage);if($("unitMasteryText")){$("unitMasteryText").textContent=`${examName}最佳 ${ev}%`;$("unitMasteryText").dataset.tier=masteryTier(ev)}if($("unitMasteryFill")){$("unitMasteryFill").style.width=`${ev}%`;$("unitMasteryFill").dataset.tier=masteryTier(ev)}
+ }else{const limit=currentQuestionLimit();$("unit").textContent=displayTopicName(terms[s.t][1][s.u]);$("course").textContent=displayTopicName(topicName(s.t,s.u));$("counter").textContent=`第 ${Math.min(limit,s.practiceN+1)} / ${limit} 題`;updateUnitMasteryUI()}
  updateUnitProgress(s.practiceN||0);
-
- const qel=$("q"),aw=$("answerNativeWrap"),ai=$("answerInput"),
-       tw=$("textAnswerWrap"),ti=$("textAnswerInput"),lw=$("lessonOnlyWrap");
- qel.classList.toggle("plain-question",!!q.plainPrompt);
-
- if(q.mode==="lesson"){
-   qel.textContent="";
-   aw.classList.add("hidden");
-   ai.classList.add("hidden");
-   tw.classList.add("hidden");
-   lw.classList.remove("hidden");
-   return fitAllText()
- }
-
- lw.classList.add("hidden");
- if(q.plainPrompt)qel.textContent=q.txt||q.tex||"";
- else renderMath(qel,q.tex||q.txt);
-
- if(q.mode==="text"){
-   aw.classList.add("hidden");
-   ai.classList.add("hidden");
-   tw.classList.remove("hidden");
-   ti.value=s.input||"";
+ const qel=$("q"),aw=$("answerNativeWrap"),ai=$("answerInput"),tw=$("textAnswerWrap"),ti=$("textAnswerInput"),cw=$("choiceAnswerWrap"),lw=$("lessonOnlyWrap");
+ qel.classList.toggle("plain-question",!!q.plainPrompt);aw?.classList.add("hidden");tw?.classList.add("hidden");cw?.classList.add("hidden");lw?.classList.add("hidden");
+ if(q.mode==="lesson"){qel.textContent="";lw?.classList.remove("hidden");return fitAllText()}
+ if(q.plainPrompt)qel.textContent=q.txt||q.tex||"";else renderMath(qel,q.tex||q.txt||"");
+ if(q.mode==="choice"){
+   if(cw){cw.classList.remove("hidden");cw.innerHTML=(q.choices||[]).map((choice,idx)=>`<button type="button" class="practice-choice-btn" onclick="submitPracticeChoice(${idx})">${esc(String(choice))}</button>`).join("")}
+ }else if(q.mode==="text"){
+   tw?.classList.remove("hidden");if(ti)ti.value=s.input||""
  }else{
-   tw.classList.add("hidden");
-   aw.classList.remove("hidden");
-   ai.classList.remove("hidden");
-   ai.inputMode=nativeInputModeFor(q);
-   ai.placeholder=q.mode==="symbol"?"輸入答案（可打 omega、eps0、^^）":"輸入答案";
-   ai.value=s.input||"";
+   aw?.classList.remove("hidden");if(ai){ai.inputMode=nativeInputModeFor(q);ai.placeholder=q.mode==="symbol"?"輸入答案（可打 omega、eps0、^^）":"輸入答案";ai.value=s.input||""}
  }
- fitAllText()
+ setPracticeAnswerLocked(false);fitAllText()
 }
 
 
@@ -10943,7 +11160,7 @@ function huangMascotSrc(spriteKey="normal",colorId=s.huangColor){
   const c1=t?.c1||"#ffe56b";
   const c2=t?.c2||"#f59e0b";
   const c3=t?.c3||t?.c2||"#d97706";
-  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><radialGradient id="body" cx="30%" cy="24%" r="74%"><stop offset="0%" stop-color="${c1}"/><stop offset="58%" stop-color="${c2}"/><stop offset="100%" stop-color="${c3}"/></radialGradient></defs><circle cx="100" cy="100" r="76" fill="url(#body)"/><ellipse cx="69" cy="61" rx="15" ry="21" transform="rotate(-32 69 61)" fill="white" opacity=".16"/><circle cx="74" cy="96" r="10" fill="#111827"/><circle cx="126" cy="96" r="10" fill="#111827"/><path d="M66 124 C78 141 122 141 134 124" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/></svg>`;
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><radialGradient id="body" cx="30%" cy="24%" r="74%"><stop offset="0%" stop-color="${c1}"/><stop offset="58%" stop-color="${c2}"/><stop offset="100%" stop-color="${c3}"/></radialGradient></defs><circle cx="100" cy="100" r="76" fill="url(#body)"/><ellipse cx="69" cy="61" rx="15" ry="21" transform="rotate(-32 69 61)" fill="white" opacity=".16"/><circle cx="74" cy="96" r="10" fill="#334155"/><circle cx="126" cy="96" r="10" fill="#334155"/><path d="M66 124 C78 141 122 141 134 124" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round"/></svg>`;
   return "data:image/svg+xml;utf8,"+encodeURIComponent(svg)
 }
 
@@ -11012,7 +11229,7 @@ function onboardingSpeech(step){
  const lines=[
    "嗨！先帶你快速看一次這個網站怎麼玩。",
    "從主線開始。每一關都會帶你往下一個數學主題前進。",
-   "一般關卡有 10 題，做到最後會算這一輪的熟練度。",
+   "主線一般關第一次 5 題；通關後 10 題挑戰第 2 顆星、20 題挑戰第 3 顆星。",
    "作答直接用裝置自己的鍵盤，輸入後按 Enter 或完成。",
    "不會算時就打開教學，我會把題目一步一步拆開。",
    "熟練度記錄你在這個單元最好的表現，70% 就能繼續往前。",
@@ -11133,6 +11350,11 @@ function addWrong(q){
 }
 
 
+function submitPracticeChoice(index){
+ const q=currentQ();if(!q||q.mode!=="choice"||!Array.isArray(q.choices))return;
+ if(document.body.classList.contains("stage-finish-lock")||document.body.classList.contains("completion-focus"))return;
+ const choice=q.choices[index];if(choice===undefined)return;s.input=String(choice);submit()
+}
 function submit(){
  const limit=currentQuestionLimit();
  const completeWrap=$("unitCompleteWrap");
@@ -11144,9 +11366,11 @@ function submit(){
    return
  }
  let q=currentQ(),correct=false;
- if(q&&q.mode==="choice"){q.mode="text";q.aliases=q.aliases||[]}
  if(q.mode==="lesson"){showLesson();return}
- if(q.mode==="text"){
+ if(q.mode==="choice"){
+   if(!String(s.input||"").trim()){$("fb").textContent="請選一個答案";return}
+   correct=textCorrect(s.input,q)
+ }else if(q.mode==="text"){
    s.input=$("textAnswerInput")?.value||"";
    if(!s.input.trim()){$("fb").textContent="請輸入答案";return}
    correct=textCorrect(s.input,q)
@@ -11186,9 +11410,9 @@ function submit(){
 
  if(s.practiceN>=limit){
    setPracticeAnswerLocked(true);
-   setTimeout(()=>{$("fb").textContent="";finishUnit()},350)
+   setTimeout(()=>{$("fb").textContent="";finishUnit()},90)
  }else{
-   setTimeout(()=>{$("fb").textContent="";nextPractice()},350)
+   setTimeout(()=>{$("fb").textContent="";nextPractice()},90)
  }
 }
 
@@ -11870,32 +12094,32 @@ function huangStickerSrc(id){
  const valid=HUANG_STICKER_IDS.includes(id)?id:"hello";
  const globalBase={global50:"hello",global500:"laugh",global2500:"angry",global10000:"king"}[valid];
  const face=globalBase||valid;
- let eyes=`<circle cx="74" cy="93" r="9" fill="#111827"/><circle cx="126" cy="93" r="9" fill="#111827"/>`;
- let mouth=`<path d="M67 122 C79 140 121 140 133 122" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
+ let eyes=`<circle cx="74" cy="93" r="9" fill="#334155"/><circle cx="126" cy="93" r="9" fill="#334155"/>`;
+ let mouth=`<path d="M67 122 C79 140 121 140 133 122" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round"/>`;
  let extra="";
  if(face==="hello"){
-   eyes=`<path d="M63 94 Q74 84 85 94" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/><path d="M115 94 Q126 84 137 94" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
-   extra=`<path d="M151 78 Q169 63 177 82" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/><path d="M160 73 L176 61" stroke="#111827" stroke-width="6" stroke-linecap="round"/>`;
+   eyes=`<path d="M63 94 Q74 84 85 94" fill="none" stroke="#334155" stroke-width="7" stroke-linecap="round"/><path d="M115 94 Q126 84 137 94" fill="none" stroke="#334155" stroke-width="7" stroke-linecap="round"/>`;
+   extra=`<path d="M151 78 Q169 63 177 82" fill="none" stroke="#334155" stroke-width="7" stroke-linecap="round"/><path d="M160 73 L176 61" stroke="#334155" stroke-width="6" stroke-linecap="round"/>`;
  }else if(face==="laugh"){
-   eyes=`<path d="M62 94 Q74 79 86 94" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/><path d="M114 94 Q126 79 138 94" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
-   mouth=`<path d="M64 119 Q100 157 136 119 Q131 151 100 154 Q69 151 64 119Z" fill="#111827"/><path d="M80 144 Q100 134 120 144" fill="none" stroke="#fb7185" stroke-width="7" stroke-linecap="round"/>`;
+   eyes=`<path d="M62 94 Q74 79 86 94" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round"/><path d="M114 94 Q126 79 138 94" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round"/>`;
+   mouth=`<path d="M64 119 Q100 157 136 119 Q131 151 100 154 Q69 151 64 119Z" fill="#334155"/><path d="M80 144 Q100 134 120 144" fill="none" stroke="#fb7185" stroke-width="7" stroke-linecap="round"/>`;
  }else if(face==="fire"){
-   eyes=`<path d="M64 91 L84 97" stroke="#111827" stroke-width="7" stroke-linecap="round"/><path d="M116 97 L136 91" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
-   mouth=`<path d="M72 126 Q100 142 128 126" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
+   eyes=`<path d="M64 91 L84 97" stroke="#334155" stroke-width="7" stroke-linecap="round"/><path d="M116 97 L136 91" stroke="#334155" stroke-width="7" stroke-linecap="round"/>`;
+   mouth=`<path d="M72 126 Q100 142 128 126" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round"/>`;
    extra=`<path d="M153 58 C146 42 160 33 159 19 C179 34 185 52 174 69 C183 64 188 75 183 84 C176 97 156 95 149 82 C143 73 146 65 153 58Z" fill="#fb923c"/><path d="M160 61 C157 52 164 47 164 39 C174 47 177 57 171 67 C177 65 179 72 176 77 C172 84 161 83 157 76 C154 70 156 65 160 61Z" fill="#fde047"/>`;
  }else if(face==="cry"){
-   mouth=`<path d="M72 139 Q100 111 128 139" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
+   mouth=`<path d="M72 139 Q100 111 128 139" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round"/>`;
    extra=`<path d="M63 103 C52 119 56 135 67 137 C78 135 81 119 70 103Z" fill="#60a5fa"/><path d="M130 103 C119 119 122 135 133 137 C144 135 148 119 137 103Z" fill="#60a5fa"/>`;
  }else if(face==="angry"){
-   eyes=`<path d="M60 82 L86 91" stroke="#111827" stroke-width="8" stroke-linecap="round"/><path d="M114 91 L140 82" stroke="#111827" stroke-width="8" stroke-linecap="round"/><circle cx="75" cy="99" r="7" fill="#111827"/><circle cx="125" cy="99" r="7" fill="#111827"/>`;
-   mouth=`<path d="M72 139 Q100 113 128 139" fill="none" stroke="#111827" stroke-width="8" stroke-linecap="round"/>`;
+   eyes=`<path d="M60 82 L86 91" stroke="#334155" stroke-width="8" stroke-linecap="round"/><path d="M114 91 L140 82" stroke="#334155" stroke-width="8" stroke-linecap="round"/><circle cx="75" cy="99" r="7" fill="#334155"/><circle cx="125" cy="99" r="7" fill="#334155"/>`;
+   mouth=`<path d="M72 139 Q100 113 128 139" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round"/>`;
  }else if(face==="dead"){
-   eyes=`<path d="M64 84 L84 104 M84 84 L64 104 M116 84 L136 104 M136 84 L116 104" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
-   mouth=`<path d="M72 128 Q82 118 92 128 Q102 138 112 128 Q122 118 132 128" fill="none" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
+   eyes=`<path d="M64 84 L84 104 M84 84 L64 104 M116 84 L136 104 M136 84 L116 104" stroke="#334155" stroke-width="7" stroke-linecap="round"/>`;
+   mouth=`<path d="M72 128 Q82 118 92 128 Q102 138 112 128 Q122 118 132 128" fill="none" stroke="#334155" stroke-width="7" stroke-linecap="round"/>`;
  }else if(face==="king"){
    extra=`<path d="M48 46 L61 19 L84 39 L101 14 L119 39 L143 19 L153 47 Z" fill="#facc15" stroke="#92400e" stroke-width="5" stroke-linejoin="round"/>`;
  }else if(face==="battle"){
-   eyes=`<path d="M62 92 L84 98" stroke="#111827" stroke-width="7" stroke-linecap="round"/><path d="M116 98 L138 92" stroke="#111827" stroke-width="7" stroke-linecap="round"/>`;
+   eyes=`<path d="M62 92 L84 98" stroke="#334155" stroke-width="7" stroke-linecap="round"/><path d="M116 98 L138 92" stroke="#334155" stroke-width="7" stroke-linecap="round"/>`;
    extra=`<path d="M149 51 L179 81 M179 51 L149 81" stroke="#e5e7eb" stroke-width="8" stroke-linecap="round"/>`;
  }
  const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><radialGradient id="hg" cx="30%" cy="24%" r="74%"><stop offset="0%" stop-color="#fff27a"/><stop offset="58%" stop-color="#f8c93a"/><stop offset="100%" stop-color="#e49a16"/></radialGradient></defs><circle cx="100" cy="104" r="75" fill="url(#hg)"/><ellipse cx="69" cy="66" rx="15" ry="21" transform="rotate(-32 69 66)" fill="white" opacity=".18"/>${eyes}${mouth}${extra}</svg>`;
@@ -12369,7 +12593,7 @@ async function loadGlobalAnswered(){
    for(const n of globalMilestoneClaimsServer){const m=GLOBAL_MILESTONES.find(x=>x.n===n);if(!m)continue;if(m.sticker&&!s.ownedGlobalStickers?.includes(m.sticker)){if(!Array.isArray(s.ownedGlobalStickers))s.ownedGlobalStickers=[];s.ownedGlobalStickers.push(m.sticker)}}
    saveGame();hydrateHuangStickerTray()
   }
- }catch(e){console.warn("global total",e);if($("globalAnswerNext"))$("globalAnswerNext").textContent="⚠️ 全球答題同步失敗，請確認 Supabase V14.66 / V14.69 SQL"}
+ }catch(e){console.warn("global total",e);if($("globalAnswerNext"))$("globalAnswerNext").textContent="⚠️ 全球答題同步失敗，請確認最新版全球總答題 SQL"}
  try{
   if(db){const recent=await db.rpc("latest_global_contributor_v1");if(!recent.error&&recent.data)latestGlobalContributorName=String(recent.data)}
  }catch(e){console.warn("latest global contributor",e)}
@@ -13435,10 +13659,10 @@ function notifyBattleLeaveKeepalive(){
 }
 window.addEventListener("pagehide",e=>{if(!e.persisted)notifyBattleLeaveKeepalive()});
 
-function resetGame(){if(!confirm("確定重置所有進度？頭像解鎖進度也會重置。"))return;let name=s.name,avatarType=s.avatarType,avatarImage=s.avatarImage,avatarStyles=s.avatarStyles||{};s={name,tab:"line",t:0,u:0,q:0,input:"",right:0,wrong:0,studyInput:"",practiceN:0,wrongs:[],reviewIndex:-1,level:0,visited:[],category:"國小",recentQ:{},avatarType:avatarType==="image"?"image":"symbol",avatarSymbol:DEFAULT_AVATAR_SYMBOL,avatarImage,avatarProgress:{},avatarStyles,coins:0,ownedHuangDecor:["none"],huangDecor:"none",ownedHuangColors:["yellow"],huangColor:"yellow",mainlineActive:false,mainlineStage:0,mainlineExamActive:false,mainlineExamStage:-1,examScores:{},examScheduleVersion:2,dailyChallenge:{date:challengeDateKey(),correct:0,streak:0,bestStreak:0,playSeconds:0,rewardClaimed:false}};players=[];saveGame();fillTerms();tab("line");$("fb").textContent="";render();pushProgress();restoreBattle()}
+function resetGame(){if(!confirm("確定重置所有進度？頭像解鎖進度也會重置。"))return;let name=s.name,avatarType=s.avatarType,avatarImage=s.avatarImage,avatarStyles=s.avatarStyles||{};s={name,tab:"line",t:0,u:0,q:0,input:"",right:0,wrong:0,studyInput:"",practiceN:0,wrongs:[],reviewIndex:-1,level:0,visited:[],category:"國小",recentQ:{},avatarType:avatarType==="image"?"image":"symbol",avatarSymbol:DEFAULT_AVATAR_SYMBOL,avatarImage,avatarProgress:{},avatarStyles,coins:0,ownedHuangDecor:["none"],huangDecor:"none",ownedHuangColors:["yellow"],huangColor:"yellow",mainlineActive:false,mainlineStage:0,mainlineRunQuestionLimit:0,mainlineStars:{},mainlineExamActive:false,mainlineExamStage:-1,examScores:{},examScheduleVersion:2,dailyChallenge:{date:challengeDateKey(),correct:0,streak:0,bestStreak:0,playSeconds:0,rewardClaimed:false}};players=[];saveGame();fillTerms();tab("line");$("fb").textContent="";render();pushProgress();restoreBattle()}
 
 // ===== Club system =====
-let clubState={club:null,members:[],towerQ:null,infQ:null,combo:0,sqrtEvent:null,sqrtQ:null,sqrtCombo:0};
+let clubState={club:null,members:[],towerQ:null,infQ:null,combo:0,sqrtEvent:null,sqrtQ:null,sqrtCombo:0,towerRecent:[],infRecent:[],sqrtRecent:[]};
 function clubHuangBounce(el){el.classList.add('bounce');setTimeout(()=>el.classList.remove('bounce'),220)}
 function clubTab(name,btn){
  clubSetStatus('');['Lobby','Event','Tower','Infinite','Members'].forEach(x=>$('club'+x)?.classList.add('hidden'));const m={lobby:'Lobby',event:'Event',tower:'Tower',infinite:'Infinite',members:'Members'};$('club'+m[name])?.classList.remove('hidden');document.querySelectorAll('.club-tabs button').forEach(b=>b.classList.remove('active'));btn?.classList.add('active');if(name==='event'){ensureSqrtEventQ();loadClubSqrtEvent()}if(name==='tower')ensureTowerQ();if(name==='infinite')ensureInfQ()
@@ -13447,7 +13671,7 @@ function clubSetStatus(t){if($('clubStatus'))$('clubStatus').textContent=t||''}
 function clubErrorText(e,action='操作'){const msg=String(e?.message||e?.details||e?.hint||e||'未知錯誤');const low=msg.toLowerCase();if(low.includes('already in club'))return '你已經在社團裡了；正在重新讀取社團資料…';if(low.includes('auth required')||low.includes('jwt')||low.includes('not authenticated'))return '登入狀態失效，請重新登入後再試';if(low.includes('could not find the function')||low.includes('schema cache')||low.includes('club_create_v1')&&low.includes('function'))return '社團 SQL 尚未完整安裝（找不到 RPC）';if(low.includes('duplicate key')||low.includes('unique constraint'))return '資料庫已有衝突的社團資料：'+msg;return action+'失敗：'+msg}
 async function createClub(){if(!db){clubSetStatus('Supabase 未連線');return}const name=String($('clubNameInput')?.value||'').trim();if(name.length<2){clubSetStatus('社團名稱至少 2 個字');return}const minStage=Math.max(0,Math.min(400,Math.floor(Number($('clubMinStageInput')?.value)||0)));if($('clubMinStageInput'))$('clubMinStageInput').value=String(minStage);clubSetStatus('建立中…');try{await ensureAuth();const r=await db.rpc('club_create_v1',{p_name:name,p_min_stage:minStage});if(r.error)throw r.error;clubSetStatus('建立成功 🔥');await loadClubHub()}catch(e){console.error('club create',e);const t=clubErrorText(e,'建立');clubSetStatus(t);if(String(e?.message||e).toLowerCase().includes('already in club'))await loadClubHub()}}
 async function joinClub(){if(!db){clubSetStatus('Supabase 未連線');return}const code=String($('clubCodeInput')?.value||'').trim().toUpperCase();if(code.length!==6){clubSetStatus('請輸入 6 位社團碼');return}clubSetStatus('加入中…');try{await ensureAuth();const r=await db.rpc('club_join_v1',{p_code:code,p_stage:Math.min(400,mainlineClearedCount())});if(r.error)throw r.error;clubSetStatus('加入成功 🎉');await loadClubHub()}catch(e){console.error('club join',e);const msg=String(e?.message||e).toLowerCase();if(msg.includes('full'))clubSetStatus('加入失敗：這個社團已滿 30 人');else if(msg.includes('stage requirement'))clubSetStatus('加入失敗：你的主線進度未達社團門檻');else if(msg.includes('not found'))clubSetStatus('加入失敗：找不到這個社團碼');else{clubSetStatus(clubErrorText(e,'加入'));if(msg.includes('already in club'))await loadClubHub()}}}
-async function loadClubHub(){if(!db)return;try{await ensureAuth();const r=await db.rpc('club_my_v1');if(r.error)throw r.error;const d=Array.isArray(r.data)?r.data[0]:r.data;if(!d||!d.club_id){clubState.club=null;clubState.members=[];$('clubNoClub')?.classList.remove('hidden');$('clubHome')?.classList.add('hidden');return}clubState.club=d;$('clubNoClub')?.classList.add('hidden');$('clubHome')?.classList.remove('hidden');clubSetStatus('');renderClub();await loadClubSqrtEvent();const m=await db.rpc('club_members_v1');if(m.error){console.warn('club members',m.error);clubSetStatus(clubErrorText(m.error,'成員讀取'));}else{clubState.members=m.data||[];renderClubMembers()}}catch(e){console.warn('club load',e);clubState.club=null;clubSetStatus(clubErrorText(e,'社團資料讀取'));} }
+async function loadClubHub(){if(!db)return;try{await ensureAuth();const r=await db.rpc('club_my_v1');if(r.error)throw r.error;const d=Array.isArray(r.data)?r.data[0]:r.data;if(!d||!d.club_id){clubState.club=null;clubState.members=[];$('clubNoClub')?.classList.remove('hidden');$('clubHome')?.classList.add('hidden');return}clubState.club=d;$('clubNoClub')?.classList.add('hidden');$('clubHome')?.classList.remove('hidden');clubSetStatus('');renderClub();await loadClubSqrtEvent();const m=await db.rpc('club_members_v1');if(m.error){console.warn('club members',m.error);clubSetStatus(clubErrorText(m.error,'成員讀取'));}else{const seen=new Set();clubState.members=(m.data||[]).filter(x=>{const k=String(x.user_id||x.nickname||'');if(seen.has(k))return false;seen.add(k);return true});renderClubMembers()}}catch(e){console.warn('club load',e);clubSetStatus(clubErrorText(e,'社團資料讀取'));if(!clubState.club){$('clubNoClub')?.classList.remove('hidden');$('clubHome')?.classList.add('hidden')}} }
 function renderClub(){const c=clubState.club||{};$('clubName').textContent=c.name||'社團';$('clubCode').textContent=c.code||'------';$('clubMeta').textContent=`${c.member_count||0}/30`;$('clubXp').textContent=Number(c.xp||0).toLocaleString();$('clubAnswers').textContent=Number(c.total_answers||0).toLocaleString();$('clubMembersCount').textContent=`${c.member_count||0}/30`;$('clubHuangLevel').textContent='共同黃黃 Lv.'+Math.min(100,1+Math.floor(Number(c.huang_xp||0)/100));$('clubHuangXp').textContent=Number(c.huang_xp||0).toLocaleString()+' XP';$('towerFloor').textContent=`${Math.min(1000,Number(c.tower_floor||1))}F / 1000F`;$('towerBig').textContent=Math.min(1000,Number(c.tower_floor||1))+'F';$('towerProgressText').textContent=`${Number(c.tower_progress||0)} / 5 題`;$('towerFill').style.width=`${Math.min(100,Number(c.tower_progress||0)*20)}%`;$('infFloor').textContent=Number(c.infinite_floor||0).toLocaleString()+'F';$('infPoints').textContent=Number(c.infinite_points||0).toLocaleString();$('infCombo').textContent=`${clubState.combo} ×${Math.max(1,Math.min(10,clubState.combo||1))}`;renderClubSqrtEvent()}
 function sqrtEventMultiplier(combo){const n=Math.max(0,Number(combo)||0);return n>=50?5:n>=25?3:n>=10?2:1}
 function renderClubSqrtEvent(){
@@ -13478,58 +13702,101 @@ async function loadClubSqrtEvent(){
    if($('sqrtEventSync'))$('sqrtEventSync').textContent='⚠️ 根號活動 SQL 尚未安裝或同步失敗：'+String(e?.message||e);
  }
 }
+function clubRememberUnique(factory,bucket,maxRecent=50){
+ if(!Array.isArray(bucket))bucket=[];let first=null;
+ for(let i=0;i<36;i++){const q=factory();if(!first)first=q;const sig=questionSignature(q);if(!bucket.includes(sig)){bucket.push(sig);while(bucket.length>maxRecent)bucket.shift();return q}}
+ const q=first||factory();const sig=questionSignature(q);bucket.push(sig);while(bucket.length>maxRecent)bucket.shift();return q
+}
 function clubSqrtQuestion(){
  const pts=Math.max(0,Number(clubState.sqrtEvent?.sqrt_event_points||0));
  const tier=pts>=2000?3:pts>=500?2:pts>=100?1:0;
- const maxType=tier===0?4:tier===1?6:8;
- const type=Math.floor(Math.random()*maxType);
- let a,b,x,n,ans,text;
- if(type===0){x=2+Math.floor(Math.random()*(tier>=2?49:24));n=x*x;ans=x;text=`√${n} = ?`}
- else if(type===1){x=2+Math.floor(Math.random()*(tier>=2?18:10));n=x*x*x;ans=x;text=`∛${n} = ?`}
- else if(type===2){a=2+Math.floor(Math.random()*(tier>=2?28:13));b=2+Math.floor(Math.random()*(tier>=2?22:11));ans=a+b;text=`√${a*a} + √${b*b} = ?`}
- else if(type===3){a=3+Math.floor(Math.random()*(tier>=2?24:12));b=2+Math.floor(Math.random()*Math.max(1,a-1));ans=a-b;text=`√${a*a} − √${b*b} = ?`}
- else if(type===4){a=2+Math.floor(Math.random()*(tier>=2?17:10));b=2+Math.floor(Math.random()*(tier>=2?14:8));ans=a*b;text=`√${a*a} × √${b*b} = ?`}
- else if(type===5){x=2+Math.floor(Math.random()*(tier>=2?35:18));n=x*x;ans=x;text=`x² = ${n}，且 x > 0，x = ?`}
- else if(type===6){a=2+Math.floor(Math.random()*18);b=2+Math.floor(Math.random()*12);ans=a+b;text=`√${a*a} + ∛${b*b*b} = ?`}
- else {a=2+Math.floor(Math.random()*16);b=2+Math.floor(Math.random()*9);ans=a;text=`√${(a*b)*(a*b)} ÷ ${b} = ?`}
- return {text,ans,mode:'number',plainPrompt:true}
+ const type=Math.floor(Math.random()*(tier===0?10:tier===1?16:tier===2?21:24));
+ const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+ let a,b,c,x,n,ans,text;
+ if(type===0){x=R(2,tier>=2?60:25);n=x*x;ans=x;text=`√${n} = ?`}
+ else if(type===1){x=R(2,tier>=2?22:12);n=x*x*x;ans=x;text=`∛${n} = ?`}
+ else if(type===2){a=R(2,30);b=R(2,24);ans=a+b;text=`√${a*a} + √${b*b} = ?`}
+ else if(type===3){a=R(6,34);b=R(2,a-1);ans=a-b;text=`√${a*a} − √${b*b} = ?`}
+ else if(type===4){a=R(2,18);b=R(2,15);ans=a*b;text=`√${a*a} × √${b*b} = ?`}
+ else if(type===5){x=R(2,40);n=x*x;ans=x;text=`x² = ${n}，且 x > 0，x = ?`}
+ else if(type===6){a=R(2,22);b=R(2,14);ans=a+b;text=`√${a*a} + ∛${b*b*b} = ?`}
+ else if(type===7){a=R(2,18);b=R(2,12);ans=a;text=`√${(a*b)*(a*b)} ÷ ${b} = ?`}
+ else if(type===8){a=R(2,25);ans=2*a;text=`2√${a*a} = ?`}
+ else if(type===9){a=R(2,25);c=R(1,20);ans=a+c;text=`√${a*a} + ${c} = ?`}
+ else if(type===10){a=R(4,30);b=R(1,a-1);ans=a+b;text=`√${(a+b)*(a+b)} = ?`}
+ else if(type===11){a=R(5,20);b=R(1,a-1);ans=a-b;text=`∛${(a-b)**3} = ?`}
+ else if(type===12){a=R(2,14);b=R(2,12);ans=a*b;text=`√(${a*a} × ${b*b}) = ?`}
+ else if(type===13){a=R(2,24);ans=2*a;text=`√${4*a*a} = ?`}
+ else if(type===14){a=R(2,30);ans=1;text=`√${a*a} ÷ ${a} = ?`}
+ else if(type===15){a=R(2,24);ans=a*a;text=`√x = ${a}，x = ?`}
+ else if(type===16){a=R(2,13);ans=a*a*a;text=`∛x = ${a}，x = ?`}
+ else if(type===17){a=R(2,18);b=R(2,18);c=R(2,18);ans=a+b+c;text=`√${a*a}+√${b*b}+√${c*c} = ?`}
+ else if(type===18){a=R(2,16);b=R(2,10);ans=b;text=`√${(a*b)*(a*b)} ÷ ${a} = ?`}
+ else if(type===19){a=R(3,22);b=R(2,10);ans=a*b-b;text=`√${a*a}×${b}−${b} = ?`}
+ else if(type===20){a=R(2,16);b=R(2,12);ans=a*b+a;text=`√${a*a}×√${b*b}+√${a*a} = ?`}
+ else if(type===21){a=R(2,18);b=R(2,10);ans=a;text=`√(${a*a*b*b}) ÷ √${b*b} = ?`}
+ else if(type===22){a=R(3,16);b=R(2,9);ans=a+b*b;text=`√${a*a} + (√${b*b})² = ?`}
+ else {a=R(2,14);b=R(2,9);c=R(1,8);ans=a*b+c;text=`√${a*a}×∛${b*b*b}+${c} = ?`}
+ return {text,txt:text,tex:text,ans,mode:"number",plainPrompt:true}
 }
 function ensureSqrtEventQ(){
- if(!clubState.sqrtQ)clubState.sqrtQ=clubSqrtQuestion();
- if($('sqrtEventQuestion'))$('sqrtEventQuestion').textContent=clubState.sqrtQ.text;
- const input=$('sqrtEventAnswer');if(input)input.inputMode='decimal';
- renderClubSqrtEvent();
+ if(!clubState.sqrtQ)clubState.sqrtQ=clubRememberUnique(()=>clubSqrtQuestion(),clubState.sqrtRecent,70);
+ if($("sqrtEventQuestion"))$("sqrtEventQuestion").textContent=clubState.sqrtQ.text;
+ const input=$("sqrtEventAnswer");if(input)input.inputMode="decimal";renderClubSqrtEvent()
 }
 async function submitClubSqrtEvent(){
- ensureSqrtEventQ();
- const input=$('sqrtEventAnswer'),raw=String(input?.value||'').trim();if(!raw)return;
- const ok=Number.isFinite(Number(raw))&&Number(raw)===Number(clubState.sqrtQ?.ans);
+ ensureSqrtEventQ();const input=$('sqrtEventAnswer'),raw=String(input?.value||'').trim();if(!raw)return;const ok=Number.isFinite(Number(raw))&&Number(raw)===Number(clubState.sqrtQ?.ans);
  if(!ok){clubState.sqrtCombo=0;if($('sqrtEventFeedback'))$('sqrtEventFeedback').textContent='❌ Combo 歸 0 · 換下一題';clubState.sqrtQ=null;if(input)input.value='';ensureSqrtEventQ();return}
- clubState.sqrtCombo++;const mult=sqrtEventMultiplier(clubState.sqrtCombo);
- try{
-   const r=await db.rpc('club_sqrt_event_answer_v1',{p_points:mult});if(r.error)throw r.error;
-   if($('sqrtEventFeedback'))$('sqrtEventFeedback').textContent=`✅ +${mult} √碎片 · Combo ${clubState.sqrtCombo} ×${mult}`;
-   clubState.sqrtQ=null;if(input)input.value='';await loadClubHub();ensureSqrtEventQ();
- }catch(e){console.error('club sqrt event',e);if($('sqrtEventFeedback'))$('sqrtEventFeedback').textContent='❌ 根號活動同步失敗：'+String(e?.message||e)}
+ clubState.sqrtCombo++;const mult=sqrtEventMultiplier(clubState.sqrtCombo);if(!clubState.sqrtEvent)clubState.sqrtEvent={sqrt_event_points:0,sqrt_event_answers:0,sqrt_event_reward_mask:0};clubState.sqrtEvent.sqrt_event_points=Number(clubState.sqrtEvent.sqrt_event_points||0)+mult;clubState.sqrtEvent.sqrt_event_answers=Number(clubState.sqrtEvent.sqrt_event_answers||0)+1;
+ if($('sqrtEventFeedback'))$('sqrtEventFeedback').textContent=`✅ +${mult} √碎片 · Combo ${clubState.sqrtCombo} ×${mult} · 同步中`;clubState.sqrtQ=null;if(input)input.value='';renderClubSqrtEvent();ensureSqrtEventQ();
+ clubBackgroundRpc('club sqrt event',async()=>{const r=await db.rpc('club_sqrt_event_answer_v1',{p_points:mult});if(r.error)throw r.error},e=>{if($('sqrtEventFeedback'))$('sqrtEventFeedback').textContent='❌ 根號活動同步失敗：'+String(e?.message||e)})
 }
 function renderClubMembers(){const el=$('clubMemberList');if(!el)return;el.innerHTML=(clubState.members||[]).map(m=>`<div class="club-member"><b>${esc(m.nickname||'玩家')}</b><span>${m.role==='owner'?'👑 社長':m.role==='admin'?'⭐ 管理員':'成員'} · 貢獻 ${Number(m.contribution||0).toLocaleString()}</span></div>`).join('')||'<div class="muted">尚無成員資料</div>'}
 function clubRandomQuestion(hard=false){
- const maxType=hard?12:7;let type=Math.floor(Math.random()*maxType),a,b,c,ans,text;
- if(type===0){a=1+Math.floor(Math.random()*199);b=1+Math.floor(Math.random()*199);ans=a+b;text=`${a} + ${b} = ?`}
- else if(type===1){a=20+Math.floor(Math.random()*180);b=Math.floor(Math.random()*a);ans=a-b;text=`${a} − ${b} = ?`}
- else if(type===2){a=2+Math.floor(Math.random()*23);b=2+Math.floor(Math.random()*18);ans=a*b;text=`${a} × ${b} = ?`}
- else if(type===3){b=2+Math.floor(Math.random()*18);ans=2+Math.floor(Math.random()*25);a=b*ans;text=`${a} ÷ ${b} = ?`}
- else if(type===4){a=2+Math.floor(Math.random()*20);ans=a*a;text=`${a}² = ?`}
- else if(type===5){ans=2+Math.floor(Math.random()*25);a=ans*ans;text=`√${a} = ?`}
- else if(type===6){a=1+Math.floor(Math.random()*40);b=1+Math.floor(Math.random()*40);c=1+Math.floor(Math.random()*20);ans=a+b-c;text=`${a} + ${b} − ${c} = ?`}
- else if(type===7){ans=2+Math.floor(Math.random()*30);a=2+Math.floor(Math.random()*12);b=a*ans;text=`${a}x = ${b}，x = ?`}
- else if(type===8){a=(1+Math.floor(Math.random()*9))*10;b=10*(1+Math.floor(Math.random()*9));ans=a*b/100;text=`${a}% × ${b} = ?`}
- else if(type===9){a=2+Math.floor(Math.random()*8);b=2+Math.floor(Math.random()*5);ans=a**b;text=`${a}^${b} = ?`}
- else if(type===10){a=2+Math.floor(Math.random()*15);b=2+Math.floor(Math.random()*15);ans=2*(a+b);text=`長 ${a}、寬 ${b} 的長方形周長 = ?`}
- else {a=2+Math.floor(Math.random()*12);b=2+Math.floor(Math.random()*12);c=1+Math.floor(Math.random()*9);ans=a*b+c;text=`${a} × ${b} + ${c} = ?`}
- return{text,ans}
+ const R=(a,b)=>a+Math.floor(Math.random()*(b-a+1));
+ const maxType=hard?36:24;let type=Math.floor(Math.random()*maxType),a,b,c,d,ans,text;
+ if(type===0){a=R(1,399);b=R(1,399);ans=a+b;text=`${a} + ${b} = ?`}
+ else if(type===1){a=R(40,500);b=R(0,a);ans=a-b;text=`${a} − ${b} = ?`}
+ else if(type===2){a=R(2,29);b=R(2,24);ans=a*b;text=`${a} × ${b} = ?`}
+ else if(type===3){b=R(2,24);ans=R(2,35);a=b*ans;text=`${a} ÷ ${b} = ?`}
+ else if(type===4){a=R(2,30);ans=a*a;text=`${a}² = ?`}
+ else if(type===5){ans=R(2,35);a=ans*ans;text=`√${a} = ?`}
+ else if(type===6){a=R(1,80);b=R(1,80);c=R(1,30);ans=a+b-c;text=`${a} + ${b} − ${c} = ?`}
+ else if(type===7){ans=R(2,35);a=R(2,12);b=a*ans;text=`${a}x = ${b}，x = ?`}
+ else if(type===8){a=[10,20,25,40,50,75][R(0,5)];b=R(2,20)*20;ans=a*b/100;text=`${a}% × ${b} = ?`}
+ else if(type===9){a=R(2,8);b=R(2,5);ans=a**b;text=`${a}^${b} = ?`}
+ else if(type===10){a=R(2,18);b=R(2,18);ans=2*(a+b);text=`長 ${a}、寬 ${b} 的長方形周長 = ?`}
+ else if(type===11){a=R(2,16);b=R(2,16);c=R(1,12);ans=a*b+c;text=`${a} × ${b} + ${c} = ?`}
+ else if(type===12){a=R(2,20);b=R(2,20);ans=a*b;text=`長 ${a}、寬 ${b} 的長方形面積 = ?`}
+ else if(type===13){a=R(2,16)*2;b=R(2,15);ans=a*b/2;text=`底 ${a}、高 ${b} 的三角形面積 = ?`}
+ else if(type===14){a=R(2,20);ans=4*a;text=`邊長 ${a} 的正方形周長 = ?`}
+ else if(type===15){a=R(2,10);ans=a**3;text=`邊長 ${a} 的正方體體積 = ?`}
+ else if(type===16){a=R(2,9);b=R(2,9);c=R(2,8);ans=b*c;text=`${a}:${b} = ${a*c}:x，x = ?`}
+ else if(type===17){a=R(4,36);b=R(4,36);ans=gcd(a,b);text=`gcd(${a}, ${b}) = ?`}
+ else if(type===18){a=R(2,12);b=R(2,12);ans=Math.abs(a*b)/gcd(a,b);text=`lcm(${a}, ${b}) = ?`}
+ else if(type===19){a=R(1,15);b=R(1,8);ans=a+3*b;text=`數列 ${a}, ${a+b}, ${a+2*b}, … 下一項 = ?`}
+ else if(type===20){a=R(1,10);b=R(1,6);c=R(5,12);ans=a+(c-1)*b;text=`等差數列 a₁=${a}, d=${b}，a${c} = ?`}
+ else if(type===21){a=R(-30,-2);ans=Math.abs(a);text=`|${a}| = ?`}
+ else if(type===22){a=R(-25,-2);b=R(2,20);ans=a+b;text=`${a} + ${b} = ?`}
+ else if(type===23){a=R(2,7);b=R(2,6);c=R(1,5);ans=b+c;text=`${a}^${b} × ${a}^${c} = ${a}^?`}
+ else if(type===24){a=R(2,20);b=R(2,12);ans=a+b;text=`√${a*a} + ∛${b*b*b} = ?`}
+ else if(type===25){a=R(-10,10);b=R(-10,10);ans=Math.abs(a-b);text=`點 (${a},2) 與 (${b},2) 的距離 = ?`}
+ else if(type===26){a=R(1,9);ans=a*10;text=`袋中有 10 顆球，其中 ${a} 顆紅球。抽到紅球的百分率 = ?`}
+ else if(type===27){a=[10,20,25,50][R(0,3)];b=R(2,15)*100;ans=b*(100-a)/100;text=`${b} 元打 ${100-a}% 價後 = ?`}
+ else if(type===28){a=R(1,20);ans=a*100;text=`${a} 公尺 = ? 公分`}
+ else if(type===29){const tri=[[3,4,5],[5,12,13],[8,15,17],[7,24,25]][R(0,3)];a=tri[0];b=tri[1];ans=tri[2];text=`直角三角形兩股 ${a}, ${b}，斜邊 = ?`}
+ else if(type===30){a=R(2,8);b=R(1,8);c=R(1,6);d=R(1,5);ans=a*d*d+b*d+c;text=`f(x)=${a}x²+${b}x+${c}，f(${d}) = ?`}
+ else if(type===31){a=R(2,18);b=R(2,10);c=R(1,9);ans=a+b*c;text=`${a} + ${b} × ${c} = ?`}
+ else if(type===32){a=R(2,20);b=R(2,20);c=R(2,20);ans=(a+b+c)/3;text=`${a}, ${b}, ${c} 的平均數 = ?`}
+ else if(type===33){a=R(2,12);b=R(2,15);ans=a*b;text=`x ÷ ${a} = ${b}，x = ?`}
+ else if(type===34){a=R(2,12);b=R(1,12);c=R(2,10);ans=a*c-b;text=`x + ${b} = ${a*c}，x = ?`}
+ else {a=R(2,9);b=R(2,5);c=R(1,b-1);ans=a**c;text=`${a}^${b} ÷ ${a}^${b-c} = ?`}
+ return {text,txt:text,tex:text,ans,mode:"number",plainPrompt:true}
 }
-function ensureTowerQ(){if(!clubState.towerQ)clubState.towerQ=clubRandomQuestion(Number(clubState.club?.tower_floor||1)>500);$('towerQuestion').textContent=clubState.towerQ.text;const input=$('towerAnswer');if(input)input.inputMode=nativeInputModeFor(clubState.towerQ)}
+function ensureTowerQ(){
+ if(!clubState.towerQ)clubState.towerQ=clubRememberUnique(()=>clubRandomQuestion(Number(clubState.club?.tower_floor||1)>500),clubState.towerRecent,80);
+ $("towerQuestion").textContent=clubState.towerQ.text;const input=$("towerAnswer");if(input)input.inputMode=nativeInputModeFor(clubState.towerQ)
+}
 function clubAllTopicQuestion(){
  // 無限塔：直接從完整 terms 題庫抽題，不看玩家是否解鎖。
  // make() 可產生數字、分數、文字、符號等題型；失敗時才退回舊隨機題。
@@ -13540,11 +13807,11 @@ function clubAllTopicQuestion(){
    try{
      const q=make(t,u,Date.now()+attempt*10007+Math.floor(Math.random()*999999));
      if(validQuestion(topicName(t,u),q)&&q.mode!=="lesson"){
-       q._clubTopic=topicName(t,u);return q
+       q._clubTopic=topicName(t,u);const sig=questionSignature(q);if(clubState.infRecent.includes(sig))continue;clubState.infRecent.push(sig);while(clubState.infRecent.length>100)clubState.infRecent.shift();return q
      }
    }catch(e){continue}
  }
- const q=clubRandomQuestion(true);return {tex:q.text,txt:q.text,ans:q.ans,mode:"number",plainPrompt:true,_clubTopic:"隨機數學"}
+ const q=clubRememberUnique(()=>clubRandomQuestion(true),clubState.infRecent,100);return {tex:q.text,txt:q.text,ans:q.ans,mode:"number",plainPrompt:true,_clubTopic:"隨機數學"}
 }
 function ensureInfQ(){
  if(!clubState.infQ)clubState.infQ=clubAllTopicQuestion();
@@ -13554,8 +13821,24 @@ function ensureInfQ(){
  else{el.innerHTML='';if(topic){const b=document.createElement('b');b.textContent=topic;el.appendChild(b);el.appendChild(document.createElement('br'))}const m=document.createElement('span');el.appendChild(m);renderMath(m,q.tex||q.txt||"")}
  const input=$('infAnswer');if(input)input.inputMode=nativeInputModeFor(q)
 }
-async function submitClubTower(){ensureTowerQ();const input=$('towerAnswer'),raw=String(input?.value||'');if(!raw.trim())return;const q=clubState.towerQ;const ok=(q&&('mode' in q||(q.ans&&typeof q.ans==='object')))?bingoAnswerCorrect(raw,q):(Number.isFinite(Number(raw))&&Number(raw)===Number(q?.ans));if(!ok){$('towerFeedback').textContent='❌ 再試一次';return}try{const r=await db.rpc('club_tower_answer_v1');if(r.error)throw r.error;$('towerFeedback').textContent='✅ +1 塔進度';clubState.towerQ=null;if(input)input.value='';await loadClubHub();ensureTowerQ()}catch(e){console.error('club tower',e);$('towerFeedback').textContent='❌ '+clubErrorText(e,'塔同步')} }
-async function submitInfiniteTower(){ensureInfQ();const raw=String($('infAnswer')?.value||'');if(!raw.trim())return;if(!bingoAnswerCorrect(raw,clubState.infQ)){clubState.combo=0;$('infFeedback').textContent='❌ Combo 歸 0';clubState.infQ=null;$('infAnswer').value='';ensureInfQ();renderClub();return}clubState.combo++;const mult=Math.min(10,clubState.combo);try{const r=await db.rpc('club_infinite_answer_v1',{p_points:mult});if(r.error)throw r.error;$('infFeedback').textContent=`✅ +${mult} ∞P · Combo ${clubState.combo}`;clubState.infQ=null;$('infAnswer').value='';await loadClubHub();ensureInfQ()}catch(e){console.error('club infinite',e);$('infFeedback').textContent='❌ '+clubErrorText(e,'無限塔同步')}}
+let clubPendingSyncs=0,clubRefreshTimer=null;
+function clubBackgroundRpc(label,runner,onError){
+ clubPendingSyncs++;Promise.resolve().then(runner).then(()=>{clubPendingSyncs=Math.max(0,clubPendingSyncs-1);if(clubPendingSyncs===0){clearTimeout(clubRefreshTimer);clubRefreshTimer=setTimeout(()=>loadClubHub(),160)}}).catch(e=>{clubPendingSyncs=Math.max(0,clubPendingSyncs-1);console.error(label,e);if(typeof onError==="function")onError(e)})
+}
+function advanceTowerLocal(){const c=clubState.club;if(!c)return;let f=Math.max(1,Number(c.tower_floor)||1),p=Math.max(0,Number(c.tower_progress)||0);if(f>=1000)c.tower_progress=Math.min(5,p+1);else if(p>=4){c.tower_floor=f+1;c.tower_progress=0}else c.tower_progress=p+1}
+async function submitClubTower(){
+ ensureTowerQ();const input=$('towerAnswer'),raw=String(input?.value||'');if(!raw.trim())return;const q=clubState.towerQ;
+ const ok=(q&&('mode' in q||(q.ans&&typeof q.ans==='object')))?bingoAnswerCorrect(raw,q):(Number.isFinite(Number(raw))&&Number(raw)===Number(q?.ans));if(!ok){$('towerFeedback').textContent='❌ 再試一次';return}
+ $('towerFeedback').textContent='✅ +1 塔進度 · 同步中';advanceTowerLocal();renderClub();clubState.towerQ=null;if(input)input.value='';ensureTowerQ();
+ clubBackgroundRpc('club tower',async()=>{const r=await db.rpc('club_tower_answer_v1');if(r.error)throw r.error},e=>{$('towerFeedback').textContent='❌ '+clubErrorText(e,'塔同步')})
+}
+async function submitInfiniteTower(){
+ ensureInfQ();const input=$('infAnswer'),raw=String(input?.value||'');if(!raw.trim())return;
+ if(!bingoAnswerCorrect(raw,clubState.infQ)){clubState.combo=0;$('infFeedback').textContent='❌ Combo 歸 0';clubState.infQ=null;if(input)input.value='';ensureInfQ();renderClub();return}
+ clubState.combo++;const mult=Math.min(10,clubState.combo);if(clubState.club){clubState.club.infinite_floor=Number(clubState.club.infinite_floor||0)+1;clubState.club.infinite_points=Number(clubState.club.infinite_points||0)+mult}
+ $('infFeedback').textContent=`✅ +${mult} ∞P · Combo ${clubState.combo} · 同步中`;clubState.infQ=null;if(input)input.value='';renderClub();ensureInfQ();
+ clubBackgroundRpc('club infinite',async()=>{const r=await db.rpc('club_infinite_answer_v1',{p_points:mult});if(r.error)throw r.error},e=>{$('infFeedback').textContent='❌ '+clubErrorText(e,'無限塔同步')})
+}
 let clubContributionWarningShown=false;
 async function clubNormalAnswerContribution(){if(!db)return;try{const r=await db.rpc('club_answer_contribute_v1');if(r.error)throw r.error;clubState.lastContributionError=''}catch(e){console.warn('club contribution sync',e);clubState.lastContributionError=clubErrorText(e,'社團貢獻同步');if(!clubContributionWarningShown){clubContributionWarningShown=true;showUnlockAnnouncement('⚠️ 社團同步暫時失敗','本次社團貢獻可能尚未同步；稍後重新整理社團頁即可重試連線。',null)}}}
 
