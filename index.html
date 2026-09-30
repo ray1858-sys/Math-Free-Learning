@@ -3688,6 +3688,9 @@ body.bingo-focus #bingoPlay{
 #unitCompleteWrap.score-counting .unit-complete-title,
 #unitCompleteWrap.score-counting #unitCompleteScore,
 #unitCompleteWrap.score-counting .unit-complete-actions{opacity:0!important}
+#unitCompleteWrap.score-counting .unit-complete-actions,
+#unitCompleteWrap.settlement-locked .unit-complete-actions{pointer-events:none!important}
+#unitCompleteWrap.settlement-locked .unit-complete-actions button{pointer-events:none!important}
 #unitCompleteWrap.score-counting .score-count-stage{
  opacity:1!important;display:flex!important;
 }
@@ -5434,7 +5437,7 @@ html,body{
 .path-node-label{position:relative!important;z-index:7!important;background:rgba(9,25,43,.78)!important;border-radius:8px!important;padding:3px 5px!important;box-shadow:0 2px 8px rgba(0,0,0,.22)!important}
 .path-current-cluster{z-index:8!important}
 
-/* V15.00 — global answered milestones + GUI rewards */
+/* V15.02 — global answered milestones + GUI rewards */
 .global-answer-card{margin:0 0 14px;padding:16px;border:1px solid #29445f;border-radius:16px;background:linear-gradient(145deg,rgba(20,45,70,.9),rgba(10,24,39,.92))}
 .global-answer-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.global-answer-number{font-size:26px;font-weight:950}.global-answer-track{height:10px;background:#0a1420;border-radius:999px;overflow:hidden;margin:10px 0}.global-answer-track>i{display:block;height:100%;background:linear-gradient(90deg,#60a5fa,#a78bfa);border-radius:inherit}.global-milestones{display:flex;gap:7px;overflow-x:auto;padding:5px 0 2px}.global-milestone{min-width:86px;padding:8px;border:1px solid #30465d;border-radius:11px;text-align:center;font-size:11px;background:#0d1927}.global-milestone.done{border-color:#5e8f68}.global-milestone.claimable{box-shadow:0 0 0 2px rgba(250,204,21,.22) inset}.global-milestone button{padding:5px 8px;margin-top:5px;font-size:10px}
 .public-profile-card{overflow:hidden;padding:0!important}.public-profile-bg{min-height:230px;padding:24px;background:linear-gradient(145deg,#172638,#0a111b);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center}.public-profile-avatar{width:88px;height:88px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:42px;background:#111}.public-profile-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}.rank-avatar{cursor:pointer}
@@ -5495,9 +5498,9 @@ body.bingo-focus>#bingoPlay .bingo-answer-row{width:100%!important;max-width:700
 .rank-list-head{margin:18px 0 8px}.rank-list-head>b{font-size:18px}
 #avatarModal .modal-card{position:relative}
 #avatarModal .avatar-preview{display:flex!important;align-items:center!important;justify-content:center!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;margin:14px 0 16px!important}
-/* ===== V15.00 Deep cleanup: packaged GUI backgrounds; obsolete embedded galaxy removed. ===== */
+/* ===== V15.02 Deep cleanup: removed GUI backgrounds; obsolete embedded galaxy removed. ===== */
 .gui-background-panel{margin:14px 0;padding:12px;border:1px solid #2c3f56;border-radius:14px;background:rgba(255,255,255,.035)}
-.gui-bg-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}.gui-bg-choice{padding:6px!important;min-width:0;display:grid;gap:6px;text-align:center}.gui-bg-choice.active{box-shadow:0 0 0 2px #79b8ff inset}.gui-bg-thumb{display:block;height:52px;border-radius:8px;background:#101c2d center/cover no-repeat}.gui-bg-choice b{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bg-default{background:linear-gradient(180deg,#223758,#0b1220)}.bg-galaxy{background-image:url("backgrounds/galaxy.webp")!important}.bg-aurora{background-image:url("backgrounds/aurora.webp")!important}.bg-ocean{background-image:url("backgrounds/ocean.webp")!important}.bg-sunset{background-image:url("backgrounds/sunset.webp")!important}
+.gui-bg-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:10px}.gui-bg-choice{padding:6px!important;min-width:0;display:grid;gap:6px;text-align:center}.gui-bg-choice.active{box-shadow:0 0 0 2px #79b8ff inset}.gui-bg-thumb{display:block;height:52px;border-radius:8px;background:#101c2d center/cover no-repeat}.gui-bg-choice b{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bg-default{background:linear-gradient(180deg,#223758,#0b1220)}.bg-galaxy{background-image:none!important}.bg-aurora{background-image:none!important}.bg-ocean{background-image:none!important}.bg-sunset{background-image:none!important}
 body.has-gui-image{background-image:linear-gradient(rgba(2,7,15,.02),rgba(2,7,15,.08)),var(--gui-bg-image)!important;background-size:cover!important;background-position:center!important;background-attachment:fixed!important;background-color:#081628!important;background-blend-mode:normal!important}
 body:not(.has-gui-image){background-image:radial-gradient(circle at 50% 0%,var(--user-bg-1) 0%,transparent 46%),linear-gradient(180deg,var(--user-bg-2) 0%,var(--user-bg-3) 100%)!important;background-attachment:fixed!important}
 @media(max-width:700px){.gui-bg-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.global-answer-hero{min-height:250px;padding:18px!important}.global-answer-hero .global-answer-number{font-size:34px}.global-contributor{font-size:17px}}
@@ -5524,10 +5527,10 @@ body.has-gui-image{background-image:linear-gradient(rgba(255,255,255,.05),rgba(4
 body.has-gui-image .card,body.has-gui-image .panel,body.has-gui-image .modal-card,body.has-gui-image .feature-card,body.has-gui-image .main-card{background-color:rgba(22,45,76,.84)!important}
 body.has-gui-image button:not(.primary):not(.danger){filter:brightness(1.16) saturate(1.08)}
 body.has-gui-image .topbar,body.has-gui-image header{filter:brightness(1.12)}
-.bg-galaxy{background-image:url("backgrounds/galaxy.webp")!important}
-.bg-aurora{background-image:url("backgrounds/aurora.webp")!important}
-.bg-ocean{background-image:url("backgrounds/ocean.webp")!important}
-.bg-sunset{background-image:url("backgrounds/sunset.webp")!important}
+.bg-galaxy{background-image:none!important}
+.bg-aurora{background-image:none!important}
+.bg-ocean{background-image:none!important}
+.bg-sunset{background-image:none!important}
 
 
 /* V14.75 — brighter glass UI + canonical avatar preview geometry */
@@ -5604,8 +5607,8 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 #avatarModal .modal-close{background:rgba(12,28,50,.68)!important;border-color:rgba(170,211,255,.45)!important}
 
 
-/* ===== V14.80 Uploaded HD Background Pack + Stage 10 Blue Nebula Reward ===== */
-:root{--nebula-reward-bg:url("backgrounds/nebula.webp");}
+/* ===== V14.80 retired background pack ===== */
+:root{--nebula-reward-bg:none;}
 body{
   --user-bg-1:#315b8f!important;--user-bg-2:#1d3d68!important;--user-bg-3:#102746!important;
   background-color:#183a63!important;
@@ -5684,11 +5687,11 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 @media(max-width:700px){.modal-wrap{padding:8px!important}.modal-card{max-height:calc(100dvh - 16px)!important}.gui-bg-grid{gap:8px!important}.gui-bg-thumb{height:68px!important}}
 
 
-/* ===== V15.00 Exam isolation repair =====
+/* ===== V15.02 Exam isolation repair =====
    Midterm/final progress and best scores persist; exam runs keep a separate
    30-question de-dup history and no longer get erased by UI initialization.
 */
-/* ===== V15.00 modal vertical-position canonical override =====
+/* ===== V15.02 modal vertical-position canonical override =====
    Keep dialogs near the top of the viewport; long content scrolls inside the card. */
 .modal-wrap{
   align-items:flex-start!important;
@@ -5712,7 +5715,7 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 }
 
 
-/* ===== V15.00 Tower GUI redesign ===== */
+/* ===== V15.02 Tower GUI redesign ===== */
 .mega-tower-wrap{position:relative;width:min(520px,94%);margin:16px auto 18px;padding:58px 92px 8px 12px;box-sizing:border-box;min-height:390px}
 .mega-tower-spire{position:absolute;top:0;left:12px;width:calc(100% - 104px);height:72px;display:grid;place-items:center;font-size:34px;font-weight:950;color:#d9ecff;background:linear-gradient(145deg,#173b68,#0b1e39);clip-path:polygon(50% 0,100% 100%,0 100%);text-shadow:0 0 18px #65b8ff}
 .mega-tower-body{border:3px solid #78bdff;border-top:0;border-radius:0 0 18px 18px;overflow:hidden;background:linear-gradient(180deg,rgba(18,49,86,.94),rgba(8,24,47,.96));box-shadow:0 16px 35px #0006,0 0 30px #4ca7ff22}
@@ -5720,7 +5723,7 @@ body.has-gui-image .lesson-card,body.has-gui-image .profile-card{
 .infinite-terminal-wrap{position:relative;width:min(330px,86%);margin:20px auto 16px;padding-top:78px}.infinite-spire{position:absolute;top:0;left:50%;transform:translateX(-50%);width:180px;height:90px;display:grid;place-items:center;padding-top:18px;box-sizing:border-box;clip-path:polygon(50% 0,100% 100%,0 100%);background:linear-gradient(145deg,#164d88,#091d37);font-size:48px;font-weight:950;color:#d9f0ff;text-shadow:0 0 22px #63bdff}.infinite-terminal{position:relative;border:3px solid #70baff;border-radius:16px;padding:24px 18px 16px;text-align:center;background:linear-gradient(180deg,#102e52,#08192e);box-shadow:0 15px 34px #0007,0 0 34px #389fff24}.infinite-terminal small{display:block;color:#abc7e2;font-weight:800}.infinite-terminal strong{display:inline-block;font-size:44px;line-height:1.1;margin:8px 5px 4px;color:#fff}.infinite-terminal em{font-style:normal;font-weight:950;color:#7dc8ff}.infinite-substats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.infinite-substats span{padding:8px;border-radius:10px;background:#ffffff0a;font-size:12px}.infinite-substats b{display:block;font-size:16px;margin-top:2px}.infinite-note{text-align:center;margin-bottom:8px}
 @media(max-width:700px){.mega-tower-wrap{width:100%;padding-right:72px;min-height:350px}.mega-tower-spire{width:calc(100% - 84px)}.mega-current-arrow{width:66px;font-size:14px}.mega-floor{min-height:58px}.mega-floor.current{min-height:72px}.mega-floor b{font-size:20px}.mega-floor.current b{font-size:30px}.infinite-terminal-wrap{width:92%}}
 
-/* V15.00 — mainline question navigation lock */
+/* V15.02 — mainline question navigation lock */
 button.mainline-nav-locked, .mainline-nav-locked{
   opacity:.38!important;filter:grayscale(.9) saturate(.25)!important;cursor:not-allowed!important;
   pointer-events:none!important;box-shadow:none!important;transform:none!important;
@@ -5728,7 +5731,7 @@ button.mainline-nav-locked, .mainline-nav-locked{
 
 
 
-/* ===== V15.00 Pure White GUI =====
+/* ===== V15.02 Pure White GUI =====
    Default GUI is solid white. Existing photo backgrounds remain selectable,
    but old saves migrate to Pure White once. The main answer area/input are white too. */
 body.white-gui,
@@ -5858,10 +5861,42 @@ body.white-gui .club-event-milestones>div{
 body.white-gui .gui-bg-thumb.bg-white{background:#fff!important;border:1px solid #cbd5e1!important;}
 body.white-gui #avatarModal .modal-card{background:#fff!important;}
 body.white-gui #avatarModal .modal-close{background:#f5f7fa!important;border-color:#d5dbe5!important;color:#172033!important;}
+
+/* ===== V15.02 canonical white/high-contrast GUI ===== */
+html,body{background:#fff!important;color:#111827!important}
+body{--user-bg-1:#fff!important;--user-bg-2:#fff!important;--user-bg-3:#fff!important;--gui-bg-image:none!important;background-image:none!important}
+body::before,body::after{background-image:none!important}
+.app{filter:none!important;color:#111827!important}
+.card,.panel,.modal-card,.lesson-card,.profile-card,.mainline-wrap,.feature-card,.main-card,.club-pane,.global-answer-card,.friends-panel,.rank-page-panel,.bingo-panel,.study-panel,.battle-panel,.huang-shop-card,.huang-products-panel,.huang-preview-panel{
+ background:#fff!important;color:#111827!important;border-color:#cbd5e1!important;box-shadow:0 6px 22px rgba(15,23,42,.08)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important
+}
+.muted,.mastery-sub,.modal-sub,.huang-shop-sub,.friend-chat-note,.global-answer-sub,.club-sub,.progress-text,.theme-custom-sub,.avatar-unlock-help{color:#475569!important}
+small,label,.club-stage-row label{color:#334155!important}
+input,select,textarea,.study-select,.answer-input,.text-answer-input,.topic-search{background:#fff!important;color:#111827!important;border-color:#94a3b8!important;box-shadow:none!important}
+input::placeholder,textarea::placeholder{color:#64748b!important;opacity:1!important}
+button,.tabs button,.top-actions button,.profile-mini,.friends-top-btn,.club-top-btn,.global-top-btn,.rank-top-btn,.help-btn{background:#fff!important;color:#172033!important;border-color:#cbd5e1!important;text-shadow:none!important}
+button.primary,.tabs button.active,.top-actions button.active{background:#2563eb!important;color:#fff!important;border-color:#2563eb!important}
+button:disabled,.feature-locked,.mainline-nav-locked{color:#64748b!important;background:#f1f5f9!important;opacity:.66!important}
+/* Never allow old font-gradient rules to turn white-background titles transparent. */
+h1,h2,h3,.mainline-title,.path-detail-title,.huang-preview-name,.panel-title,.section-title,.modal-title,.avatar-section-title,.huang-shop-title,.club-title,.rank-list-head b,.global-answer-head b{
+ color:#111827!important;background:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;-webkit-text-fill-color:#111827!important;text-shadow:none!important
+}
+#challengeDock,.challenge-dock,.daily-challenge{background:#fff!important;color:#111827!important;border-color:#cbd5e1!important}
+#challengeDock .muted,#challengeDock small,#challengeDock span{color:#334155!important}
+.rankrow{border-bottom-color:#e2e8f0!important;color:#111827!important}.rank-avatar{background:#f8fafc!important;border-color:#cbd5e1!important}.rank-name{color:#111827!important}
+#club,.club-pane,#club .panel{color:#111827!important}#club .muted{color:#475569!important}
+#global,.global-answer-card{color:#111827!important}
+.question,.math-display,#q{color:#111827!important;background:#fff!important;border-color:#d7dee8!important}
+#practiceBox,#practiceWorkArea,.native-answer-wrap,.text-answer-wrap{background:#fff!important;color:#111827!important}
+.feedback{color:#111827!important}
+/* Mainline path itself remains a game map, but surrounding GUI is white. */
+body.white-gui{background:#fff!important;background-image:none!important}
+.gui-background-panel,.gui-bg-grid,.bg-custom-card{display:none!important}
+
 </style>
 <meta name="theme-color" content="#ffffff">
-<!-- V15.00 deploy: keep index.html with backgrounds/ and assets/ folders together. -->
-<!-- V15.00 reliability cleanup: visible async sync failures; corrected flower SQL guidance. -->
+<!-- V15.02 deploy: single-file; upload index.html only. -->
+<!-- V15.02 reliability cleanup: visible async sync failures; corrected flower SQL guidance. -->
 </head>
 <body><div class="app">
 
@@ -5877,7 +5912,7 @@ body.white-gui #avatarModal .modal-close{background:#f5f7fa!important;border-col
 <div id="game" class="hidden">
 
 <div class="app-title-row">
-  <h1>Math Free Learning <span class="version-badge">V15.00</span></h1>
+  <h1>Math Free Learning <span class="version-badge">V15.02</span></h1>
   <div class="top-actions">
     <button id="shopBtn" type="button" class="coin-shop-btn" onclick="openHuangShop()" aria-label="開啟黃黃商店">
       <img id="topCoinIcon" class="coin-icon" alt="" aria-hidden="true">
@@ -6227,29 +6262,6 @@ body.white-gui #avatarModal .modal-close{background:#f5f7fa!important;border-col
         <div id="huangColorName" class="huang-color-name">顏色：經典黃</div>
         <div id="huangEquippedName" class="huang-equipped-name">樣式：單色</div>
         <div class="huang-shop-price-hint">只保留顏色，不再顯示裝飾。<br>一般顏色 <b>10</b> 金幣，漸層顏色 <b>20</b> 金幣。</div>
-        <div class="bg-custom-card">
-          <div class="bg-custom-head">
-            <div>
-              <div class="bg-custom-title">🌌 自訂網站背景</div>
-              <div class="bg-custom-sub">解鎖後可以永久自由改背景，不會每次換色都扣金幣。</div>
-            </div>
-            <button id="buyCustomBgBtn" type="button" class="bg-custom-buy" onclick="buyCustomBackground()">
-              <img src="" id="customBgCoinIcon" alt="">20
-            </button>
-          </div>
-          <div id="customBgControls" class="bg-custom-controls hidden">
-            <div class="bg-custom-colors">
-              <div class="bg-color-control"><label>上方光暈</label><input id="bgColor1" type="color" value="#223758" oninput="previewCustomBackground()"></div>
-              <div class="bg-color-control"><label>主背景</label><input id="bgColor2" type="color" value="#111b2c" oninput="previewCustomBackground()"></div>
-              <div class="bg-color-control"><label>底部顏色</label><input id="bgColor3" type="color" value="#0b1220" oninput="previewCustomBackground()"></div>
-            </div>
-            <div id="customBgPreview" class="bg-preview-strip"></div>
-            <div class="bg-custom-actions">
-              
-              <button type="button" onclick="resetCustomBackground()">恢復預設</button>
-            </div>
-          </div>
-        </div>
         <div class="theme-custom-card">
           <div class="theme-custom-title">🎨 字體＋主線關卡漸層</div>
           <div class="theme-custom-sub">直接選顏色，整個網站即時預覽。</div>
@@ -6313,11 +6325,6 @@ body.white-gui #avatarModal .modal-close{background:#f5f7fa!important;border-col
           <label class="avatar-color-field">顏色 2<input id="avatarModalColor2" type="color" oninput="setAvatarColor(2,this.value)"></label>
         </div>
         <label class="avatar-gradient-row"><span>使用漸層</span><input id="avatarModalGradient" type="checkbox" onchange="setAvatarGradient(this.checked)"></label>
-      </div>
-      <div class="gui-background-panel">
-        <div class="avatar-section-title">🖼️ GUI 背景</div>
-        <div class="muted">更換整個遊戲後方的背景圖片。</div>
-        <div id="guiBackgroundChoices" class="gui-bg-grid"></div>
       </div>
      </div>
   </div>
@@ -6556,51 +6563,77 @@ async function pushProgress(){
    }
  }catch(e){console.error("排行榜同步失敗",e)}
 }
+async function recordMainAnswerServer(correct){
+ if(!db||!s.name)return false;
+ try{
+   const u=await ensureAuth();if(!u)return false;
+   const payload={
+     p_nickname:normalizePlayerName(s.name),
+     p_term:Number(s.t)||0,
+     p_unit:Number(s.u)||0,
+     p_question:Math.max(0,Number(s.q)||0),
+     p_correct:!!correct,
+     p_performance:learningPerformance(),
+     p_avatar_type:s.avatarType||"symbol",
+     p_avatar_symbol:s.avatarSymbol||DEFAULT_AVATAR_SYMBOL,
+     p_avatar_data:s.avatarType==="image"?safeAvatarDataUrl(s.avatarImage):avatarStylePayload()
+   };
+   const r=await db.rpc("record_main_answer_v1",payload);
+   if(r.error)throw r.error;
+   return true;
+ }catch(e){
+   console.warn("主課程計分 RPC 失敗，改用舊同步",e);
+   await pushProgress();
+   return false;
+ }
+}
+
 async function loadRanks(){
  loadGlobalAnswered();
- if(!socialFeaturesUnlocked()){players=[];return}
+ if(!socialFeaturesUnlocked()){players=[];renderRanksLocal();return}
  if(!db){players=[];renderRanksLocal();return}
  try{
-   let res=await db.from("players")
-     .select("nickname,term,unit,question,answered,avatar_type,avatar_symbol,avatar_data")
-     .order("answered",{ascending:false})
-     .order("updated_at",{ascending:false})
-     .limit(100);
-
-   let hasAnsweredColumn=true;
-   if(res.error&&/answered/i.test(String(res.error.message||res.error.details||""))){
-     hasAnsweredColumn=false;
-     res=await db.from("players")
-       .select("nickname,term,unit,question,avatar_type,avatar_symbol,avatar_data")
-       .order("question",{ascending:false})
-       .limit(100)
+   let rows=null;
+   const rpc=await db.rpc("leaderboard_top100_v1");
+   if(!rpc.error&&Array.isArray(rpc.data)){
+     rows=rpc.data;
+   }else{
+     if(rpc.error)console.warn("排行榜 RPC fallback",rpc.error);
+     let res=await db.from("players")
+       .select("user_id,nickname,term,unit,question,answered,avatar_type,avatar_symbol,avatar_data,updated_at")
+       .order("answered",{ascending:false})
+       .order("updated_at",{ascending:false})
+       .limit(300);
+     let hasAnsweredColumn=true;
+     if(res.error&&/answered/i.test(String(res.error.message||res.error.details||""))){
+       hasAnsweredColumn=false;
+       res=await db.from("players")
+         .select("user_id,nickname,term,unit,question,avatar_type,avatar_symbol,avatar_data,updated_at")
+         .order("question",{ascending:false}).limit(300)
+     }
+     if(res.error)throw res.error;
+     const seen=new Set();
+     rows=(res.data||[]).filter(x=>{
+       const k=x.user_id||`legacy:${x.nickname}:${x.term}:${x.unit}`;
+       if(seen.has(k))return false;seen.add(k);return true
+     }).slice(0,100).map(x=>({...x,answered:hasAnsweredColumn?x.answered:x.question}));
    }
-
-   if(res.error&&/(?:avatar_(?:type|symbol|data))/i.test(String(res.error.message||res.error.details||""))){
-     res=await db.from("players")
-       .select(hasAnsweredColumn
-         ?"nickname,term,unit,question,answered"
-         :"nickname,term,unit,question")
-       .order(hasAnsweredColumn?"answered":"question",{ascending:false})
-       .limit(100)
-   }
-
-   if(res.error)throw res.error;
-
-   players=(res.data||[]).map(x=>({
-     name:x.nickname,
-     t:x.term,
-     u:x.unit,
+   players=(rows||[]).map(x=>({
+     user_id:x.user_id||null,
+     name:x.nickname||"玩家",
+     t:Number(x.term)||0,
+     u:Number(x.unit)||0,
      q:Math.max(0,Number(x.question)||0),
-     answered:Math.max(0,Number(hasAnsweredColumn?x.answered:x.question)||0),
+     answered:Math.max(0,Number(x.answered)||0),
      avatar_type:x.avatar_type||"symbol",
      avatar_symbol:x.avatar_symbol||DEFAULT_AVATAR_SYMBOL,
-     avatar_data:safeRemoteAvatarData(x.avatar_data,x.avatar_type||"symbol"),
+     avatar_data:safeRemoteAvatarData(x.avatar_data,x.avatar_type||"symbol")
    }));
    renderRanksLocal()
  }catch(e){
    console.warn("排行榜讀取失敗",e);
-   renderRanksLocal()
+   players=[];renderRanksLocal();
+   const el=$("ranks");if(el)el.innerHTML='<div class="muted">⚠️ 排行榜同步失敗，請執行 V15.02 修復 SQL。</div>'
  }
 }
 
@@ -6765,7 +6798,7 @@ function updateNameCounter(){
  if(count)count.textContent=`${el.value.length} / ${NAME_MAX}`
 }
 function normalizeProfileState(){
- if(typeof s.redNebulaUnlocked!=="boolean")s.redNebulaUnlocked=false;
+ s.redNebulaUnlocked=false;
  // V13.58: name font color feature removed; old saved value is discarded.
  if(!s||typeof s!=="object")return;
  s.name=normalizePlayerName(s.name);
@@ -6778,9 +6811,7 @@ function normalizeProfileState(){
  if(typeof s.avatarImage!=="string")s.avatarImage="";
  s.coins=Math.max(0,Math.floor(Number(s.coins)||0));
  if(typeof s.customBgUnlocked!=="boolean")s.customBgUnlocked=false;
- if(!["white","default","galaxy","aurora","ocean","sunset","nebula","rednebula"].includes(s.guiBackground))s.guiBackground="white";
- if(!s.whiteGuiV1500Migrated){s.guiBackground="white";s.whiteGuiV1500Migrated=true;}
- if(s.guiBackground==="nebula"&&mainlineClearedCount()<10)s.guiBackground="white";
+ s.guiBackground="white"; s.whiteGuiV1500Migrated=true;
  if(!Array.isArray(s.customBgColors)||s.customBgColors.length!==3)s.customBgColors=["#223758","#111b2c","#0b1220"];
  if(!Array.isArray(s.fontGradient)||s.fontGradient.length!==2)s.fontGradient=["#f8fbff","#8fc5ff"];
  if(!Array.isArray(s.stageCurrentGradient)||s.stageCurrentGradient.length!==3)s.stageCurrentGradient=["#ffe16b","#ffad1f","#e57d09"];
@@ -6955,7 +6986,7 @@ function renderAvatarCustomizer(){
    .forEach(([id,v])=>{const e=$(id);if(e){e.checked=!!v;e.disabled=disabled}})
 }
 
-const HUANG_COIN_IMAGE="assets/huang-coin.webp";
+const HUANG_COIN_IMAGE="data:image/webp;base64,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";
 
 
 const HUANG_COLOR_THEMES=[
@@ -7131,47 +7162,19 @@ function renderHuangShopCard(item){
   return `<article class="huang-item huang-color-card ${item.gradient?"gradient-card":""} ${equippedNow?"selected":""}">${previewHTML}<div class="huang-item-name">${esc(item.name)}</div>${action}</article>`
 }
 
-function guiBackgroundCSS(id){
- if(id==="white")return "";
- const photos={
-  galaxy:"backgrounds/galaxy.webp",
-  aurora:"backgrounds/aurora.webp",
-  ocean:"backgrounds/ocean.webp",
-  sunset:"backgrounds/sunset.webp",
-  nebula:"backgrounds/nebula.webp"
- };
- if(id==="rednebula")return `linear-gradient(rgba(190,0,28,.58),rgba(62,0,18,.72)),url("backgrounds/nebula.webp")`;
- return photos[id]?`url("${photos[id]}")`:"";
-}
+function guiBackgroundCSS(){return ""}
 function applyCustomBackground(){
  normalizeProfileState();
- const colors=s.guiBackground==="white"?["#ffffff","#ffffff","#ffffff"]:(s.customBgUnlocked?s.customBgColors:["#223758","#111b2c","#0b1220"]);
- document.body.style.setProperty("--user-bg-1",colors[0]);
- document.body.style.setProperty("--user-bg-2",colors[1]);
- document.body.style.setProperty("--user-bg-3",colors[2]);
- const img=guiBackgroundCSS(s.guiBackground);
- document.body.style.setProperty("--gui-bg-image",img||"none");
- document.body.classList.toggle("has-gui-image",!!img);
- document.body.classList.toggle("white-gui",s.guiBackground==="white");
- renderGuiBackgroundChoices();
+ s.guiBackground="white";
+ document.body.style.setProperty("--user-bg-1","#ffffff");
+ document.body.style.setProperty("--user-bg-2","#ffffff");
+ document.body.style.setProperty("--user-bg-3","#ffffff");
+ document.body.style.setProperty("--gui-bg-image","none");
+ document.body.classList.remove("has-gui-image");
+ document.body.classList.add("white-gui");
 }
-function renderGuiBackgroundChoices(){
- const el=$("guiBackgroundChoices");if(!el)return;
- const opts=[["white","⬜ 純白"],["default","預設"],["galaxy","🌌 銀河系"],["aurora","✨ 極光"],["ocean","🌊 深海"],["sunset","🌇 暮色"],["nebula","💙 藍色星雲"],["rednebula","🔴 紅色星雲"]];
- const cleared=mainlineClearedCount();
- el.innerHTML=opts.map(([id,name])=>{
-   const locked=(id==="nebula"&&cleared<10)||(id==="rednebula"&&!s.redNebulaUnlocked);
-   const note=locked?`<span class="gui-bg-lock">🔒</span><small>${id==="rednebula"?"全球 1,500 題里程碑解鎖":"主線第 10 關解鎖"}</small>`:"";
-   return `<button type="button" class="gui-bg-choice ${s.guiBackground===id?'active':''} ${locked?'locked':''}" onclick="equipGuiBackground('${id}')"><span class="gui-bg-thumb bg-${id}"></span>${locked?'':`<b>${name}</b>`}${note}</button>`
- }).join("")
-}
-function equipGuiBackground(id){
- if(!["white","default","galaxy","aurora","ocean","sunset","nebula","rednebula"].includes(id))return;
- if(id==="nebula"&&mainlineClearedCount()<10){showUnlockAnnouncement("💙 藍色星雲背景尚未解鎖","通過主線第 10 關即可永久解鎖。",null);return}
- if(id==="rednebula"&&!s.redNebulaUnlocked){showUnlockAnnouncement("🔴 紅色星雲背景尚未解鎖","全球總答題達 1,500 題並領取里程碑即可永久解鎖。",null);return}
- s.guiBackground=id;saveGame();applyCustomBackground();
-}
-
+function renderGuiBackgroundChoices(){}
+function equipGuiBackground(){s.guiBackground="white";saveGame();applyCustomBackground()}
 function renderCustomBackgroundShop(){
   const buy=$("buyCustomBgBtn");
   const controls=$("customBgControls");
@@ -7188,53 +7191,10 @@ function renderCustomBackgroundShop(){
     controls.classList.add("hidden")
   }
 }
-function buyCustomBackground(){
-  normalizeProfileState();
-  if(s.customBgUnlocked){renderCustomBackgroundShop();return}
-  if(s.coins<20){showHuangShopMessage("金幣不足，需要 20 金幣","bad");return}
-  s.coins-=20;
-  s.customBgUnlocked=true;
-  saveGame();
-  renderCoinUI();
-  renderCustomBackgroundShop();
-  showHuangShopMessage("已永久解鎖自訂背景 ✨","good")
-}
-function previewCustomBackground(){
-  if(!s.customBgUnlocked)return;
-  const colors=[
-    $("bgColor1")?.value||s.customBgColors[0],
-    $("bgColor2")?.value||s.customBgColors[1],
-    $("bgColor3")?.value||s.customBgColors[2]
-  ];
-  s.customBgColors=colors.slice();
-  document.body.style.setProperty("--user-bg-1",colors[0]);
-  document.body.style.setProperty("--user-bg-2",colors[1]);
-  document.body.style.setProperty("--user-bg-3",colors[2]);
-  saveGame();
-  const p=$("customBgPreview");
-  if(p)p.style.background=`radial-gradient(circle at 50% 0%,${colors[0]} 0%,transparent 52%),linear-gradient(180deg,${colors[1]},${colors[2]})`
-}
-function saveCustomBackground(){
-  if(!s.customBgUnlocked)return;
-  s.customBgColors=[
-    $("bgColor1")?.value||"#223758",
-    $("bgColor2")?.value||"#111b2c",
-    $("bgColor3")?.value||"#0b1220"
-  ];
-  saveGame();
-  applyCustomBackground();
- applySiteColors();
-  renderCustomBackgroundShop();
-  showHuangShopMessage("背景已套用","good")
-}
-function resetCustomBackground(){
-  if(!s.customBgUnlocked)return;
-  s.customBgColors=["#223758","#111b2c","#0b1220"];
-  saveGame();
-  applyCustomBackground();
-  renderCustomBackgroundShop();
-  showHuangShopMessage("已恢復預設背景","good")
-}
+function buyCustomBackground(){showHuangShopMessage("背景功能已移除；GUI 固定為純白。")}
+function previewCustomBackground(){s.guiBackground="white";applyCustomBackground();saveGame()}
+function saveCustomBackground(){s.guiBackground="white";applyCustomBackground();saveGame()}
+function resetCustomBackground(){s.guiBackground="white";applyCustomBackground();saveGame()}
 
 
 function setSiteColorVars(font,cur,done,lock){
@@ -8552,7 +8512,7 @@ function initStateExtras(){
    s.examScores={};
    s.examScheduleVersion=2
  }
- // V15.00: keep the current exam run + best exam scores.
+ // V15.02: keep the current exam run + best exam scores.
  // Older builds deleted these on every initStateExtras() call, which made
  // midterm/final progress and pass records disappear while navigating UI.
  if(typeof s.mainlineExamActive!=="boolean")s.mainlineExamActive=false;
@@ -9202,15 +9162,12 @@ function handleFeatureUnlockMilestones(prevCleared,nextCleared){
    showUnlockAnnouncement("黃黃表情解鎖！","第 5 關通過，現在可以在好友聊天使用全部黃黃表情。","friendsBtn");
    if(typeof updateHuangStickerUnlockUI==="function")updateHuangStickerUnlockUI()
  }
- if(prevCleared<10&&nextCleared>=10){
-   showUnlockAnnouncement("🌸 新背景解鎖！","第 10 關通過！「星雲」已加入 GUI 背景收藏。",null);
-   renderGuiBackgroundChoices();
- }
  if(prevCleared<12&&nextCleared>=12)showUnlockAnnouncement("黃黃商店解鎖！","第 12 關通過，現在可以打開黃黃商店。","shopBtn");
  if(prevCleared<24&&nextCleared>=24)showUnlockAnnouncement("賓果解鎖！","第 24 關通過，現在可以打開賓果。","tbi");
 }
 
 function startMainlineStage(i){
+ setSettlementInteractionLocked(false);
  $("practiceBox")?.classList.remove("stage-cleared");
  document.body.classList.remove("completion-focus");
  if(!Number.isInteger(Number(i)))return;
@@ -9262,7 +9219,23 @@ function actuallyStartMainlineStage(i){
  saveGame()
 }
 
+let settlementInteractionLocked=false;
+function setSettlementInteractionLocked(locked){
+ settlementInteractionLocked=!!locked;
+ const wrap=$("unitCompleteWrap");
+ if(wrap)wrap.classList.toggle("settlement-locked",settlementInteractionLocked);
+ const restart=$("restartUnitBtn"),mapBtn=$("mainlineMapBtn"),nextBtn=$("mainlineNextBtn");
+ if(restart)restart.disabled=settlementInteractionLocked;
+ if(mapBtn)mapBtn.disabled=settlementInteractionLocked;
+ if(nextBtn&&settlementInteractionLocked)nextBtn.disabled=true;
+ if(!settlementInteractionLocked)updateMainlineCompletionButtons();
+}
+function settlementActionBlocked(){
+ return settlementInteractionLocked;
+}
+
 function continueMainline(){
+ if(settlementActionBlocked())return;
  document.body.classList.remove("completion-focus");
  const finished=Number.isInteger(s.mainlineStage)?s.mainlineStage:-1;
  if(finished<0||!MAINLINE[finished]){goMainline();return}
@@ -9279,6 +9252,7 @@ function continueMainline(){
  startMainlineStage(next)
 }
 function goMainline(){
+ if(settlementActionBlocked())return;
  document.body.classList.remove("completion-focus");
  $("practiceBox")?.classList.add("stage-cleared");
  const current=mainlineCurrentIndex();
@@ -9373,6 +9347,7 @@ function updateMainlineCompletionButtons(){
    return
  }
  mapBtn.classList.remove("hidden");
+ mapBtn.disabled=settlementInteractionLocked;
 
  const i=Number.isInteger(s.mainlineStage)?s.mainlineStage:-1;
  if(i<0||!MAINLINE[i]){
@@ -9387,10 +9362,10 @@ function updateMainlineCompletionButtons(){
      nextBtn.textContent=`${MAINLINE[i].examType==="final"?"期末考":"期中考"}需 70%`
    }else nextBtn.textContent="熟練度需 70%"
  }else if(i>=MAINLINE.length-1){
-   nextBtn.disabled=false;
+   nextBtn.disabled=settlementInteractionLocked;
    nextBtn.textContent="🏁 查看主線完成"
  }else{
-   nextBtn.disabled=false;
+   nextBtn.disabled=settlementInteractionLocked;
    const next=MAINLINE[i+1];
    nextBtn.textContent=next?.exam
      ?`下一關：${next.examType==="final"?"💀 期末考":"😡 期中考"}`
@@ -9918,7 +9893,7 @@ function generateExamQuestion(stageIndex,n){
  if(!stage?.exam||!sources.length)return lessonQ("綜合考試");
  if(!s.examRecent||typeof s.examRecent!=="object")s.examRecent={};
  const recent=Array.isArray(s.examRecent[stage.examKey])?s.examRecent[stage.examKey]:[];
- // V15.00: never intentionally return a question already used in this 30-question exam run.
+ // V15.02: never intentionally return a question already used in this 30-question exam run.
  for(let attempt=0;attempt<5000;attempt++){
    const si=(n*7+stage.afterNormal*3+attempt*11)%sources.length,src=sources[si];
    const q=generateUniqueQuestion(src.t,src.u,n+stage.afterNormal*50000+attempt*701);
@@ -9978,6 +9953,7 @@ function setPracticeAnswerLocked(locked){
 }
 function finishUnit(){
  if(document.body.classList.contains("stage-finish-lock"))return;
+ setSettlementInteractionLocked(true);
  setPracticeAnswerLocked(true);
  document.body.classList.add("completion-focus");
  if(s.mainlineExamActive){finishExam();return}
@@ -9988,6 +9964,7 @@ function finishUnit(){
 }
 function finishExam(){
  if(document.body.classList.contains("stage-finish-lock"))return;
+ setSettlementInteractionLocked(true);
  setPracticeAnswerLocked(true);
  document.body.classList.add("completion-focus");
  const stage=currentExamStage();
@@ -10029,13 +10006,16 @@ function animateSettlementScore(score,correct,total,done){
  requestAnimationFrame(tick);
 }
 
-function playSettlementAnimation(){
+function playSettlementAnimation(done){
  const el=$("unitCompleteWrap");
- if(!el)return;
+ if(!el){done?.();return}
  el.classList.remove("result-enter");
  void el.offsetWidth;
  el.classList.add("result-enter");
- setTimeout(()=>el.classList.remove("result-enter"),1200);
+ setTimeout(()=>{
+   el.classList.remove("result-enter");
+   done?.();
+ },1200);
 }
 
 function finishUnitSettlement(){
@@ -10070,7 +10050,7 @@ function finishUnitSettlement(){
  if($("unitCompleteScore")){
    $("unitCompleteScore").innerHTML=`這輪答對 <b>${s.unitCorrect||0} / ${QUESTIONS_PER_UNIT}</b> 題。<br>本輪 ${roundScore}% ・ 最佳熟練度 <b>${masteryResult.next}%（${esc(masteryResult.label)}）</b><br><span class="muted">重做單元可以提高熟練度；較低分不會把原本熟練度扣掉。</span>`
  }
- animateSettlementScore(roundScore,s.unitCorrect||0,QUESTIONS_PER_UNIT,()=>playSettlementAnimation());
+ animateSettlementScore(roundScore,s.unitCorrect||0,QUESTIONS_PER_UNIT,()=>playSettlementAnimation(()=>setSettlementInteractionLocked(false)));
  saveGame()
 }
 
@@ -10118,11 +10098,12 @@ function finishExamSettlement(){
  updateFeatureUnlockUI();
  handleFeatureUnlockMilestones(prevCleared,mainlineClearedCount());
  renderMainline();
- animateSettlementScore(roundScore,s.unitCorrect||0,EXAM_QUESTIONS,()=>playSettlementAnimation());
+ animateSettlementScore(roundScore,s.unitCorrect||0,EXAM_QUESTIONS,()=>playSettlementAnimation(()=>setSettlementInteractionLocked(false)));
  saveGame()
 }
 
 function restartUnit(){
+ if(settlementActionBlocked())return;
  const restartingExam=s.mainlineExamActive?currentExamStage():null;
  if(restartingExam?.examKey){
    if(!s.examRecent||typeof s.examRecent!=="object")s.examRecent={};
@@ -11199,7 +11180,7 @@ function submit(){
  s.input="";
  activePracticeQ=null;
  saveGame();
- pushProgress().then(()=>loadGlobalAnswered()).catch(e=>console.warn("答題進度/全球總答題同步",e));
+ recordMainAnswerServer(correct).then(()=>Promise.all([loadGlobalAnswered(),loadRanks()])).catch(e=>console.warn("答題計分/排行榜同步",e));
  if($("answerInput"))$("answerInput").value="";
  if($("textAnswerInput"))$("textAnswerInput").value="";
 
@@ -12365,7 +12346,7 @@ function submitStudy(){
 
 
 const GLOBAL_MILESTONES=[
- {n:10,r:"🪙 50 金幣",coin:50},{n:25,r:"🪙 100 金幣",coin:100},{n:50,r:"🟡 黃黃限定表情",sticker:"global50"},{n:100,r:"🪙 200 金幣",coin:200},{n:200,r:"🪙 250 金幣",coin:250},{n:350,r:"🪙 350 金幣",coin:350},{n:500,r:"😎 黃黃限定表情",sticker:"global500"},{n:750,r:"🪙 500 金幣",coin:500},{n:1000,r:"🪙 1,000 金幣",coin:1000},{n:1500,r:"🔴 紅色星雲 GUI 背景",redNebula:true},{n:2500,r:"😈 稀有黃黃表情",sticker:"global2500"},{n:5000,r:"🪙 2,500 金幣",coin:2500},{n:7500,r:"🪙 2,000 金幣",coin:2000},{n:10000,r:"👑 5,000 金幣 + 傳說黃黃表情",coin:5000,sticker:"global10000"}
+ {n:10,r:"🪙 50 金幣",coin:50},{n:25,r:"🪙 100 金幣",coin:100},{n:50,r:"🟡 黃黃限定表情",sticker:"global50"},{n:100,r:"🪙 200 金幣",coin:200},{n:200,r:"🪙 250 金幣",coin:250},{n:350,r:"🪙 350 金幣",coin:350},{n:500,r:"😎 黃黃限定表情",sticker:"global500"},{n:750,r:"🪙 500 金幣",coin:500},{n:1000,r:"🪙 1,000 金幣",coin:1000},{n:1500,r:"🪙 1,500 金幣",coin:1500},{n:2500,r:"😈 稀有黃黃表情",sticker:"global2500"},{n:5000,r:"🪙 2,500 金幣",coin:2500},{n:7500,r:"🪙 2,000 金幣",coin:2000},{n:10000,r:"👑 5,000 金幣 + 傳說黃黃表情",coin:5000,sticker:"global10000"}
 ];
 let globalAnsweredTotal=0;
 let globalMilestoneClaimsServer=[];
@@ -12385,7 +12366,7 @@ async function loadGlobalAnswered(){
   if(!c.error){
    globalMilestoneClaimsServer=(c.data||[]).map(x=>Number(x.milestone||x)).filter(Number.isFinite);
    /* Restore non-consumable cosmetics on a new browser/device; coins are never replayed. */
-   for(const n of globalMilestoneClaimsServer){const m=GLOBAL_MILESTONES.find(x=>x.n===n);if(!m)continue;if(m.redNebula)s.redNebulaUnlocked=true;if(m.sticker&&!s.ownedGlobalStickers?.includes(m.sticker)){if(!Array.isArray(s.ownedGlobalStickers))s.ownedGlobalStickers=[];s.ownedGlobalStickers.push(m.sticker)}}
+   for(const n of globalMilestoneClaimsServer){const m=GLOBAL_MILESTONES.find(x=>x.n===n);if(!m)continue;if(m.sticker&&!s.ownedGlobalStickers?.includes(m.sticker)){if(!Array.isArray(s.ownedGlobalStickers))s.ownedGlobalStickers=[];s.ownedGlobalStickers.push(m.sticker)}}
    saveGame();hydrateHuangStickerTray()
   }
  }catch(e){console.warn("global total",e);if($("globalAnswerNext"))$("globalAnswerNext").textContent="⚠️ 全球答題同步失敗，請確認 Supabase V14.66 / V14.69 SQL"}
@@ -12414,7 +12395,6 @@ async function claimGlobalMilestone(n,btn){
   const row=Array.isArray(r.data)?r.data[0]:r.data;
   if(!row?.claimed_now){await loadGlobalAnswered();return}
   if(m.coin)addCoins(m.coin);
-  if(m.redNebula){s.redNebulaUnlocked=true;renderGuiBackgroundChoices()}
   if(m.sticker&&!s.ownedGlobalStickers?.includes(m.sticker)){if(!Array.isArray(s.ownedGlobalStickers))s.ownedGlobalStickers=[];s.ownedGlobalStickers.push(m.sticker)}
   globalMilestoneClaimsServer.push(n);s.globalMilestoneClaims=[...new Set([...(s.globalMilestoneClaims||[]),n])];saveGame();renderGlobalAnswered();hydrateHuangStickerTray();syncAvatarOnline()
  }catch(e){console.warn("global milestone claim",e);if(btn){btn.disabled=false;btn.textContent="領取"}}
